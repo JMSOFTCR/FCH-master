@@ -1,0 +1,104 @@
+body{
+  background: #f1f1f1;
+
+}
+
+.contenedor{
+    display: flex;
+	flex-wrap: wrap; /* Permite que cuando una imagen no tenga campo se posicione debajo de la otra*/
+	justify-content: center;
+}
+
+.post{
+
+  margin: 30px;
+  width: 300px;
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+  
+  border-radius: 10px;
+  
+}
+.post:hover .post-s{
+  width: 300px;
+}
+.post img {
+  display: block;
+  width: 300px;
+  height: 200px;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+.post-s{
+  width: 0px;
+  height: 200px;
+  background: rgba(28, 255, 168, 0.62);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.7s ease;
+}
+.post-s a{
+  color: #ffffff;
+  font-size: 35px;
+  border: 1px solid white;
+  padding: 10px 30px;
+}
+
+.slide-tr {
+  -webkit-animation: slide-tr 1.8s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+          animation: slide-tr 1.8s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+}
+
+@-webkit-keyframes slide-tr {
+  0% {
+    -webkit-transform: translateY(0) translateX(0);
+            transform: translateY(0) translateX(0);
+  }
+  100% {
+    -webkit-transform: translateY(-800px) translateX(800px);
+            transform: translateY(-800px) translateX(800px);
+  }
+}
+@keyframes slide-tr {
+  0% {
+    -webkit-transform: translateY(0) translateX(0);
+            transform: translateY(0) translateX(0);
+  }
+  100% {
+    -webkit-transform: translateY(-800px) translateX(800px);
+            transform: translateY(-800px) translateX(800px);
+  }
+}
+.contai {
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 5px 6px 0px 0px rgba(6, 6, 6, 0.19);
+  width:60%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.tit_cart{
+  background-color:#F7BA71;
+  text-align:center;
+  margin-top:10px;
+  height:10%;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.06);
+}
+
+.cont-imgs{
+  max-width:350px;
+  overflow-x:auto;
+}
+.lit-img{
+padding: unset;
+}
+.lit-img:hover{
+border-color: burlywood;
+}

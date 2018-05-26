@@ -1,0 +1,38 @@
+body{
+  background: #f1f1f1;
+  font-family: 'intro';
+  margin: 0;
+  padding: 0;
+}
+.post{
+  width: 400px;
+  height: 250px;
+  position: relative;
+  cursor: pointer;
+}
+.post:hover .post-s{
+  width: 400px;
+}
+.post img {
+  display: block;
+  width: 400px;
+  height: 250px;
+}
+.post-s{
+  width: 0px;
+  height: 250px;
+  background: rgba(103, 58, 183, 0.71);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.7s ease;
+}
+.post-s h2{
+  color: white;
+  font-size: 50px;
+  border: 6px solid white;
+  padding: 10px 30px;
+}

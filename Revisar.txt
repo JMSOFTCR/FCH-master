@@ -1,0 +1,13 @@
+Quimicos colocar las marcas, agregar los pads (la imagen).
+Modificar el index con un nav debajo del slider y el nav "principal" con el logo, login and shopping cart.
+colocar equipo principal con cada marca en la sección de new equitment.
+agregar una ventana nueva con información para el about Us. 
+Crear subcategorias para modificar la información. 
+Limitar acceso a ciertos productos o precios sin estar registrado.
+Mejorar los botones. Nuevos diseños.
+Training almacena videos y una explicación breve. Limitar el acceso a training.
+Ficha Técnica.
+Fondo Dentro de Slider.
+Cambiar tamaño de 
+agregar fotografias adicionales en las compras y trabajar el insert de los videos.
+Agregar los efectos.
