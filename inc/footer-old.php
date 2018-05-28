@@ -59,8 +59,8 @@
      
   </div>
 </div>  
-                    <li><a href="../contact.php">Contact</a></li>
-                    <li><a href="../about.php"> About Us</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="about.php"> About Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -94,11 +94,11 @@
                 <div class="link-area">
                     <h4 style="text-decoration: underline;">Contact Us:</h4>
                     <ul>
-                    <li><p style="color:white"> Email: fchmaintenance@gmail.com</p></li>
-                    <li><p style="color:white"> Phone: 800-678-0502</p></li>
-                    <li><p style="color:white"> Phone: 604-265-4794</p></li>
-                    <li><p style="color:white"> General Mailing Address: 13-4 Alliance Blvd. Suite 111 Barrie, On  L4M 1L2 </p></li>
-                    <li><p style="color:white"> 236 Eglington Rd S. <br> Callander, On, Canada <br> P0H-1H0 </p></li>
+                    <li><p style="color:white"><i class="fa fa-envelope-o text-white"></i> : fchmaintenance@gmail.com</p></li>
+                    <li><p style="color:white"><i class="fa fa-address-book-o text-white"></i> : 1-800-678-0502</p></li>
+                    <li><p style="color:white"><i class="fa fa-phone text-white"></i> : 604-265-4794</p></li>
+                    <li><p style="color:white"><i class="fa fa-compass text-white"></i> : General Mailing Address: 13-4 Alliance Blvd. Suite 111 Barrie, On  L4M 1L2 </p></li>
+                    <li><p style="color:white"><i class="fa fa-compass text-white"></i> : 236 Eglington Rd S. <br> Callander, On, Canada <br> P0H-1H0 </p></li>
                     </ul>
                 </div>
             </div>

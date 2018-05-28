@@ -16,6 +16,7 @@ background-image: url("img/Fondo/gearblue.png");"
          a{color: aliceblue}
   </style>
    <link href="css/ihover.css" rel="stylesheet">
+   <link href="css/footer.css" rel="stylesheet">
   
  <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet"> 
  
@@ -38,7 +39,7 @@ background-image: url("img/Fondo/gearblue.png");"
         <div class="collapse navbar-collapse flex-column align-items-end" id="navbarCollapse">
             <!-- navbar1 -->
             <div class="navbar-nav mb-lg-0">
-                <h5 class="nav-item nav-link" href="#" style="color:#7ff57f; margin-right:100px;"> 1-800-678-0502</h5>
+                <h5 class="nav-item nav-link" href="#" style="color:#7ff57f; margin-right:100px;"><i class="fa fa-phone text-white"></i> : 1-800-678-0502</h5>
                 <a class="nav-item nav-link" href=""><i class="fa fa-facebook text-white"></i></a>
              
                 <a class="nav-item nav-link" href="#"><i class="fa fa-twitter text-white" ></i></a>
@@ -65,7 +66,7 @@ background-image: url("img/Fondo/gearblue.png");"
          </div>
         </li></li>
                                             <li id="cartme" style="cursor:pointer">
-                                            <a class="nav-item nav-link" id="cart_control" title="Carrito de compras" data-toggle="popover"><i class="fa fa-shopping-cart fa-fw" id="cartir"></i></a>
+                                            <a class="nav-item nav-link" id="cart_control" title="Shopping Cart" data-toggle="popover"><i class="fa fa-shopping-cart fa-fw" id="cartir"></i></a>
                                             </li>
                                    
                                     </div>
@@ -75,7 +76,7 @@ background-image: url("img/Fondo/gearblue.png");"
                                 echo ' 
                                           <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-user text-white"> Login</i></a>
                                           	<li id="cartme" style="cursor:pointer">
-                                            <a class="nav-item nav-link" id="cart_control" title="Carrito de compras" data-toggle="popover"><i class="fa fa-shopping-cart fa-fw" id="cartir"></i></a>
+                                            <a class="nav-item nav-link" id="cart_control" title="Shopping Cart" data-toggle="popover"><i class="fa fa-shopping-cart fa-fw" id="cartir"></i></a>
                                             </li>
                                  ';
                             }

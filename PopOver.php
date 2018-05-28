@@ -25,7 +25,7 @@ session_start();
       <?php
     }
     } echo '<br><a class="bnt bnt-md btn-info" href="fetch_cart.php" type="submit">Check Out</a>';         
-  }else{echo "No hay productos en su carro de compras";}?>
+  }else{echo "There are no products in your shopping cart";}?>
   <script type="text/javascript">
   $(".remove_product_p").on("click",function(){
         var id = {"idp":$(this).val()}
