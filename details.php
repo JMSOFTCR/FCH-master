@@ -107,7 +107,7 @@
   <div class="form-group">
     <input id="idp" type="hidden" value="<?php echo $id; ?>" >
     <label for="qty">Qty:</label>
-    <input type="number" style="width:80px;height:30x" value="0" class="form-control" id="qty" onchange="valid()">
+    <input type="number" style="width:80px;height:30x" class="form-control" id="qty" onchange="valid()">
     <button type="submit" class="btn btn-success disabled" required style="margin-left:5px;" disabled="true" id="btnCart">Add to Cart</button>
     <div id="divani"></div>
   
