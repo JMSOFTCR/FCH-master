@@ -95,7 +95,8 @@
    		</div>
               
                 <div class="col-sm-4" style="background-color:#ffffff; border:1px solid; border-radius:5px;">
-        <h1 style="color: #00d361">₡<?php echo number_format($price,2); ?></h1>
+<!--        <h1 style="color: #00d361">₡<?php echo number_format($price,2); ?></h1>-->
+       <h1 style="color: #00d361">Cooming soon</h1>
         <hr>
         <a style="color: gray"><?php echo $product_name; ?></a>
         <hr>
@@ -107,7 +108,7 @@
   <div class="form-group">
     <input id="idp" type="hidden" value="<?php echo $id; ?>" >
     <label for="qty">Qty:</label>
-    <input type="number" style="width:80px;height:30x" class="form-control" id="qty" onchange="valid()">
+    <input type="number" style="width:80px;height:30x" class="form-control" id="qty" min="0" step="1" onchange="valid()">
     <button type="submit" class="btn btn-success disabled" required style="margin-left:5px;" disabled="true" id="btnCart">Add to Cart</button>
     <div id="divani"></div>
   
