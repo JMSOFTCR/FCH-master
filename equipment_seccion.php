@@ -56,7 +56,7 @@
         </div></a></div>
       
             </div>
-      
+        <div style="padding-top:20px;"></div>
            
                 
   <div class="col-sm-4">   
@@ -78,7 +78,7 @@
         </div></a></div>
                    
                       </div>
-                      
+             
                       <div class="col-sm-4">
                    
           <div class="ih-item square colored effect14 top_to_bottom"><a href="pioneer_equipment.php">

@@ -21,26 +21,11 @@
   integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
   crossorigin="anonymous">
       
-           <style>
-         .carousel-item {
-  height: 40vh;
-  min-height: 100px;
-  background: no-repeat center center scroll;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-         
-  </style>
-   
       
 </head>
 
 
   <body>
-	
-	<!-- End WOWSlider.com BODY section -->
 
 	      <?php include './inc/nav.php'; ?> 
    
@@ -53,6 +38,8 @@
     </header>
         <div style="height: 70px;"></div>
     <!-- Page Content -->
+      <div id="mainC">
+          <div class="parallax-window" data-parallax="scroll" data-image-src="img/Fondo/gearblue.png"></div>
       <div class="contenedor scrollflow -pop -opacity">
 
 
@@ -119,6 +106,7 @@
   </div>
 
       </div>
+      </div>
     <div class="container">
     
         <div style="height:60px;" ></div>
@@ -133,7 +121,7 @@
         <div class="col-lg-6">
           <h2 class="">Learn more about FCH Maintenance</h2>
           <h4 style="color: black" class="scrollflow -pop -opacity">We think about our clients</h4>
-          <h6>By that reason we offer you:</h6>
+          <h6 style="color:black;">By that reason we offer you:</h6>
             <ul>
             <li>Trust</li>
             <li>Reliability</li>
@@ -171,16 +159,43 @@
     </ul>
 </div>
         </div>
--->
-                <div style="height:60px;" ></div>
+--> 
+              
         <div style="text-align:center" class="col-lg-12 scrollflow scrollflow -pop -opacity">
           <h2 >Our brands</h2>
           <h4 style="color:black">We represent these brands</h4>
-          <h6>Nationally and internationally, we manage the best brands in the market to provide an excellent service to our customers</h6>
-       
+          <h6 style="color:black">Nationally and internationally, we manage the best brands in the market to provide an excellent service to our customers</h6>
         </div>
-      </div>
-       
+      </div>   
+
+
+               <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+        <div class="carousel-inner w-100" role="listbox">
+            <div class="carousel-item row no-gutters active">
+                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/Tennant.png"></div>
+                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/PioneerEclipseLogo.jpg"></div>
+                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/bet.png"></div>
+                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/Kawasaki_Logo.jpg"></div>
+            </div>
+            <div class="carousel-item row no-gutters">
+                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/Aztec.png"></div>
+                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/advance.png"></div>
+                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/clarke.png"></div>
+                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/viper.png"></div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+
+
+</div>
+      
       <hr>
 
       <!-- Call to Action Section -->
@@ -203,8 +218,6 @@
  
       
     <!-- Bootstrap core JavaScript -->  
-
-      
 
     <script src="js/eskju.jquery.scrollflow.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>

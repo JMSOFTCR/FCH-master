@@ -6,15 +6,14 @@
 
 	
 	<style>
-body{
-background-image: url("img/Fondo/gearblue.png");"
-    }
+
         
          h1, h2, h3, p, li, h4, a { font-family: 'Lora', serif; 
         }
         
          a{color: aliceblue}
   </style>
+<div class="parallax-window" data-parallax="scroll" data-image-src="img/Fondo/gearblue.png"></div>
    <link href="css/ihover.css" rel="stylesheet">
    <link href="css/footer.css" rel="stylesheet">
   
@@ -148,6 +147,7 @@ background-image: url("img/Fondo/gearblue.png");"
     </div>
 </nav>
     <script src="js/eskju.jquery.scrollflow.min.js"></script>
+    <script src="js/parallax.js"></script>
 <script>
 $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
   if (!$(this).next().hasClass('show')) {
