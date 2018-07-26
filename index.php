@@ -169,7 +169,7 @@
       </div>   
 
 
-               <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+               <div  class="col-lg-12 scrollflow scrollflow -pop -opacity" id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
         <div class="carousel-inner w-100" role="listbox">
             <div class="carousel-item row no-gutters active">
                 <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/Tennant.png"></div>

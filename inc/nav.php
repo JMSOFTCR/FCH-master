@@ -12,8 +12,12 @@
         }
         
          a{color: aliceblue}
+        
+body{
+background-image: url("img/Fondo/gearblue.png");"
+    }
   </style>
-<div class="parallax-window" data-parallax="scroll" data-image-src="img/Fondo/gearblue.png"></div>
+
    <link href="css/ihover.css" rel="stylesheet">
    <link href="css/footer.css" rel="stylesheet">
   
