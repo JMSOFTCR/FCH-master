@@ -1,6 +1,6 @@
 <?php
 	include('session.php');
-    function arrayphoto (array $id=$_POST['id']){
+    function array (array $fileInfo = PATHINFO($_FILES["image"]["name"])){
         $result = array()
     }
 	$id=$_POST['id'];
