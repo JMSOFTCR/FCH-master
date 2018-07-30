@@ -1,8 +1,9 @@
 <?php
 	include('session.php');
     function array (array $fileInfo = PATHINFO($_FILES["image"]["name"])){
-        $result = array()
+        $result = array();
     }
+    $id=$_POST['id'];
 
     while (array =! empty($_FILES["image"]["name"])){
         

@@ -136,33 +136,21 @@
 					?>
 					<div style="height:10px;"></div>
                     <form role="form" method="POST" action="addphoto.php<?php echo '?id='.$pid; ?>" enctype="multipart/form-data">
-                        
-						<div style="height:10px;"></div>					
+                      
+                            <?php
+                            for ($i = 0; $i < 5; $i++) {
+                                print '<div style="height:10px;"></div>					
                                 <div class="form-group input-group">
                                 <span class="input-group-addon" style="width:120px;">Photo:</span> 
                                 <input type="file" style="width:400px;" class="form-control" name="image">
-                                </div>                                                  
-                        <div style="height:10px;"></div>
-                                <div class="form-group input-group">
-                                <span class="input-group-addon" style="width:120px;">Photo:</span> 
-                                <input type="file" style="width:400px;" class="form-control" name="image2">
-                                </div>
-                        <div style="height:10px;"></div>
-                         <div class="form-group input-group">
-                                <span class="input-group-addon" style="width:120px;">Photo:</span> 
-                                <input type="file" style="width:400px;" class="form-control" name="image3">
-                                </div>
-                        <div style="height:10px;"></div>
-                         <div class="form-group input-group">
-                                <span class="input-group-addon" style="width:120px;">Photo:</span> 
-                                <input type="file" style="width:400px;" class="form-control" name="image4">
-                                </div>
-                        <div style="height:10px;"></div>
-                         <div class="form-group input-group">
-                                <span class="input-group-addon" style="width:120px;">Photo:</span> 
-                                <input type="file" style="width:400px;" class="form-control" name="image5">
-                                </div>
-                        <div style="height:10px;"></div>
+                                </div>';
+                            }
+                            ?> 
+                       <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-check-square-o"></i> Add Photo</button>
+					</form>
+                </div>
                         
 				</div>
 			
