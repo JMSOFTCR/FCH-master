@@ -136,16 +136,36 @@
 					?>
 					<div style="height:10px;"></div>
                     <form role="form" method="POST" action="addphoto.php<?php echo '?id='.$pid; ?>" enctype="multipart/form-data">
-                      
-                            <?php
-                            for ($i = 0; $i < 5; $i++) {
-                                print '<div style="height:10px;"></div>					
+                            
+                              <div style="height:10px;"></div>					
                                 <div class="form-group input-group">
                                 <span class="input-group-addon" style="width:120px;">Photo:</span> 
-                                <input type="file" style="width:400px;" class="form-control" name="image">
-                                </div>';
-                            }
-                            ?> 
+                                <input type="file" style="width:400px;" class="form-control" name="archivo[]" multiple="" accept="image/*" />
+                                </div>
+                                
+                               <div class="col-sm-10">
+						
+						<?php 
+							$path = "files/".$pid;
+							if(file_exists($path)){
+								$directorio = opendir($path);
+								while ($archivo = readdir($directorio))
+								{
+									if (!is_dir($archivo)){
+										echo "<div data='".$path."/".$archivo."'><a href='".$path."/".$archivo."' title='Ver Archivo Adjunto'><span class='glyphicon glyphicon-picture'></span></a>";
+										echo "$archivo <a href='del_file.php' class='delete' title='Ver Archivo Adjunto' ><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a></div>";
+										echo "<img src='files/$pid/$archivo' width='300' />";
+									}
+								}
+							}
+							
+						?>
+						
+					</div>                 
+                               
+                        
+                                
+                            
                        <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
                     <button type="submit" class="btn btn-success"><i class="fa fa-check-square-o"></i> Add Photo</button>
@@ -160,8 +180,26 @@
 </div>
 </div>
 
+<script type="text/javascript">
+			$(document).ready(function() {
+				$('.delete').click(function(){
+					var parent = $(this).parent().attr('pid');
+					var service = $(this).parent().attr('data');
+					var dataString = 'pid='+service;
+					
+					$.ajax({
+						type: "POST",
+						url: "del_file.php",
+						data: dataString,
+						success: function() {			
+							location.reload();
+						}
+					});
+				});                 
+			});    
+		</script>
 
 <!-- add photo -->
-
-
+                            
+                     
 <!-- /add photo -->

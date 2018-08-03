@@ -43,3 +43,68 @@
 		</script>
 	<?php
 ?>
+
+if($_FILES["archivo"]["error"]>0){
+		echo "Error al cargar archivo";	
+		} else {
+		
+		$permitidos = array("image/gif","image/png","image/jpg","application/pdf");
+		$limite_kb = 2000;
+		
+		if(in_array($_FILES["archivo"]["type"], $permitidos) && $_FILES["archivo"]["size"] <= $limite_kb * 1024){
+			
+			$ruta = 'files/'.$id.'/';
+			$archivo = $ruta.$_FILES["archivo"]["name"];
+			
+			if(!file_exists($ruta)){
+				mkdir($ruta);
+			}
+			
+			if(!file_exists($archivo)){
+				
+				$resultado = @move_uploaded_file($_FILES["archivo"]["tmp_name"], $archivo);
+				
+                 mysqli_query($conn,"call GuardarImagen('$id','$target_path')"); 
+				
+                if($resultado){
+					echo "Archivo Guardado";
+					} else {
+					echo "Error al guardar archivo";
+                    
+                
+				}
+				
+				} else {
+				echo "Archivo ya existe";
+			}
+			
+			} else {
+			echo "Archivo no permitido o excede el tamaño";
+		}
+		
+	};   
+                                                                                                       
+                                                                                                       
+        <div class="col-sm-10">
+						<input type="file" class="form-control" id="archivo" name="archivo">
+						
+						<?php 
+							$path = "../upload/".$pid;
+							if(file_exists($path)){
+								$directorio = opendir($path);
+								while ($archivo = readdir($directorio))
+								{
+									if (!is_dir($archivo)){
+										echo "<div data='".$path."/".$archivo."'><a href='".$path."/".$archivo."' title='Ver Archivo Adjunto'><span class='glyphicon glyphicon-picture'></span></a>";
+										echo "$archivo <a href='#' class='delete' title='Ver Archivo Adjunto' ><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a></div>";
+										echo "<img src='files/$pid/$archivo' width='300' />";
+									}
+								}
+							}
+							
+						?>
+						
+					</div>                                                                                                
+                                                                                                       
+    
+    
