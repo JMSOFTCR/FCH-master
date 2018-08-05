@@ -143,27 +143,49 @@
                                 <input type="file" style="width:400px;" class="form-control" name="archivo[]" multiple="" accept="image/*" />
                                 </div>
                                 
-                               <div class="col-sm-10">
-						
-						<?php 
-							$path = "files/".$pid;
-							if(file_exists($path)){
-								$directorio = opendir($path);
-								while ($archivo = readdir($directorio))
-								{
-									if (!is_dir($archivo)){
-										echo "<div data='".$path."/".$archivo."'><a href='".$path."/".$archivo."' title='Ver Archivo Adjunto'><span class='glyphicon glyphicon-picture'></span></a>";
-										echo "$archivo <a href='del_file.php' class='delete' title='Ver Archivo Adjunto' ><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a></div>";
-										echo "<img src='files/$pid/$archivo' width='300' />";
-									}
-								}
-							}
-							
-						?>
-						
-					</div>                 
+                              
                                
-                        
+                         <div class="col-sm-10">
+						
+                                   
+                           
+						
+                                   
+                                   
+						<?php 
+                                      
+                                   $sql = "select * from carousel as c where c.productid = '$pid'"; 
+                                    $result = mysqli_query($conn, $sql);
+                                
+                                                               
+
+                                        if(mysqli_num_rows($result) > 0){
+                                        while($row = mysqli_fetch_array($result)){
+                                        $id = $row['productid'];
+                                        $photo = $row['photo'];
+                                       
+                                              for($i=0; $i < count($photo); $i++){
+                                   
+										
+                                       echo "<img src='$photo' width='300' />";
+                                       echo "<a href='del_file.php' class='delete' title='Ver Archivo Adjunto' ><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a>";
+                                    } 
+                                    }
+                                     
+                                    }
+                                   
+                                    
+                                        
+                                   ?>
+                
+    		   
+                          
+						
+						
+					</div>                     
+				
+            
+    		  
                                 
                             
                        <div class="modal-footer">
@@ -180,26 +202,4 @@
 </div>
 </div>
 
-<script type="text/javascript">
-			$(document).ready(function() {
-				$('.delete').click(function(){
-					var parent = $(this).parent().attr('pid');
-					var service = $(this).parent().attr('data');
-					var dataString = 'pid='+service;
-					
-					$.ajax({
-						type: "POST",
-						url: "del_file.php",
-						data: dataString,
-						success: function() {			
-							location.reload();
-						}
-					});
-				});                 
-			});    
-		</script>
 
-<!-- add photo -->
-                            
-                     
-<!-- /add photo -->

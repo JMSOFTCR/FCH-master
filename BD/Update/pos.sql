@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-02-2018 a las 08:14:21
+-- Tiempo de generación: 05-08-2018 a las 10:16:55
 -- Versión del servidor: 10.1.25-MariaDB
 -- Versión de PHP: 5.6.31
 
@@ -22,6 +22,84 @@ SET time_zone = "+00:00";
 -- Base de datos: `pos`
 --
 
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GuardarImagen` (IN `Productid` INT, IN `Photo` VARCHAR(100))  BEGIN
+   INSERT INTO carousel (productid, photo) VALUES (Productid, Photo);
+   END$$
+
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carousel`
+--
+
+CREATE TABLE `carousel` (
+  `productid` int(11) NOT NULL,
+  `photo` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `carousel`
+--
+
+INSERT INTO `carousel` (`productid`, `photo`) VALUES
+(27, 'upload/e85903-00_300x300_main.png'),
+(28, 'upload/1 (Copiar)_1512603568_1512603723.png'),
+(34, 'upload/SCRUBBER_CASTERS_1511398657.jpg'),
+(36, 'upload/e88398-00_300x300_main_1516384509.jpg'),
+(37, 'upload/SCRUBBER_ELECTRONIC_PARTS_1517176157.jpg'),
+(38, 'upload/New_Batteries_1516385312.jpg'),
+(39, 'upload/BUFFER_WHEELS_1516395627.jpg'),
+(40, 'upload/Vacuum_Motors_1517176063.jpg'),
+(42, 'upload/CA30_17E_1517172151.jpg'),
+(43, 'upload/Clarke_Focus_II_Rider_1517172520.jpg'),
+(44, 'upload/Focus_II_Compact_Autoscrubber_1517172804.jpg'),
+(45, 'upload/Focus_II_MicroRider_1517172916.jpg'),
+(46, 'upload/Focus_II_Mid_Size_Autoscrubber_1517174823.jpg'),
+(47, 'upload/MA10_12E_1517174985.jpg'),
+(49, 'upload/Vantage_14_1517175081.jpg'),
+(50, 'upload/vacuum1_1517177141.png'),
+(52, 'upload/e85903-00_300x300_main_1527300794.jpg'),
+(54, 'upload/SC100_1519104219.jpg'),
+(55, 'upload/SC6000_1519104402.jpg'),
+(56, 'upload/SC250_1519023405.jpg'),
+(57, 'upload/SC250_1519104257.jpg'),
+(58, 'upload/SC351-comercial_1519104291.jpg'),
+(59, 'upload/SC351-industrial_1519104302.jpg'),
+(60, 'upload/SC400_1519104320.jpg'),
+(61, 'upload/SC450_1519104355.jpg'),
+(62, 'upload/Adfinity_1519104196.jpg'),
+(64, 'upload/SC3000_1519104271.jpg'),
+(65, 'upload/SC1500_1519104245.jpg'),
+(66, 'upload/SC800_1519104427.jpg'),
+(67, 'upload/SC750_1519104441.jpg'),
+(68, 'upload/SC500_1519104372.jpg'),
+(69, 'upload/Green Earth Daily Floor Cleaner_1519289048.jpg'),
+(71, 'upload/Non_Zinc_Floor_Finish_&_Sealer_1519289070.jpg'),
+(72, 'upload/Green_earth_Floor_stripper_1519289095.jpg'),
+(73, 'upload/128-FS-EnviroStar-Green_1519289977.png'),
+(74, 'upload/515FS_web_1519289962.png'),
+(75, 'upload/330MPE_web_1519289876.png'),
+(76, 'upload/black_1519629109.jpg'),
+(77, 'upload/blue_1519629131.jpg'),
+(78, 'upload/red_1519628921.jpg'),
+(79, 'upload/green_1519629061.jpg'),
+(48, 'upload/MA30_13b_1517175035.jpg'),
+(48, 'files/48//1.jpg'),
+(48, 'files/48//2.jpg'),
+(48, 'files/48//3.jpg'),
+(53, 'upload/motomop1.jpg'),
+(53, 'upload/motomop2.jpg'),
+(53, 'upload/motomop3.jpg'),
+(53, 'upload/motomop4.jpg'),
+(53, 'upload/motomop5.jpg'),
+(53, 'upload/motomop6.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -34,6 +112,13 @@ CREATE TABLE `cart` (
   `productid` int(11) NOT NULL,
   `qty` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `cart`
+--
+
+INSERT INTO `cart` (`cartid`, `userid`, `productid`, `qty`) VALUES
+(1, 2, 28, 8);
 
 -- --------------------------------------------------------
 
@@ -190,7 +275,10 @@ INSERT INTO `inventory` (`inventoryid`, `userid`, `action`, `productid`, `quanti
 (81, 1, 'Add Product', 76, 2, '2018-02-26 00:56:30'),
 (82, 1, 'Add Product', 77, 2, '2018-02-26 01:05:17'),
 (83, 1, 'Add Product', 78, 1, '2018-02-26 01:08:41'),
-(84, 1, 'Add Product', 79, 2, '2018-02-26 01:11:01');
+(84, 1, 'Add Product', 79, 2, '2018-02-26 01:11:01'),
+(85, 2, 'Purchase', 34, 3, '2018-05-13 02:12:51'),
+(86, 2, 'Purchase', 28, 3, '2018-05-13 02:12:51'),
+(87, 1, 'Update Quantity', 34, 20, '2018-05-16 01:26:03');
 
 -- --------------------------------------------------------
 
@@ -216,9 +304,9 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`productid`, `categoryid`, `product_name`, `product_price`, `product_qty`, `photo`, `supplierid`, `description`, `video`, `tech`) VALUES
-(27, 2, 'Vacuum Motors', 210, 8, 'upload/1 (Copiar)_1512188309.png', 4, 'Betco back pack vacuums provide a high productivity alternative to upright vacuum cleaning by reducing labor and fatigue. Perform total floor to ceiling cleaning in all types of dry vacuuming applications. Includes an ergonomically designed backrest to enhance operator comfort \r\n<br>\r\n<br>\r\n\r\n\r\nLightweight and versatile design reduces operator fatigue.\r\n\r\nMulti-task tool kit included.\r\n\r\nQuad filtration captures fine dust particles.\r\n\r\n\r\nfor Betco STEALTH DRS26BT', '', ''),
-(28, 10, 'Tennant Tire', 210, 1, 'upload/1 (Copiar)_1512603568_1512603723.png', 4, '', '', ''),
-(34, 10, 'Scrubber Casters', 20, 1, 'upload/SCRUBBER_CASTERS_1511398657.jpg', 4, 'Work on Cars', '', ''),
+(27, 2, 'Vacuum Motors', 210, 8, 'upload/e85903-00_300x300_main.png', 4, 'Betco back pack vacuums provide a high productivity alternative to upright vacuum cleaning by reducing labor and fatigue. Perform total floor to ceiling cleaning in all types of dry vacuuming applications. Includes an ergonomically designed backrest to enhance operator comfort \r\n<br>\r\n<br>\r\n\r\n\r\nLightweight and versatile design reduces operator fatigue.\r\n\r\nMulti-task tool kit included.\r\n\r\nQuad filtration captures fine dust particles.\r\n\r\n\r\nfor Betco STEALTH DRS26BT', '', ''),
+(28, 10, 'Tennant Tire', 210, -2, 'upload/1 (Copiar)_1512603568_1512603723.png', 4, '', '', ''),
+(34, 10, 'Scrubber Casters', 20, 20, 'upload/SCRUBBER_CASTERS_1511398657.jpg', 4, 'Work on Cars', '', ''),
 (36, 7, 'LIL BERTHAÂ®', 20, 20, 'upload/e88398-00_300x300_main_1516384509.jpg', 5, 'Betco provides the most productive stripping machines available today. Built with a tough steel frame and a reliable 603cc Kawasaki V-Twin engine this propane powered machine provides the performance and durability required to quickly handle large areas and excessive finish build ups.\r\n\r\n<br>\r\n<br>\r\nA wide 24\" stripping path maximizes productivity.\r\n<br>\r\n<br>\r\nFloating shroud contains stripper solution and prevents splashing.\r\n<br>\r\n<br>\r\nPowerful 603cc Kawasaki V-Twin engine for maximum stripping performance\r\n<br>\r\n<br>\r\nRugged powder coated steel construction for heavy use in tough environments\r\n<br>\r\n<br>\r\nTriple counter-rotating brushes easily remove multiple layers of floor finish in a single pass.', '', ''),
 (37, 10, 'Scrubber Electronics Parts', 15, 10, 'upload/SCRUBBER_ELECTRONIC_PARTS_1517176157.jpg', 4, '', '', ''),
 (38, 6, 'Batterie', 15, 10, 'upload/New_Batteries_1516385312.jpg', 5, '', '', ''),
@@ -233,8 +321,8 @@ INSERT INTO `product` (`productid`, `categoryid`, `product_name`, `product_price
 (48, 1, 'MA30 13b', 4000, 10, 'upload/MA30_13b_1517175035.jpg', 4, '', '', ''),
 (49, 9, 'Vantage 14', 4000, 10, 'upload/Vantage_14_1517175081.jpg', 7, '', '', ''),
 (50, 4, 'Betco Vacuum', 200, 10, 'upload/vacuum1_1517177141.png', 5, '', '', ''),
-(52, 7, 'Backpack Vacuums', 1000, 2, 'upload/e85903-00_300x300_main_1518588347.jpg', 5, 'Betco back pack vacuums provide a high productivity alternative to upright vacuum cleaning by reducing labor and fatigue. Perform total floor to ceiling cleaning in all types of dry vacuuming applications. Includes an ergonomically designed backrest to enhance operator comfort \r\n\r\nLightweight and versatile design reduces operator fatigue.\r\n\r\nMulti-task tool kit included.\r\n\r\nQuad filtration captures fine dust particles.\r\n\r\n', '', 'Airflow: 120 CFM\r\nDust Bag Capacity: 1.25 Gallons\"\r\nFiltration: 	3-Stage\r\nTool Kit: Multi-Task Tool Kit Included\r\nVacuum Motor: 1000 Watt\r\nWater Lift: 100\"\r\nWeight: 11 Pounds\r\n'),
-(53, 7, 'Motomop', 1000, 2, 'upload/motomop1_1518987171.jpg', 5, '', '', ''),
+(52, 7, 'Backpack Vacuums', 1000, 2, 'upload/e85903-00_300x300_main_1527300794.jpg', 5, 'Betco back pack vacuums provide a high productivity alternative to upright vacuum cleaning by reducing labor and fatigue. Perform total floor to ceiling cleaning in all types of dry vacuuming applications. Includes an ergonomically designed backrest to enhance operator comfort \r\n\r\nLightweight and versatile design reduces operator fatigue.\r\n\r\nMulti-task tool kit included.\r\n\r\nQuad filtration captures fine dust particles.\r\n\r\n', '', 'Airflow: 120 CFM\r\nDust Bag Capacity: 1.25 Gallons\"\r\nFiltration: 	3-Stage\r\nTool Kit: Multi-Task Tool Kit Included\r\nVacuum Motor: 1000 Watt\r\nWater Lift: 100\"\r\nWeight: 11 Pounds\r\n'),
+(53, 7, 'Motomop', 1000, 2, 'upload/motomop1_1533456011.jpg', 5, '', '', ''),
 (54, 8, 'SC100â„¢', 1000, 2, 'upload/SC100_1519104219.jpg', 6, 'MOVING BEYOND THE MOP.\r\n\r\nFor generations the mop and bucket was the only option for cleaning small spaces, but simply spreading dirt around is neither effective nor sanitary. This is why Advance developed the SC100â„¢ Upright Scrubber. Not only does its compact, lightweight design allow you to clean very tight areas, but its superior productivity gets the job done fast, giving you more time for other tasks.\r\n\r\nThe faster way to cleaner floors.\r\n\r\nThe Advance SC100â€™s convenient, easy-to-use features make it perfect for cleaning small, high-traffic spaces quickly and effectively. The single-pass scrub and dry performance provides quick access to cleaned areas, and the comfortable, two-hand grip combined with its light weight make maneuverability and transport easy for any operator.\r\nA cleaner clean.\r\n\r\nWith a more effective cleaning system that removes dirt and water rather than spreading it around like a traditional mop, you not only decrease chances for slip-and-falls, but you creat', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/sBaVc6XXx7U\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>', 'PERFORMANCE & FEATURES\r\n\r\n    Two solution flow settings and a low solution indicator light ensure efficient cleaning\r\n    Ergonomic handle for comfortable one or two-handed operation\r\n    Easy-to-handle recovery tank makes emptying dirty water easier\r\n    Low deck profile gives the operator easy access to hardto- reach areas\r\n    Dosing cap makes adding the right amount of detergent much easier\r\n    Strong aluminum frame is built for reliability and long life'),
 (55, 8, 'SC6000â„¢', 1000, 2, 'upload/SC6000_1519104402.jpg', 6, ' HIGHER PRODUCTIVITY WITH A LOWER COST TO CLEAN\r\n\r\nUnparalleled durability and ease of use.\r\nHigh Productivity in a compact package\r\n\r\nâ€¢ Up to 30% greater runtime/productivity versus nearest competitor\r\nRugged industrial design for maximum life\r\n\r\nâ€¢ Fully protected scrub deck, tubular frame, and extended life cylindrical deck components\r\nSmartKeyâ„¢ with impact detection\r\n\r\nâ€¢ Provides unique levels of user access to produce consistent results with greater operator accountability, and lower total cost of cleaning\r\nSmartFlowâ„¢ and intermittent solution off\r\n\r\nâ€¢ Reduces water and chemical usage by up to 50% while producing safer cleaning results\r\nOffset deck\r\n\r\nâ€¢ For edge cleaning with no added complexity or cost\r\n', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/I3lWyR9ozo0\" frameborder=\"0\" allow=\"autoplay; encrypted-media\" allowfullscreen></iframe>', ''),
 (56, 1, 'SC250', 1000, 2, 'upload/SC250_1519023405.jpg', 4, 'Compact and Maneuverable.\r\n\r\nWith its compact, highly maneuverable design, the SC250 is ideal for scrubbing in tight corners or under tables or chairs. Itâ€™s adjustable and foldable handle makes transport and storage easy.\r\n\r\nFast and Effective Cleaning\r\n\r\nEasily raise the front squeegee to sweep up small debris while scrubbing, thereby minimizing the need to pre-sweep. Designed to pick-up water in forward and reverse directions, the SC250 ensures a clean, dry, more hygienic environment while decreasing chances for slip-and-fall accidents.\r\nBattery Powered\r\n\r\nThe SC250 uses a powerful 36 V Lithium battery that provides up to 40 minutes of run time and operates at only 66 dB A, allowing for daytime cleaning and cleaning of noisesensitive areas. The cordless design ensures a safer cleaning environment and flexible cleaning options.\r\n\r\nSave time. Reduce costs.', 'No video available at this time', 'EFFECTIVE & COMPACT & SAFE & SANITARY\r\n\r\n    Sweep, scrub and dry in a single pass\r\n    Ideal design for scrubbing small spaces quickly\r\n    Cord-free and quiet operation\r\n    Creates a cleaner environment than mopping'),
@@ -291,7 +379,8 @@ INSERT INTO `sales` (`salesid`, `userid`, `sales_total`, `sales_date`) VALUES
 (11, 2, 20, '2017-11-19 17:45:58'),
 (12, 1, 15, '2017-11-22 19:47:29'),
 (13, 1, 20, '2017-12-04 21:16:56'),
-(14, 1, 420, '2017-12-04 21:17:25');
+(14, 1, 420, '2017-12-04 21:17:25'),
+(15, 2, 690, '2018-05-13 02:12:51');
 
 -- --------------------------------------------------------
 
@@ -332,7 +421,9 @@ INSERT INTO `sales_detail` (`sales_detailid`, `salesid`, `productid`, `sales_qty
 (19, 11, 23, 1),
 (20, 12, 24, 1),
 (21, 13, 23, 1),
-(22, 14, 27, 2);
+(22, 14, 27, 2),
+(23, 15, 34, 3),
+(24, 15, 28, 3);
 
 -- --------------------------------------------------------
 
@@ -390,6 +481,12 @@ INSERT INTO `user` (`userid`, `username`, `password`, `access`) VALUES
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `carousel`
+--
+ALTER TABLE `carousel`
+  ADD KEY `productid` (`productid`);
 
 --
 -- Indices de la tabla `cart`
@@ -453,7 +550,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `category`
 --
@@ -463,7 +560,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT de la tabla `inventory`
 --
 ALTER TABLE `inventory`
-  MODIFY `inventoryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `inventoryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 --
 -- AUTO_INCREMENT de la tabla `product`
 --
@@ -473,17 +570,27 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT de la tabla `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `salesid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `salesid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT de la tabla `sales_detail`
 --
 ALTER TABLE `sales_detail`
-  MODIFY `sales_detailid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `sales_detailid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;COMMIT;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `carousel`
+--
+ALTER TABLE `carousel`
+  ADD CONSTRAINT `productid` FOREIGN KEY (`productid`) REFERENCES `product` (`productid`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

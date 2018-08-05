@@ -107,4 +107,20 @@ if($_FILES["archivo"]["error"]>0){
 					</div>                                                                                                
                                                                                                        
     
-    
+
+
+-----------------------
+    	$path = "files/".$pid;
+							if(file_exists($path)){
+								$directorio = opendir($path);
+								while ($archivo = readdir($directorio))
+								{
+									if (!is_dir($archivo)){
+										echo "<div data='".$path."/".$archivo."'><a href='".$path."/".$archivo."' title='Ver Archivo Adjunto'><span class='glyphicon glyphicon-picture'></span></a>";
+										echo "$archivo <a href='del_file.php' class='delete' title='Ver Archivo Adjunto' ><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a></div>";
+										echo "<img src='files/$pid/$archivo' width='300' />";
+									}
+								}
+							}
+							
+						?>
