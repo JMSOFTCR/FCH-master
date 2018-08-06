@@ -45,18 +45,24 @@
             <a href="New_Engine.php"><img class="card-img-top" src="img/NEW_ENGINE/FCH_NEW_006.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="New_Engine.php"> NEW ENGINE</a>
+                <a href="New_Engine.php" style="color:black" > NEW ENGINE</a>
               </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+             <p>Take comfort in knowing that FCH has you covered in any situation. <br>
+              <br>
+            If you have a late model buffer and are in need of a new engine, we offer fast turnaround to get you up and running in as little as two days!
+              <br>
+              <br>
+            Call FCH and we will take care of you!
+            </p>
             </div>
           </div>
         </div>
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
-            <a href="Old_To_New.php"><img class="card-img-top" src="img/OLD_TO_NEW/FCH_Old_to_new_001.jpg" alt=""></a>
+            <a href="Old_To_New.php"><img class="card-img-top" src="img/OLD_TO_NEW/1/FCH_Old_to_new_001.jpg" alt=""></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="Old_To_New.php">OLD TO NEW</a>
+                <a href="Old_To_New.php" style="color:black" >OLD TO NEW</a>
               </h4>
               <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
             </div>

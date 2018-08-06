@@ -20,7 +20,7 @@
     
   <body>
       
-          <div style="height: 90px;"></div>
+       
           <?php include './inc/nav.php'; ?>  
     <!-- Navigation -->
       
@@ -34,13 +34,13 @@
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Home</a>
+          <a href="index.html" style="color:black">Home</a>
         </li>
         <li class="breadcrumb-item active">Equipment Deliver</li>
       </ol>
 
       <!-- Image Header -->
-      <img class="img-fluid rounded mb-4" src="http://placehold.it/1200x300" alt="">
+      <img class="img-fluid rounded mb-4" src="img/deliveri/deliveri.jpg" alt="">
 
       <!-- Marketing Icons Section -->
       <div class="row">
@@ -84,64 +84,8 @@
     <!-- /.container -->
 
     <!-- Footer -->
-  <section class="index-link">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="link-area">
-                    <h3>ABOUT US</h3>
-                    <P>Building Consensus among your Senior leaders to leverage your digital strengths and work on gaps which are hindering your growth.</P>
-                    <li class="fa-li"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li class="fa-li"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li class="fa-li"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="link-area">
-                    <h3>PRODUCT</h3>
-                    <ul>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="link-area">
-                    <h3>COMPANY</h3>
-                    <ul>
-                    <li><a href="index.html"> Home</a></li>
-                    <li><a href="services.html"> Services</a></li>
-                    <li><a href="#"> Gallery</a></li>
-                    <li><a href="contact.html"> contact</a></li>
-                    <li><a href="about.html"> About Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="link-area">
-                    <h3>LEARM MORE</h3>
-                    <ul>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    <li><a href="#"> Services-1</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+ <?php include './inc/footer.php'; ?>  
 
-<section class="index-social">
-    <div class="container">
-    <div class="row index-social-link text-center">
-            <p class="copy-c"><p>&copy; 2017 FCHMAINTENANCE</p>
-        </div>
-        </div>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>

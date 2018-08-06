@@ -31,7 +31,7 @@
    
       
     <header>
-  <div style="height: 10px;"></div>
+
 
 	<?php include 'slider.php'; ?> 
       
@@ -79,7 +79,7 @@
     <div class="ih-item square colored effect6 from_top_and_bottom"><a href="#">
         <div class="img"><img src="img/Main/Cleaning_Supplies.jpg" style="height:185px;" alt="img"></div>
         <div class="info">
-          <h3>Cleaning Supplies</h3>
+          <h3>Cleaning Chemicals and Supplies</h3>
 
         </div></a></div>
     <!-- end colored -->
@@ -133,7 +133,7 @@
           <p>We hope you can find everything you need. FCH Maintenance is focused on providing high-quality service and customer satisfaction - we will do everything we can to meet your expectations.</p>
         </div>
         <div class="col-lg-6">
-       <iframe width="300" height="300" src="https://www.youtube.com/embed/zbcghvr0biU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+       <iframe width="300" height="300" src="https://www.youtube.com/embed/G7Mv5SSv6ks" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div> 
       

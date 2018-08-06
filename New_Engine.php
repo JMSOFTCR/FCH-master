@@ -34,7 +34,7 @@
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Home</a>
+          <a href="index.html" style="color:black">Home</a>
         </li>
         <li class="breadcrumb-item active">Portfolio Item</li>
       </ol>
@@ -80,7 +80,13 @@
 
         <div class="col-md-4">
           <h3 class="my-3">New Engine</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+          <p>Take comfort in knowing that FCH has you covered in any situation. <br>
+              <br>
+            If you have a late model buffer and are in need of a new engine, we offer fast turnaround to get you up and running in as little as two days!
+              <br>
+              <br>
+            Call FCH and we will take care of you!
+            </p>
           <h3 class="my-3">Project Details</h3>
           <ul>
             <li>New engine replacement </li>

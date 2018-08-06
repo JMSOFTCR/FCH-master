@@ -97,15 +97,13 @@ background-image: url("img/Fondo/gearblue.png");"
                     <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SERVICES</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="">Cleaning Rental Equipment</a>
+                        <a class="dropdown-item" href="repair_maintenance.php">Equipment Maintenance and Repair</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="rental_equipment.php">Cleaning Rental Equipment</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="deliver.php">Equipment Deliver</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="">Equipment Repair</a>
-                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="equipment_restoration.php">Equipment Restoration</a>       
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="">Maintenance Prevention</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Training</a>
                         <div class="dropdown-divider"></div>
@@ -116,7 +114,7 @@ background-image: url("img/Fondo/gearblue.png");"
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="equipment_seccion.php">New Equipment</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="">Cleaning Chemicals</a>
+                        <a class="dropdown-item" href="">Cleaning Chemicals and Supplies</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="Floor_seccion.php">Floor Care</a>
                         <div class="dropdown-divider"></div>
