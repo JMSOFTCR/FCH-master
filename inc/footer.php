@@ -124,7 +124,7 @@
                     <li><p style="color:white"><i class="fa fa-address-book-o text-white"></i> : 1-800-678-0502</p></li>
                     <li><p style="color:white"><i class="fa fa-phone text-white"></i> : 604-265-4794</p></li>
                     <li><p style="color:white"><i class="fa fa-compass text-white"></i> : General Mailing Address: 13-4 Alliance Blvd. Suite 111 Barrie, On  L4M 1L2 </p></li>
-                    <li><p style="color:white"><i class="fa fa-compass text-white"></i> : 236 Eglington Rd S. <br> Callander, On, Canada <br> P0H-1H0 </p></li>
+                    <li><p style="color:white"><i class="fa fa-compass text-white"></i> : Work Shop 236 Eglington Rd S, <br> Callander, Ontario <br> P0H-1H0 </p></li>
                     </ul>
                 </div>
             </div>
@@ -134,8 +134,12 @@
 
 <section class="index-social">
     <div class="container">
-    <div class="row index-social-link text-center">
-            <p class="copy-c"><p>&copy; 2017 FCHMAINTENANCE</p>
+    <div class="row index-social-link text-center d-flex">
+            <p class="d-flex flex-row copy-c"><p>&copy; 2017 FCHMAINTENANCE</p>
+            <p class="ml-auto p-2">&copy;FAMILY CHAN HOLDING GRUP</p>
+        </div>  
+    <div class="row index-social-link text-center d-flex flex-row-reverse">
+           
         </div>
         </div>
 </section>
