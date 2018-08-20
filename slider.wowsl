@@ -59,42 +59,6 @@
             <TooltipPos>bottom</TooltipPos>
             <noFrame>0</noFrame>
         </Settings>
-        <Images RelativePath="false">
-            <Image>
-                <url>C:/Users/Thanatos/Desktop/Respaldo/Carrusel/All you need to keep your floors up.. 6.png</url>
-                <title>All you need to keep your floors up.. </title>
-                <filesize>3669084</filesize>
-            </Image>
-            <Image>
-                <url>C:/Users/Thanatos/Desktop/Respaldo/Carrusel/Cleaning Supplies 1.png</url>
-                <title>Cleaning Supplies </title>
-                <filesize>3844297</filesize>
-            </Image>
-            <Image>
-                <url>C:/Users/Thanatos/Desktop/Respaldo/Carrusel/Maintenance prevention and repair 3.png</url>
-                <title>Maintenance prevention and repair </title>
-                <filesize>4102133</filesize>
-            </Image>
-            <Image>
-                <url>C:/Users/Thanatos/Desktop/Respaldo/Carrusel/New Equipment2.jpg</url>
-                <title>New Equipment</title>
-                <filesize>104772</filesize>
-            </Image>
-            <Image>
-                <url>C:/Users/Thanatos/Desktop/Respaldo/Carrusel/New_Batteries.jpg</url>
-                <title>New Batteries</title>
-                <filesize>247456</filesize>
-            </Image>
-            <Image>
-                <url>C:/Users/Thanatos/Desktop/Respaldo/Carrusel/Parts and accessories 4.png</url>
-                <title>Parts and accessories </title>
-                <filesize>3374468</filesize>
-            </Image>
-            <Image>
-                <url>C:/Users/Thanatos/Desktop/Respaldo/Carrusel/Rental equipment5.png</url>
-                <title>Rental equipment</title>
-                <filesize>4399750</filesize>
-            </Image>
-        </Images>
+        <Images RelativePath="false"/>
     </Gallery>
 </VisualLightBox>

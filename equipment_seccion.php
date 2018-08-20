@@ -15,7 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
-    <link href="css/card.css" rel="stylesheet">
+   
       
     
         
@@ -49,7 +49,7 @@
         
          <!-- colored -->
     <div class="ih-item square colored effect14 top_to_bottom"><a href="advance_equipment.php">
-        <div class="img"><img src="img/Equipment_Seccion/Advance.jpg" alt="img" style="height:192px; "></div>
+        <div class="img"><img src="img/Equipment_Seccion/new/advance.png" alt="img" ></div>
         <div class="info">
           <h3>Advance</h3>
           <p></p>
@@ -61,7 +61,7 @@
                 
   <div class="col-sm-4">   
         <div class="ih-item square colored effect14 top_to_bottom"><a href="clarke_equipment.php">
-        <div class="img"><img src="img/Equipment_Seccion/Clarke.jpg" alt="img" style="height:190px;"></div>
+        <div class="img"><img src="img/Equipment_Seccion/new/clarke.png" alt="img" ></div>
         <div class="info">
           <h3>Clarke</h3>
           <p></p>
@@ -71,7 +71,7 @@
                     
               <div class="col-sm-4">
          <div class="ih-item square colored effect14 top_to_bottom"><a href="betco_equipment.php">
-        <div class="img"><img src="img/Equipment_Seccion/Betco.jpg" alt="img" style="height:192px;"></div>
+        <div class="img"><img src="img/Equipment_Seccion/new/betco.png" alt="img"></div>
         <div class="info">
           <h3>Betco</h3>
           <p></p>
@@ -79,12 +79,32 @@
                    
                       </div>
              
-                      <div class="col-sm-4">
+        <div class="col-sm-4">
                    
           <div class="ih-item square colored effect14 top_to_bottom"><a href="pioneer_equipment.php">
-        <div class="img"><img src="img/Equipment_Seccion/Pioner.jpg" alt="img" style="height:192px;"></div>
+        <div class="img"><img src="img/Equipment_Seccion/new/pioner.png" alt="img"></div>
         <div class="info">
           <h3>Pioner Eclipse</h3>
+          <p></p>
+        </div></a></div>
+        
+        </div>    
+        <div class="col-sm-4">
+                   
+          <div class="ih-item square colored effect14 top_to_bottom"><a href="viper_equipment.php">
+        <div class="img"><img src="img/Equipment_Seccion/new/viper.png" alt="img"></div>
+        <div class="info">
+          <h3>Viper</h3>
+          <p></p>
+        </div></a></div>
+        
+        </div>
+        <div class="col-sm-4">
+                   
+          <div class="ih-item square colored effect14 top_to_bottom"><a href="aztec_equipment.php">
+        <div class="img"><img src="img/Equipment_Seccion/new/aztec.png" alt="img"></div>
+        <div class="info">
+          <h3>Aztec</h3>
           <p></p>
         </div></a></div>
         
