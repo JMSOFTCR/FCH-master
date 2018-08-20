@@ -114,7 +114,7 @@ background-image: url("img/Fondo/gearblue.png");"
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="equipment_seccion.php">New Equipment</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="">Cleaning Chemicals and Supplies</a>
+                        <a class="dropdown-item" href="chemicals_supplies.php">Cleaning Chemicals and Supplies</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="Floor_seccion.php">Floor Care</a>
                         <div class="dropdown-divider"></div>

@@ -51,7 +51,7 @@
     
 <div class="container">
 <div style="height: 30px;"></div>
-     <h1 class="mt-4 mb-3">Betco  
+     <h1 class="mt-4 mb-3">Advance  
         <small>Equipment</small>
       </h1>
 
@@ -60,7 +60,7 @@
           <a href="index.php">Home</a>
         </li>
         <li class="breadcrumb-item active">New Equipment</li>
-        <li class="breadcrumb-item active">Betco Equipment</li>
+        <li class="breadcrumb-item active">Advance Equipment</li>
       </ol>
 
     
@@ -86,13 +86,13 @@
  
  
     <!-- colored -->
-    <div class="ih-item square colored effect4" style="width:100%; height:280px;"><a id="enviar">
-        <div class="img"><img style="width:280px; height:280px;" src="POS/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="img"></div>
+    <div class="ih-item square colored effect4" style="width:400px; height:387px;"><a id="enviar">
+        <div class="img" style="width:400px; height:387px;"><img  src="POS/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="img"></div>
         <div class="mask1"></div>
         <div class="mask2"></div>
         <div class="info">  
           <h3><?php echo $name; ?></h3>
-          <h4>₡ <?php echo $price; ?></h4>
+          <h4>$ <?php echo $price; ?></h4>
              <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
         </div></a></div>
     <!-- end colored -->
