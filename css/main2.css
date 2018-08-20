@@ -3,11 +3,6 @@ body{
 
 }
 
-.mainC{
-      background: #dedede;
-    border-radius: 35px;
-}
-
 .contenedor{
     display: flex;
 	flex-wrap: wrap; /* Permite que cuando una imagen no tenga campo se posicione debajo de la otra*/
