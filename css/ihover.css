@@ -92,8 +92,8 @@
      
     }
 
-<<<<<<< HEAD
-=======
+
+
  @media screen and (max-width: 1280px){
   .ih-item.square {
   margin-bottom: 200px;
@@ -106,7 +106,30 @@
      
     }
 
->>>>>>> 04844e30bb89ced703c5ffc1a5f608e705a0d187
+@media screen and (max-width: 360px){
+  .ih-item.square {
+  margin-bottom: 200px;
+  position: relative;
+  width: 100%;
+  height: 61%;
+  border: 8px solid #fff;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+     }
+     
+    }
+
+ @media screen and (max-width: 320px){
+  .ih-item.square {
+  margin-bottom: 200px;
+  position: relative;
+  width: 100%;
+  height: 58%;
+  border: 8px solid #fff;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+     }
+     
+    }
+
 .ih-item.square .info {
   position: absolute;
   top: 0;

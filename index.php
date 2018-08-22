@@ -46,7 +46,7 @@
         
 <div class="post">
     <!-- colored -->
-    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="equipment_restoration.php">
+    <div class="ih-item square colored effect6 from_top_and_bottom" style="height:200px;"><a href="equipment_restoration.php">
         <div class="img"><img src="img/Main/Cleaning_Equipment_Repair.jpg" style="height:185px;" alt="img"></div>
         <div class="info">
           <h3>Equipment Maintenance and Repair</h3>
@@ -56,7 +56,7 @@
 </div>
 <div class="post">
     <!-- colored -->
-    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="parts_and_accessories.php">
+    <div class="ih-item square colored effect6 from_top_and_bottom" style="height:200px;"><a href="parts_and_accessories.php">
         <div class="img"><img src="img/Main/parts_and_accessories.PNG" style="height:185px;" alt="img"></div>
         <div class="info">
           <h3>Parts and Accessories</h3>
@@ -66,7 +66,7 @@
   </div>
 <div class="post"> 
     <!-- colored -->
-    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="batteries.php">
+    <div class="ih-item square colored effect6 from_top_and_bottom" style="height:200px;"><a href="batteries.php">
         <div class="img"><img src="img/Main/New_Batteries.jpg" style="height:185px;" alt="img"></div>
         <div class="info">
           <h3>New Batteries</h3>
@@ -76,7 +76,7 @@
   </div>
   <div class="post"> 
     <!-- colored -->
-    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="#">
+    <div class="ih-item square colored effect6 from_top_and_bottom" style="height:200px;"><a href="#">
         <div class="img"><img src="img/Main/Cleaning_Supplies.jpg" style="height:185px;" alt="img"></div>
         <div class="info">
           <h3>Cleaning Chemicals and Supplies</h3>
@@ -86,7 +86,7 @@
   </div>  
   <div class="post"> 
     <!-- colored -->
-    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="green_cleaning.php">
+    <div class="ih-item square colored effect6 from_top_and_bottom" style="height:200px;"><a href="green_cleaning.php">
         <div class="img"><img src="img/Main/Green_Cleaning.jpg" style="height:185px;" alt="img"></div>
         <div class="info">
           <h3>Green Cleaning</h3>
@@ -96,7 +96,7 @@
   </div> 
   <div class="post"> 
     <!-- colored -->
-    <div class="ih-item square colored effect6 from_top_and_bottom"><a href="equipment_seccion.php">
+    <div class="ih-item square colored effect6 from_top_and_bottom" style="height:200px;"><a href="equipment_seccion.php">
         <div class="img"><img src="img/Main/New_Equipment.jpg" style="height:185px;" alt="img"></div>
         <div class="info">
           <h3>New Equipment</h3>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,16 +11,20 @@
       
       <link href="vendor/bootstrap/css/footer.css" rel="stylesheet">
     <title>FCHMAINTENANCE</title>
-    <?php include './inc/link.php'; ?>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="css/card.css" rel="stylesheet">
-      
-    <?php include('conn.php');
-     $query=mysqli_query($conn,"select * from product where categoryid = 13 order by product_name");  
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <?php include './inc/nav.php';
+    include('conn.php');
+     $query=mysqli_query($conn,"select * from product where categoryid = 16 order by product_name");  
     $nro_reg=mysqli_num_rows($query); 
 
     
@@ -34,18 +39,10 @@
         $inicio=0;
       
       
-       $query=mysqli_query($conn,"select * from product where categoryid = 13 order by product_name limit $inicio,$reg_por_pagina");  
+       $query=mysqli_query($conn,"select * from product where categoryid = 16 order by product_name limit $inicio,$reg_por_pagina");  
       
       $can_paginas=ceil($nro_reg / $reg_por_pagina);
-      ?>
-        
-      
-  </head>
-
-  <body>
-
-    <!-- Navigation -->
-    <?php include './inc/nav.php';?>  
+    ?>  
     <!-- Page Content -->
     <div class="container">
 
@@ -53,20 +50,20 @@
     
 <div class="container">
 <div style="height: 30px;"></div>
-     <h1 class="mt-4 mb-3">Pioneer Eclipse  
+     <h1 class="mt-4 mb-3">Aztec  
         <small>Equipment</small>
       </h1>
 
       <ol class="breadcrumb">
-        <li class="breadcrumb-item">
+      <li class="breadcrumb-item">
           <a href="index.php">Home</a>
         </li>
         <li class="breadcrumb-item active">New Equipment</li>
-        <li class="breadcrumb-item active">Pioneer Eclipse Equipment</li>
+        <li class="breadcrumb-item active">Aztec Equipment</li>
       </ol>
 
     
-	<div style="height: 50px;"></div>
+	<div style="height: 30px;"></div>
 	<div> 
         
 	<?php
@@ -83,7 +80,7 @@
 			
 			?>
 				<div class="col-lg-3">
-                    
+                   
                     <div class="row">
  
  
@@ -102,16 +99,14 @@
 
     
   </div>
-                    
 <!--
   <div class="card">
-    <img class="card-img-top img-fluid" src="POS/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="Card image cap" style="width: 50%; height:150px; ">
+    <img class="card-img-top img-fluid" src="POS/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="Card image cap">
     <div class="card-block">
       <h4 class="card-title"></h4>
       <p class="card-text"></p>
          <div class="card-footer">
              <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="<?php echo $name; ?>" class="btn btn-success" /></form>
-              <a href="details.php?id=<?php echo $row['productid']; ?>" class="btn btn-success"><?php echo $name; ?></a>
             </div>
     </div>
   </div>
@@ -133,17 +128,17 @@
       <div align="center">
       <?php
           if($nro_pagina>1)
-              echo "<a href='pioneer_equipment.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
+              echo "<a href='aztec_equipment.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
               
        for ($i=1; $i<=$can_paginas; $i++){
            if ($i==$nro_pagina)
                echo $i." ";
            else 
-               echo "<a href='pioneer_equipment.php?num=$i'>$i</a> ";
+               echo "<a href='aztec_equipment.php?num=$i'>$i</a> ";
        } 
           
           if($nro_pagina<$can_paginas)
-               echo "<a href='pioneer_equipment.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
+               echo "<a href='aztec_equipment.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
           
        ?>
       </div>

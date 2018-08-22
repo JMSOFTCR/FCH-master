@@ -66,11 +66,17 @@
                             <a href="#"><i class="fa fa-product-hunt fa-fw"></i> Products<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 	<?php
-							$caq=mysqli_query($conn,"select * from category");
+							$caq=mysqli_query($conn,"select * from category order by category_name asc ");
 							while($catrow=mysqli_fetch_array($caq)){
 								?>
 								 <div class="dropdown-divider"></div>
-								<li><form action="product2.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $catrow['categoryid']; ?>" /><input name="Detalles" type="submit" value="<?php echo $catrow['category_name']; ?>" class="btn btn-success btn-sm" /></form></li>
+								<li><form action="product2.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $catrow['categoryid']; ?>" /><input name="Detalles" type="submit" value="<?php echo $catrow['category_name']; ?>" class="btn btn-success btn-sm" style=" display: inline-block;
+     width: 70%;
+     margin-top: 3px;
+     margin-bottom: 3px;
+     margin-left: 3px;
+     margin-right: 3px;
+     border-radius: 5px;  " /></form></li>
 								<?php
 							}
 						

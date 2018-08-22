@@ -91,7 +91,7 @@
         <div class="mask2"></div>
         <div class="info">  
           <h3><?php echo $name; ?></h3>
-          <h4>₡ <?php echo $price; ?></h4>
+          <h4>$ <?php echo $price; ?></h4>
              <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
         </div></a></div>
     <!-- end colored -->
