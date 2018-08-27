@@ -1,4 +1,4 @@
- <link href="../css/alertify.css" rel="stylesheet">
+
 <!-- Delete Product -->
     <div class="modal fade" id="delproduct_<?php echo $pid; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -174,12 +174,7 @@
                                         
                                         echo "<img src='$photo' width='300' />";
                                     
-                                       echo " 
-                                       
-                                         <button class='btn btn-danger glyphicon glyphicon-remove' type='button' 
-                          onclick='question('$id')' ></button>
-                                      
-                                       ";                                    } 
+                                       echo "<button type='button' class='btn btn-danger' onclick='Eliminar('$photo')'><span id='trash' class='glyphicon glyphicon-trash' aria-hidden='true'></span></button>";                                    } 
 
                                     }
                                      
@@ -213,39 +208,23 @@
 </div>
 </div>
 
-
 <script type="text/javascript">
-function question(id)
-    {
- alertify.confirm("Are you sure? ",
-  function(){
-    alertify.success('the photo has been deleted');
-  },
-  function(){
-    alertify.error('Cancel');
-  });
-    }
-   
-function deletephoto(id)
-    {
-        cadena ="id= " + id;
+$(document).ready(function() {
+    
+    function Eliminar(link){
         
         $.ajax({
-            type:"POST",
-            url:"del_file",
-            data:cadena,
-            success:function(r){
-                if(r==1){    
-                $('#tabla').load('´product_button.php');
-                alertify.success("Deleted!");
-                }else{
-                    alertify.error("the photo has not been deleted")
-                }
+            type: "POST",
+            url: "del_file.php",
+            data: {'photo': link},
+            success: function() { 
+                $('#delete-ok').empty();
+                $('#delete-ok').append('<div>Se ha eliminado correctamente el servicio con Nombre='+service+'.</div>').fadeIn("slow");
+                $('#'+parent).remove();
             }
         });
-        
+       
     }
-        
-  
+});    
 </script>
 

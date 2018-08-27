@@ -1,16 +1,15 @@
-
-
 <!DOCTYPE html>
+
 <html lang="en">
 
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-      
-      <link href="vendor/bootstrap/css/footer.css" rel="stylesheet">
+
+    <link href="vendor/bootstrap/css/footer.css" rel="stylesheet">
     <title>FCHMAINTENANCE</title>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -18,9 +17,9 @@
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="css/card.css" rel="stylesheet">
-  </head>
+</head>
 
-  <body>
+<body>
 
     <!-- Navigation -->
     <?php include './inc/nav.php';
@@ -43,31 +42,31 @@
        $query=mysqli_query($conn,"select * from product where categoryid = 8 order by product_name limit $inicio,$reg_por_pagina");  
       
       $can_paginas=ceil($nro_reg / $reg_por_pagina);
-    ?>  
+    ?>
     <!-- Page Content -->
     <div class="container">
 
-      <!-- Page Heading/Breadcrumbs -->
-    
-<div class="container">
-<div style="height: 30px;"></div>
-     <h1 class="mt-4 mb-3">Advance  
-        <small>Equipment</small>
-      </h1>
+        <!-- Page Heading/Breadcrumbs -->
 
-      <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-          <a href="index.php">Home</a>
-        </li>
-        <li class="breadcrumb-item active">New Equipment</li>
-        <li class="breadcrumb-item active">Advance Equipment</li>
-      </ol>
+        <div class="container">
+            <div style="height: 30px;"></div>
+            <h1 class="mt-4 mb-3">Advance
+                <small>Equipment</small>
+            </h1>
 
-    
-	<div style="height: 30px;"></div>
-	<div> 
-        
-	<?php
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="index.php">Home</a>
+                </li>
+                <li class="breadcrumb-item active">New Equipment</li>
+                <li class="breadcrumb-item active">Advance Equipment</li>
+            </ol>
+
+
+            <div style="height: 30px;"></div>
+            <div>
+
+                <?php
 		$inc=4;
 		
 		while($row=mysqli_fetch_array($query)){
@@ -80,29 +79,36 @@
 			if($inc == 1) echo "<div class='row'>";  
 			
 			?>
-				<div class="col-lg-3">
-                    
-  <div class="row">
- 
- 
-    <!-- colored -->
-    <div class="ih-item square colored effect4" style="width:400px; height:387px;"><a id="enviar">
-        <div class="img" style="width:400px; height:387px;"><img  src="POS/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="img"></div>
-        <div class="mask1"></div>
-        <div class="mask2"></div>
-        <div class="info">  
-          <h3><?php echo $name; ?></h3>
-          <h4>$ <?php echo $price; ?></h4>
-             <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
-        </div></a></div>
-    <!-- end colored -->
- 
+                    <div class="col-lg-3">
 
-    
-  </div>
-            
-				</div>
-			<?php
+                        <div class="row">
+
+
+                            <!-- colored -->
+                            <div class="ih-item square colored effect4" style="width:400px; height:387px;">
+                                <a id="enviar">
+                                    <div class="img" style="width:400px; height:387px;"><img src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img"></div>
+                                    <div class="mask1"></div>
+                                    <div class="mask2"></div>
+                                    <div class="info">
+                                        <h3>
+                                            <?php echo $name; ?>
+                                        </h3>
+                                        <h4>$
+                                            <?php echo $price; ?>
+                                        </h4>
+                                        <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- end colored -->
+
+
+
+                        </div>
+
+                    </div>
+                    <?php
            
 		if($inc == 4) echo "</div><div style='height: 30px;'></div>";
 		}
@@ -110,12 +116,12 @@
 		if($inc == 2) echo "<div class='col-lg-3'></div><div class='col-lg-3'></div></div>"; 
 		if($inc == 3) echo "<div class='col-lg-3'></div></div>"; 
 	?>
-	</div>
-</div>
+            </div>
+        </div>
         <div style="height: 50px;"></div>
-      <!-- Pagination -->
-      <div align="center">
-      <?php
+        <!-- Pagination -->
+        <div align="center">
+            <?php
           if($nro_pagina>1)
               echo "<a href='advance_equipment.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
               
@@ -130,18 +136,18 @@
                echo "<a href='advance_equipment.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
           
        ?>
-      </div>
+        </div>
     </div>
     <!-- /.container -->
 
     <!-- Footer -->
-     <?php include './inc/footer.php'; ?>  
+    <?php include './inc/footer.php'; ?>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-  </body>
+</body>
 
 </html>

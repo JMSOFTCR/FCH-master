@@ -29,9 +29,18 @@
 				echo "Ha ocurrido un error, por favor inténtelo de nuevo.<br>";
 			}
 			closedir($dir); //Cerramos el directorio de destino
-		  
+		      
+         
              mysqli_query($conn,"call GuardarImagen('$id','$target_path')"); 
+             $pid=mysqli_insert_id($conn);
+             
+             
         }
 	}
+    ?>
+	<script>
+			window.alert('Product added successfully!');
+			window.history.back();
+		</script>
           
 ?>

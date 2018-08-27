@@ -1,14 +1,27 @@
 <?php
     	include('session.php');
+        
 
-    $photo=$_GET['photo'];
-                                       
-	/*	chmod($file,0777);
-		if(!unlink($file)){
+
+        $service = $_POST['id'];
+
+
+       // $photo=$_GET['Nom'];
+    
+   mysqli_query($conn,"DELETE from carousel WHERE photo LIKE '%$service' ");  
+		chmod($file,0777);
+		if(!unlink($photo)){
 		echo false;
-		}
-	}*/
+		}                                       
 
- mysqli_query($conn,"call BorrarIMG('$photo')"); 
-	
 ?>
+
+
+
+
+
+
+
+
+ 
+	
