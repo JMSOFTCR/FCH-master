@@ -143,7 +143,7 @@
                                 <input type="file" style="width:400px;" class="form-control" name="archivo[]" multiple="" accept="image/*" />
                                 </div>
                                 <div>
-                                    HOLA
+                                    asdasdas
                                 </div>
                               
                                
