@@ -142,9 +142,6 @@
                                 <span class="input-group-addon" style="width:120px;">Photo:</span> 
                                 <input type="file" style="width:400px;" class="form-control" name="archivo[]" multiple="" accept="image/*" />
                                 </div>
-                                <div>
-                                    asdasdasdasdasdassa
-                                </div>
                               
                                
                          <div class="col-sm-10">
