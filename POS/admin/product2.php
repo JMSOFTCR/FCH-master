@@ -24,10 +24,7 @@
                         <th>Product Name</th>
                         <th>Price</th>
                         <th>Quantity</th>
-<!--                        <th>Description</th>-->
-<!--                        <th>Tech</th>-->
-                        <th>Video</th>
-                        <th>Photo</th>
+          
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -41,10 +38,7 @@
                             <td><?php echo $row['product_name'];?></td>
                             <td><?php echo $row['product_price']; ?></td>
                             <td><?php echo $row['product_qty']; ?></td>
-<!--                            <td><?php echo $row['description']; ?></td>-->
-<!--              <td><?php echo $row['tech']; ?></td>-->
-              <td><?php echo $row['video']; ?></td>
-                            <td><img src="../<?php if(empty($row['photo'])){echo "upload/noimage.jpg";}else{echo $pqrow['photo'];} ?>" height="30px" width="30px;"></td>
+                
                             <td>
                                 <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#editprod_<?php echo $pid; ?>"><i class="fa fa-edit"></i> Edit</button>
                                 <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#addphoto_<?php echo $pid; ?>"><i class="fa fa-edit"></i> Add Photo</button>

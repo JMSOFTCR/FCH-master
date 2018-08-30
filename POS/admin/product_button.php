@@ -175,8 +175,7 @@
                                     
                                        echo " 
                                        
-                                         <button class='btn btn-danger glyphicon glyphicon-remove' type='button' 
-                          onclick='question('$id')' ></button>
+                                         <a class='btn btn-danger glyphicon glyphicon-remove' href='del_file.php/?service=$photo'>Borrar</a>
                                       
                                        ";                                    } 
 

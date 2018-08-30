@@ -76,7 +76,7 @@
        	$sql2 = "select * from carousel as c where c.productid = \"$_POST[id_txt]\"";
     	$result2 = mysqli_query($conn, $sql2);
     	if ($rs = mysqli_fetch_array($result2)) {
-    		echo '<img style="" src=POS/'.$rs["1"].' class="big-img">';}
+    		echo '<img style="" src=POS/upload/'.$rs["1"].' class="big-img">';}
        	?>
        </div>
        </div>
@@ -86,7 +86,7 @@
        		<div class="form-group">
        	<?php  
        	foreach ($result2 as $rst) {
-       	echo '<button class="lit-img" value='.$rst["photo"].'><img src=POS/'.$rst["photo"].' style="width:60px;height:60px;"></button>';
+       	echo '<button class="lit-img" value='.$rst["photo"].'><img src=POS/upload/'.$rst["photo"].' style="width:60px;height:60px;"></button>';
        		}
        	?>
        	</div>
@@ -197,7 +197,7 @@ $tech1 = str_replace("\n", "<br>", $tech);
       $("#envCart").submit(function(e){
         e.preventDefault();
         var newP = $("<div>");
-        newP.html('<img style="height: 70px; width: 70px;border-radius:50px" alt="First slide image" src="POS/<?php echo $photo ?>"/>');
+        newP.html('<img style="height: 70px; width: 70px;border-radius:50px" alt="First slide image" src="POS/upload/<?php echo $photo ?>"/>');
         newP.addClass("slide-tr");
         // append prepend after
         $("#divani").append(newP);
@@ -224,7 +224,7 @@ $tech1 = str_replace("\n", "<br>", $tech);
         },1000);
       });
       $(".lit-img").on("click",function(){
-      	var img = $('<img style="" src=POS/'+$(this).val()+' class="big-img">');
+      	var img = $('<img style="" src=POS/upload/'+$(this).val()+' class="big-img">');
       	$(".bs-example").empty();
       	$(".bs-example").append(img);
       });
