@@ -213,38 +213,3 @@
 </div>
 
 
-<script type="text/javascript">
-function question(id)
-    {
- alertify.confirm("Are you sure? ",
-  function(){
-    alertify.success('the photo has been deleted');
-  },
-  function(){
-    alertify.error('Cancel');
-  });
-    }
-   
-function deletephoto(id)
-    {
-        cadena ="id= " + id;
-        
-        $.ajax({
-            type:"POST",
-            url:"del_file",
-            data:cadena,
-            success:function(r){
-                if(r==1){    
-                $('#tabla').load('´product_button.php');
-                alertify.success("Deleted!");
-                }else{
-                    alertify.error("the photo has not been deleted")
-                }
-            }
-        });
-        
-    }
-        
-  
-</script>
-
