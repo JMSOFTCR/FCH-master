@@ -31,7 +31,7 @@
                 </thead>
                 <tbody>
 				<?php
-					$pq=mysqli_query($conn,"select * from product left join category on category.categoryid=product.categoryid left join supplier on supplier.userid=product.supplierid");
+					$pq=mysqli_query($conn,"call listaproduct()");
 					while($pqrow=mysqli_fetch_array($pq)){
 						$pid=$pqrow['productid'];
 					?>
