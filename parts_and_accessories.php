@@ -58,8 +58,8 @@
   <div class="col-sm-4">
         
          <!-- colored -->
-    <div class="ih-item square colored effect14 top_to_bottom" style="height:230px"><a href="sub_scrabber.php">
-        <div class="img"><img src="img/Parts_and_accessories/FLOOR_SCRUBBER_PARTS/FLOOR_SCRUBBER_PARTS.jpg" alt="img" style="height:220px; "></div>
+    <div class="ih-item square colored effect14 top_to_bottom"><a href="sub_scrabber.php">
+        <div class="img"><img src="img/Parts_and_accessories/FLOOR_SCRUBBER_PARTS/FLOOR_SCRUBBER_PARTS.jpg" alt="img" ></div>
         <div class="info">
           <h3>Floor Scrubber Parts</h3>
           <p></p>
@@ -69,8 +69,8 @@
      <div class="col-sm-4">
         
          <!-- colored -->
-    <div class="ih-item square colored effect14 top_to_bottom" style="height:230px"><a href="sub_scrabber.php">
-        <div class="img"><img src="img/Parts_and_accessories/PROPANE_BUFFERS_PARTS/PROPANE_BUFFERS%20PARTS.jpg" alt="img" style="height:220px; "></div>
+    <div class="ih-item square colored effect14 top_to_bottom"><a href="sub_scrabber.php">
+        <div class="img"><img src="img/Parts_and_accessories/PROPANE_BUFFERS_PARTS/PROPANE_BUFFERS%20PARTS.jpg" alt="img" ></div>
         <div class="info">
           <h3>Propane Buffers Parts</h3>
           <p></p>

@@ -37,8 +37,7 @@
         $inicio=($nro_pagina-1)*$reg_por_pagina;
         else 
         $inicio=0;
-      
-      
+        
        $query=mysqli_query($conn,"select * from product where categoryid = 8 order by product_name limit $inicio,$reg_por_pagina");  
       
       $can_paginas=ceil($nro_reg / $reg_por_pagina);
