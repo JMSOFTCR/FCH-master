@@ -25,7 +25,7 @@
     <?php include './inc/nav.php';
     include('conn.php');
      $query=mysqli_query($conn,"select * from product where categoryid = 8 order by product_name");  
-    $nro_reg=mysqli_num_rows($query); 
+      $nro_reg=mysqli_num_rows($query); 
 
     
       
@@ -78,23 +78,22 @@
 			if($inc == 1) echo "<div class='row'>";  
 			
 			?>
-                    <div class="col-lg-3">
+                  
 
-                        <div class="row">
-
+                        <div class="grid">
 
                             <!-- colored -->
-                            <div class="ih-item square colored effect4" style="width:400px; height:387px;">
+                            <div class="ih-item square colored effect4" >
                                 <a id="enviar">
-                                    <div class="img" style="width:400px; height:387px;"><img src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img"></div>
-                                    <div class="mask1"></div>
-                                    <div class="mask2"></div>
+                                    <div class="img"><img src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img"></div>
+                                   <!-- <div class="mask1"></div>
+                                    <div class="mask2"></div> -->
                                     <div class="info">
                                         <h3>
                                             <?php echo $name; ?>
                                         </h3>
-                                        <h4>$
-                                            <?php echo $price; ?>
+                                        <h4>
+                                           $ <?php echo $price; ?>
                                         </h4>
                                         <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
                                     </div>
@@ -106,7 +105,6 @@
 
                         </div>
 
-                    </div>
                     <?php
            
 		if($inc == 4) echo "</div><div style='height: 30px;'></div>";

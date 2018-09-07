@@ -10,9 +10,34 @@
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
 }
+/* located on parts_and_accessories.php*/ 
 
-.ih-item square colored effect14 top_to_bottom
+
+/*Located on advance_equiptment.php*/
+
+
+img
 {
-  width: 250px;
-  height: 200px;
+  width: 100%;
+  height: 100% !important;
+
+}
+div .img{
+width: 250px;
+height: 300px;
+
+}
+
+div .grid{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+  justify-content: space-between;
+}
+
+.img_producto{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

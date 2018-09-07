@@ -16,8 +16,7 @@
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
 
-      
-    
+
         <style>
          
   .card-columns .card {
@@ -27,7 +26,7 @@
 
 .card-img-top {
   width: 100%;
-  height: 310px !important; //esta es la parte importante para que todas tus card-img tengan la misma medida sin importar el tamaño de la imagen
+  height: 310px !important; /*//esta es la parte importante para que todas tus card-img tengan la misma medida sin importar el tamaño de la imagen*/
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
 }
@@ -59,7 +58,7 @@
         
          <!-- colored -->
     <div class="ih-item square colored effect14 top_to_bottom"><a href="sub_scrabber.php">
-        <div class="img"><img src="img/Parts_and_accessories/FLOOR_SCRUBBER_PARTS/FLOOR_SCRUBBER_PARTS.jpg" alt="img" ></div>
+        <div class="img"><img src="img/Parts_and_accessories/FLOOR_SCRUBBER_PARTS/FLOOR_SCRUBBER_PARTS.jpg" alt="img"></div>
         <div class="info">
           <h3>Floor Scrubber Parts</h3>
           <p></p>
