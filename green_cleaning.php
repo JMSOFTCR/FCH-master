@@ -59,7 +59,8 @@
         
          <!-- colored -->
     <div class="ih-item square colored effect14 top_to_bottom"><a href="betco_green.php">
-        <div class="img_producto"><img src="img/Green_Cleaning/betco.jpg" alt="img"></div>
+        <div class="img_producto">
+          <img src="img/Green_Cleaning/betco.jpg" alt="img"></div>
         <div class="info">
           <h3>Betco Green Cleaning</h3>
           <p></p>

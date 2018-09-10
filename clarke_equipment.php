@@ -86,27 +86,26 @@
 			if($inc == 1) echo "<div class='row'>";  
 			
 			?>
-				<div class="col-lg-3">
-                    
-<div class="row">
- 
- 
-    <!-- colored -->
-    <div class="ih-item square colored effect4" style="width:100%; height:270px;"><a id="enviar">
-        <div class="img"><img style="width:275px; height:270px;" src="POS/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="img"></div>
-        <div class="mask1"></div>
-        <div class="mask2"></div>
-        <div class="info">  
-          <h3><?php echo $name; ?></h3>
-          <h4>$ <?php echo 'Coming soon' ?></h4>
-             <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
-        </div></a></div>
+				<div class="grid">
+                     
+          <!-- colored -->
+          <div class="ih-item square colored effect4 top_to_bottom">
+            <a id="enviar">
+              <div class="img_producto"><img src="POS/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="img"></div>
+           <!--   <div class="mask1"></div>
+              <div class="mask2"></div> -->
+              <div class="info">  
+                <h3>
+                  <?php echo $name; ?></h3>
+                <h4>$ <?php echo 'Coming soon' ?>
+                  
+                </h4>
+                   <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
+              </div>
+            </a>
+            </div>
     <!-- end colored -->
  
-
-    
-  </div>
-            
 				</div>
 			<?php
            

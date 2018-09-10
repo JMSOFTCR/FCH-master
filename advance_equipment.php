@@ -27,11 +27,10 @@
      $query=mysqli_query($conn,"select * from product where categoryid = 8 order by product_name");  
       $nro_reg=mysqli_num_rows($query); 
 
-    
       
     $reg_por_pagina=8; 
       
-    @$nro_pagina=$_GET['num']; 
+    $nro_pagina=$_GET['num']; 
     
     if(is_numeric($nro_pagina))
         $inicio=($nro_pagina-1)*$reg_por_pagina;
@@ -47,7 +46,7 @@
 
         <!-- Page Heading/Breadcrumbs -->
 
-        <div class="container">
+        
             <div style="height: 30px;"></div>
             <h1 class="mt-4 mb-3">Advance
                 <small>Equipment</small>
@@ -60,10 +59,6 @@
                 <li class="breadcrumb-item active">New Equipment</li>
                 <li class="breadcrumb-item active">Advance Equipment</li>
             </ol>
-
-
-            <div style="height: 30px;"></div>
-            <div>
 
                 <?php
 		$inc=4;
@@ -80,28 +75,27 @@
 			?>
                   
 
-                        <div class="grid">
+                    <div class="grid">
 
-                            <!-- colored -->
-                            <div class="ih-item square colored effect4" >
-                                <a id="enviar">
-                                    <div class="img"><img src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img"></div>
-                                   <!-- <div class="mask1"></div>
-                                    <div class="mask2"></div> -->
-                                    <div class="info">
-                                        <h3>
-                                            <?php echo $name; ?>
-                                        </h3>
-                                        <h4>
-                                           $ <?php echo $price; ?>
-                                        </h4>
-                                        <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
-                                    </div>
-                                </a>
-                            </div>
+                        <!-- colored -->
+                        <div class="ih-item square colored effect4" >
+                            <a id="enviar">
+                                <div class="img">
+                                  <img src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img">
+                                </div>
+                               <!-- <div class="mask1"></div>
+                                <div class="mask2"></div> -->
+                                <div class="info">
+                                    <h3><?php echo $name; ?></h3>
+                                    <h4>$ <?php echo $price; ?></h4>
+                                    <form action="details.php" method="post" name="Detalle">
+                                      <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
+                                      <input name="Detalles" type="submit" value="Detalles" class="btn btn-info" />
+                                    </form>
+                                </div>
+                            </a>
+                        </div>
                             <!-- end colored -->
-
-
 
                         </div>
 
@@ -114,8 +108,8 @@
 		if($inc == 3) echo "<div class='col-lg-3'></div></div>"; 
 	?>
             </div>
-        </div>
-        <div style="height: 50px;"></div>
+        
+       
         <!-- Pagination -->
         <div align="center">
             <?php
