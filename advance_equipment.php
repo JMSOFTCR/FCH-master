@@ -53,82 +53,67 @@
             </h1>
 
             <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="index.php">Home</a>
-                </li>
-                <li class="breadcrumb-item active">New Equipment</li>
+                <li class="breadcrumb-item"><a style="color: #000;" href="index.php">Home</a></li>
+                <li class="breadcrumb-item"><a style="color: #000;" href="equipment_seccion.php">New Equipment</a></li>
                 <li class="breadcrumb-item active">Advance Equipment</li>
-            </ol>
-
-                <?php
-		$inc=4;
+            </ol>  
 		
-		while($row=mysqli_fetch_array($query)){
-            
-         $id=$row['productid'];
-         $name=$row['product_name'];
-         $photo=$row['photo'];
-			
-			$inc = ($inc == 4) ? 1 : $inc+1; 
-			if($inc == 1) echo "<div class='row'>";  
-			
-			?>
-                  
+    <div id="A_Equipment" class="flex-container">
+      
+    		<?php
+    		while($row=mysqli_fetch_array($query)){
+                
+             $id=$row['productid'];
+             $name=$row['product_name'];
+             $photo=$row['photo'];
+    			?>
+                                
+                  <!-- colored -->
+                  <div class="ih-item square colored effect4" >
+                      <a id="enviar">
+                          <div class="img">
+                            <img src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img">
+                          </div>
 
-                    <div class="grid">
-                        <!-- colored -->
-                        <div class="ih-item square colored effect4" >
-                            <a id="enviar">
-                                <div class="img">
-                                  <img src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img">
-                                </div>
-                               <!-- <div class="mask1"></div>
-                                <div class="mask2"></div> -->
-                                <div class="info">
-                                    <h3><?php echo $name; ?></h3>
-                                    <h4>$ <?php echo $price; ?></h4>
-                                    <form action="details.php" method="post" name="Detalle">
-                                      <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
-                                      <input name="Detalles" type="submit" value="Detalles" class="btn btn-info" />
-                                    </form>
-                                </div>
-                            </a>
-                        </div>
-                            <!-- end colored -->
-
-                        </div>
-
-                      
-
-                    <?php
-           
-		if($inc == 4) echo "</div><div style='height: 30px;'></div>";
-		}
-		if($inc == 1) echo "<div class='col-lg-3></div><div class='col-lg-3'></div><div class='col-lg-3'></div></div>"; 
-		if($inc == 2) echo "<div class='col-lg-3'></div><div class='col-lg-3'></div></div>"; 
-		if($inc == 3) echo "<div class='col-lg-3'></div></div>"; 
-	?>
-           
+                          <div class="info">
+                              <h3><?php echo $name; ?></h3>
+                              <h4>$ <?php echo $price; ?></h4>
+                              <form action="details.php" method="post" name="Detalle">
+                                <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
+                                <input name="Detalles" type="submit" value="Detalles" class="btn btn-info" />
+                              </form>
+                          </div>
+                      </a>
+                  </div>
+                      <!-- end colored -->
+          <?php
+            }
+          ?>
+          </div>
         
-       
-        <!-- Pagination -->
-        <div align="center">
-            <?php
-          if($nro_pagina>1)
-              echo "<a href='advance_equipment.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
-              
-       for ($i=1; $i<=$can_paginas; $i++){
-           if ($i==$nro_pagina)
+        <div style="height: 50px;"></div>
+      <!-- Pagination -->
+      <div align="center">
+      <?php
+       if($nro_pagina>1){
+          echo "<a href='clarke_equipment.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
+       }
+       for ($i=1; $i<=$can_paginas; $i++)
+       {
+          if ($i==$nro_pagina){
                echo $i." ";
-           else 
-               echo "<a href='advance_equipment.php?num=$i'>$i</a> ";
+             }
+           else{ 
+               echo "<a href='clarke_equipment.php?num=$i'>$i</a> ";
+           }
        } 
-          
-          if($nro_pagina<$can_paginas)
-               echo "<a href='advance_equipment.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
-          
+       if($nro_pagina<$can_paginas){
+           echo "<a href='clarke_equipment.php?num=".($nro_pagina+1)."'> Siguiente ></a> "; 
+       }
        ?>
-        </div>
+      </div>
+      <!--End Pagination -->
+
     </div>
     <!-- /.container -->
 
