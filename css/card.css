@@ -1,3 +1,8 @@
+  *{
+    
+  
+  }
+
   .card-columns .card {
   display: inline-block;
   width: 100%;
@@ -23,7 +28,7 @@ img
 }
 div .img{
 width: 250px;
-height: 320px;
+height: 340px;
 }
 
 div .grid{
@@ -32,13 +37,31 @@ div .grid{
   padding: 5px;
   justify-content: center;
   align-items: center;
+
 }
 
-.img_producto{
+/*        Clarke_equipment       */
+
+.flex-container{
+
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 10px;
   justify-content: center;
-  align-items: center;
 }
 
+.flex-container > div .img_clarke{
+  width: 350px;
+  height: 350px;
+}
 
+.ih-item.square{
+  width: 350px !important;
+  height: 350px !important;
+  margin: 5px;
+}
+
+.ih-item.square:hover{
+border-radius: 15px;
+box-shadow: #999 5px 5px 10px;
+}

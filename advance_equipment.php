@@ -76,7 +76,6 @@
                   
 
                     <div class="grid">
-
                         <!-- colored -->
                         <div class="ih-item square colored effect4" >
                             <a id="enviar">
@@ -99,6 +98,8 @@
 
                         </div>
 
+                      
+
                     <?php
            
 		if($inc == 4) echo "</div><div style='height: 30px;'></div>";
@@ -107,7 +108,7 @@
 		if($inc == 2) echo "<div class='col-lg-3'></div><div class='col-lg-3'></div></div>"; 
 		if($inc == 3) echo "<div class='col-lg-3'></div></div>"; 
 	?>
-            </div>
+           
         
        
         <!-- Pagination -->
