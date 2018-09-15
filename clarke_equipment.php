@@ -52,7 +52,6 @@
 
       <!-- Page Heading/Breadcrumbs -->
     
-<div class="container">
     
     <div style="height: 50px;"></div>
 
@@ -61,82 +60,75 @@
       </h1>
 
       <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-          <a href="index.php">Home</a>
-        </li>
-        <li class="breadcrumb-item active">New Equipment</li>
+        <li class="breadcrumb-item"><a style="color: #000;" href="index.php">Home</a></li>
+        <li class="breadcrumb-item"><a style="color: #000;" href="equipment_seccion.php">New Equipment</a></li>
         <li class="breadcrumb-item active">Clarke Equipment</li>
       </ol>
-
     
-	<div style="height: 50px;"></div>
-	<div> 
-        
-	<?php
-		$inc=4;
-		
-		while($row=mysqli_fetch_array($query)){
+    <div class="flex-container">
+      
+      <?php
+
+        while($row=mysqli_fetch_array($query)){
             
          $id=$row['productid'];
          $name=$row['product_name'];
          $photo=$row['photo'];
          $price=$row['product_price'];
-			
-			$inc = ($inc == 4) ? 1 : $inc+1; 
-			if($inc == 1) echo "<div class='row'>";  
-			
-			?>
-				<div class="col-lg-3">
-                    
-<div class="row">
- 
- 
-    <!-- colored -->
-    <div class="ih-item square colored effect4" style="width:100%; height:270px;"><a id="enviar">
-        <div class="img"><img style="width:275px; height:270px;" src="POS/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="img"></div>
-        <div class="mask1"></div>
-        <div class="mask2"></div>
-        <div class="info">  
-          <h3><?php echo $name; ?></h3>
-          <h4>$ <?php echo 'Coming soon' ?></h4>
-             <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
-        </div></a></div>
-    <!-- end colored -->
- 
 
+      ?>
+
+      <div class="ih-item square colored effect4 top_to_bottom">
+            <a id="enviar">
+              
+              <div class="img_clarke">
+                <img src="POS/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="img">
+              </div>
+              
+                 <div class="info">  
+                <h3>
+                  <?php echo $name; ?></h3>
+                <h4>$ <?php echo 'Coming soon' ?>
+                  
+                </h4>
+                   <form action="details.php" method="post" name="Detalle">
+                    <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
+                    <input name="Detalles" type="submit" value="Detalles" class="btn btn-info" />
+                  </form>
+              </div>
+            </a>
+      </div>
+      <?php
+
+      }
+      ?>
+
+    </div>
     
-  </div>
-            
-				</div>
-			<?php
-           
-		if($inc == 4) echo "</div><div style='height: 30px;'></div>";
-		}
-		if($inc == 1) echo "<div class='col-lg-3></div><div class='col-lg-3'></div><div class='col-lg-3'></div></div>"; 
-		if($inc == 2) echo "<div class='col-lg-3'></div><div class='col-lg-3'></div></div>"; 
-		if($inc == 3) echo "<div class='col-lg-3'></div></div>"; 
-	?>
-	</div>
-</div>
-        <div style="height: 50px;"></div>
+	<div style="height: 50px;"></div>
+	
       <!-- Pagination -->
       <div align="center">
       <?php
-          if($nro_pagina>1)
-              echo "<a href='clarke_equipment.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
-              
-       for ($i=1; $i<=$can_paginas; $i++){
-           if ($i==$nro_pagina)
+       if($nro_pagina>1){
+          echo "<a href='clarke_equipment.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
+       }
+       for ($i=1; $i<=$can_paginas; $i++)
+       {
+          if ($i==$nro_pagina){
                echo $i." ";
-           else 
+             }
+           else{ 
                echo "<a href='clarke_equipment.php?num=$i'>$i</a> ";
+           }
        } 
-          
-          if($nro_pagina<$can_paginas)
-               echo "<a href='clarke_equipment.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
-          
+       if($nro_pagina<$can_paginas){
+           echo "<a href='clarke_equipment.php?num=".($nro_pagina+1)."'> Siguiente ></a> "; 
+       }
        ?>
       </div>
+      <!--End Pagination -->
+
     </div>
     <!-- /.container -->
 

@@ -55,11 +55,9 @@
       </h1>
 
       <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-          <a href="index.php">Home</a>
-        </li>
-        <li class="breadcrumb-item active">New Equipment</li>
-        <li class="breadcrumb-item active">Betco Equipment</li>
+      <li class="breadcrumb-item"><a style="color: #000;" href="index.php">Home</a></li>
+      <li class="breadcrumb-item"><a style="color: #000;" href="equipment_seccion.php">New Equipment</a></li>
+      <li class="breadcrumb-item active">Betco Equipment</li>
       </ol>
 
     
@@ -79,26 +77,29 @@
 			if($inc == 1) echo "<div class='row'>";  
 			
 			?>
-				<div class="col-lg-3">
-                   
-                    <div class="row">
- 
- 
-    <!-- colored -->
-    <div class="ih-item square colored effect4" style="width:100%; height:270px;"><a id="enviar">
-        <div class="img"><img style="width:275px; height:270px;" src="POS/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="img"></div>
-        <div class="mask1"></div>
-        <div class="mask2"></div>
-        <div class="info">  
-          <h3><?php echo $name; ?></h3>
-          <h4>$ <?php echo $price; ?></h4>
-             <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="Detalles" class="btn btn-info" /></form>
-        </div></a></div>
-    <!-- end colored -->
- 
 
-    
-  </div>
+        <div class="row">
+      		<div class="col-lg-3">            
+          <!-- colored -->
+            <div class="ih-item square colored effect4"><a id="enviar">
+                <div class="img">
+                  <img src="POS/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="img">
+                </div>
+                <div class="mask1"></div>
+                <div class="mask2"></div>
+                <div class="info">  
+                  <h3><?php echo $name; ?></h3>
+                  <h4>$ <?php echo $price; ?></h4>
+                     <form action="details.php" method="post" name="Detalle">
+                      <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
+                      <input name="Detalles" type="submit" value="Detalles" class="btn btn-info" />
+                    </form>
+                </div>
+              </a>
+              </div>
+            <!-- end colored -->
+        </div>
+    </div>
 <!--
   <div class="card">
     <img class="card-img-top img-fluid" src="POS/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="Card image cap">
@@ -111,8 +112,7 @@
     </div>
   </div>
 -->
-            
-				</div>
+			
 			<?php
            
 		if($inc == 4) echo "</div><div style='height: 30px;'></div>";
