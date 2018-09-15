@@ -1,5 +1,6 @@
-<script src="../../js/dropzone.js"></script>
 
+<script src="js/ajax_producto.js" charset="utf-8"></script>
+<script src="js/sweetAlert.min.js" charset="utf-8"></script>
 <!-- Add Product -->
    <div class="modal fade" id="addproduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -10,16 +11,17 @@
                 </div>
                 <div class="modal-body">
 				<div class="container-fluid">
-                    <form role="form" method="POST" action="addproduct.php" enctype="multipart/form-data">
+                    <form method="POST" id="formAddProduct" data-locked="false" >
+                      <input type="hidden" id="id" name="id" >
 						<div class="container-fluid">
 						<div style="height:15px;"></div>
 						<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">Name:</span>
-                            <input type="text" style="width:400px; text-transform:capitalize;" class="form-control" name="name" required>
+                            <input id="name_p" type="text" style="width:400px; text-transform:capitalize;" class="form-control" name="name" required>
                         </div>
 						<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">Category:</span>
-                            <select style="width:400px;" class="form-control" name="category">
+                            <select style="width:400px;" id="category_p" class="form-control" name="category">
 								<?php
 									$cat=mysqli_query($conn,"select * from category");
 									while($catrow=mysqli_fetch_array($cat)){
@@ -32,7 +34,7 @@
                         </div>
 						<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">Supplier:</span>
-                            <select style="width:400px;" class="form-control" name="supplier">
+                            <select style="width:400px;" class="form-control" id="supplier_p" name="supplier">
 								<?php
 									$sup=mysqli_query($conn,"select * from supplier");
 									while($suprow=mysqli_fetch_array($sup)){
@@ -45,27 +47,27 @@
                         </div>
                         <div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">Price:</span>
-                            <input type="text" style="width:400px;" class="form-control" name="price" required>
+                            <input type="text" style="width:400px;" class="form-control" id="price_p" name="price" required>
                         </div>
 						<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">Quantity:</span>
-                            <input type="text" style="width:400px;" class="form-control" name="qty">
+                            <input type="text" style="width:400px;" class="form-control" id="qty_p" name="qty">
                         </div>
 						<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">Main Photo:</span>
-                            <input type="file" style="width:400px;" class="form-control" name="image">
+                            <input type="file" style="width:400px;" accept="*/*" class="form-control" id="image_p" name="image">
                         </div>
                         <div class="form-group">
                         <label for="exampleTextarea">Description</label>
-                        <textarea class="form-control" id="description" name="description" rows="10"></textarea>
+                        <textarea class="form-control" name="description" id="description_p" rows="10"></textarea>
                         </div>
                         <div class="form-group">
                         <label for="exampleTextarea">Tech Specs</label>
-                        <textarea class="form-control" id="tech" name="tech" rows="10"></textarea>
+                        <textarea class="form-control" name="tech" id="tech_p" rows="10"></textarea>
                         </div>
                         <div class="form-group">
                         <label for="exampleTextarea">Video</label>
-                        <textarea class="form-control" id="video" name="video" rows="10"></textarea>
+                        <textarea class="form-control" id="video_p" name="video" rows="10"></textarea>
                         </div>
 						</div>
 				</div>
@@ -80,7 +82,7 @@
 </div>
 
 <!--Modal para agregar las fotos-->
-<div class="modal fade" id="addphoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--<div class="modal fade" id="addphoto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -92,12 +94,12 @@
                     <form role="form" method="POST" action="addphoto.php" enctype="multipart/form-data">
 						<div class="container-fluid">
 						<div style="height:15px;"></div>
-						
-						
+
+
 						<div id="actions" class="row">
 
       <div class="col-lg-7">
-        <!-- The fileinput-button span is used to style the file input field as button -->
+
         <span class="btn btn-success fileinput-button dz-clickable">
             <i class="glyphicon glyphicon-plus"></i>
             <span>Add files...</span>
@@ -113,7 +115,7 @@
       </div>
 
       <div class="col-lg-5">
-        <!-- The global file processing state -->
+
         <span class="fileupload-process">
           <div id="total-progress" class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="opacity: 0;">
             <div class="progress-bar progress-bar-success" style="width: 100%;" data-dz-uploadprogress=""></div>
@@ -122,11 +124,11 @@
       </div>
 
     </div>
-    
+
 <div class="table table-striped files" id="previews">
 
   <div id="template" class="file-row">
-    <!-- This is used as the file preview template -->
+
     <div>
         <span class="preview"><img data-dz-thumbnail /></span>
     </div>
@@ -157,8 +159,8 @@
   </div>
 
 </div>
-                        
-                   
+
+
 						</div>
 				</div>
 				</div>
@@ -170,10 +172,9 @@
 			</div>
 		</div>
 </div>
-<!-- /.modal -->
 
-<!-- Add Customer -->
-    <div class="modal fade" id="addcustomer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+  <div class="modal fade" id="addcustomer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -204,7 +205,7 @@
 						<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">Password:</span>
                             <input type="password" style="width:400px;" class="form-control" name="password" required>
-                        </div>  						
+                        </div>
 						</div>
 				</div>
 				</div>
@@ -216,9 +217,9 @@
 			</div>
 		</div>
     </div>
-<!-- /.modal -->
 
-<!-- Add Supplier -->
+
+
 <div class="modal fade" id="addsupplier" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -250,7 +251,7 @@
 						<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">Password:</span>
                             <input type="password" style="width:400px;" class="form-control" name="password" required>
-                        </div>  						
+                        </div>
 						</div>
 				</div>
 				</div>
@@ -262,9 +263,9 @@
 			</div>
 		</div>
     </div>
-<!-- /.modal -->
 
-<!-- Add Category -->
+
+
     <div class="modal fade" id="addcategory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -284,7 +285,7 @@
 						<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">Name:</span>
                             <input type="text" style="width:400px; text-transform:capitalize;" class="form-control" name="name">
-                        </div> 						
+                        </div>
 						</div>
 				</div>
 				</div>
@@ -296,8 +297,8 @@
 			</div>
 		</div>
     </div>
-<!-- /.modal -->
 
+-->
 <script>
   // myDropzone is the configuration for the element that has an id attribute
   // with the value my-dropzone (or myDropzone)
