@@ -1,6 +1,6 @@
 <?php
 	include('session.php');
-	
+
 	$name=$_POST['name'];
 	$category=$_POST['category'];
 	$price=$_POST['price'];
@@ -9,9 +9,9 @@
 	$tech=$_POST['tech'];
 	$video=$_POST['video'];
 	$qty=$_POST['qty'];
-	
+
 	$fileInfo = PATHINFO($_FILES["image"]["name"]);
-	
+
 	if (empty($_FILES["image"]["name"])){
 		$location="";
 	}
@@ -30,19 +30,12 @@
 			<?php
 		}
 	}
-	
-	mysqli_query($conn,"insert into product (product_name,categoryid,product_price,product_qty, supplierid, description, photo, tech, video) values ('$name','$category','$price','$qty', '$supplier', '$description', '$location', '$tech','$video')");
+
+	$aaa = mysqli_query($conn,"insert into product (product_name,categoryid,product_price,product_qty, supplierid, description, photo, tech, video) values ('$name','$category','$price','$qty', '$supplier', '$description', '$location', '$tech','$video')");
 	$pid=mysqli_insert_id($conn);
 	//mysqli_query($conn "call PaCarousel('$location')");
 	mysqli_query($conn,"insert into inventory (userid, action, productid, quantity, inventory_date) values ('".$_SESSION['id']."', 'Add Product', '$pid', '$qty', NOW())");
-	
+
+	return $aaa;
+
 	?>
-		<script>
-			window.alert('Product added successfully!');
-			window.history.back();
-		</script>
-	<?php
-?>
-
-
-

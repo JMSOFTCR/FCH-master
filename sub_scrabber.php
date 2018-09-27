@@ -85,7 +85,7 @@
 			?>
 				<div class="col-lg-3">
                     
-  <div class="card">
+  <div class="card" >
     <img class="card-img-top img-fluid" src="pospos/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="Card image cap">
     <div class="card-block">
       <h4 class="card-title"></h4>

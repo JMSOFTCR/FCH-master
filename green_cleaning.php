@@ -55,11 +55,12 @@
       </ol>
 
       <div class="row">
-  <div class="col-sm-4">
+  <div class="col-sm-4 grid">
         
          <!-- colored -->
-    <div class="ih-item square colored effect14 top_to_bottom" style="height:230px"><a href="betco_green.php">
-        <div class="img"><img src="img/Green_Cleaning/betco.jpg" alt="img" style="height:220px; "></div>
+    <div class="ih-item square colored effect14 top_to_bottom"><a href="betco_green.php">
+        <div class="img_producto">
+          <img src="img/Green_Cleaning/betco.jpg" alt="img"></div>
         <div class="info">
           <h3>Betco Green Cleaning</h3>
           <p></p>
@@ -69,8 +70,8 @@
       <div class="col-sm-4">
         
          <!-- colored -->
-    <div class="ih-item square colored effect14 top_to_bottom" style="height:230px"><a href="pioner_green.php">
-        <div class="img"><img src="img/Green_Cleaning/352_L5_RTU_Eclipse-Glass-Cleaner_400x400.png" alt="img" style="height:220px; "></div>
+    <div class="ih-item square colored effect14 top_to_bottom" ><a href="pioner_green.php">
+        <div class="img_producto"><img src="img/Green_Cleaning/352_L5_RTU_Eclipse-Glass-Cleaner_400x400.png" alt="img" ></div>
         <div class="info">
           <h3>Pioner Eclipse</h3>
           <p></p>

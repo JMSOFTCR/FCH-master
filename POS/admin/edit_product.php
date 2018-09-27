@@ -1,11 +1,11 @@
 <?php
-	
+
 	include('session.php');
-	$id=$_GET['id'];
-	
+	$id=$_POST['id'];
+
 	$p=mysqli_query($conn,"select * from product where productid='$id'");
 	$prow=mysqli_fetch_array($p);
-	
+
 	$name=$_POST['name'];
 	$category=$_POST['category'];
 	$supplier=$_POST['supplier'];
@@ -14,9 +14,9 @@
 	$tech=$_POST['tech'];
 	$video=$_POST['video'];
 	$qty=$_POST['qty'];
-	
+
 	$fileInfo = PATHINFO($_FILES["image"]["name"]);
-	
+
 	if (empty($_FILES["image"]["name"])){
 		$location=$prow['photo'];
 	}
@@ -35,9 +35,9 @@
 			<?php
 		}
 	}
-	
+
 	mysqli_query($conn,"update product set product_name='$name', supplierid='$supplier', categoryid='$category', product_price='$price', photo='$location', product_qty='$qty', description='$description', tech='$tech', video='$video' where productid='$id'");
-	
+
 	if($qty!=$prow['product_qty']){
 		mysqli_query($conn,"insert into inventory (userid,action,productid,quantity,inventory_date) values ('".$_SESSION['id']."','Update Quantity', '$id', '$qty', NOW())");
 	}
