@@ -38,9 +38,9 @@
     <!-- Page Content -->
     <div class="container">
         <?php
-        if (isset($_POST['id_txt'])){
-    $id = $_POST['id_txt'];
-    $nro_reg=$_POST['id_txt'];      
+        if (isset($_GET['id'])){
+    $id = $_GET['id'];
+    $nro_reg=$_GET['id'];      
     $sql = "select * from product as p where p.productid = \"$id\"";
     $result = mysqli_query($conn, $sql);
                                 }
@@ -73,7 +73,7 @@
        <div class="bs-example">
        	<div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
        	<?php 
-       	$sql2 = "select * from carousel as c where c.productid = \"$_POST[id_txt]\"";
+       	$sql2 = "select * from carousel as c where c.productid = \"$id\"";
     	$result2 = mysqli_query($conn, $sql2);
     	if ($rs = mysqli_fetch_array($result2)) {
     		echo '<img style="" src=POS/upload/'.$rs["1"].' class="big-img">';}
