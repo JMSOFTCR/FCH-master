@@ -10,7 +10,7 @@
        // $id=$_GET['service2'];
 
     
-   mysqli_query($conn,"DELETE from carousel WHERE photo LIKE '%../$photo' ");  
+   mysqli_query($conn,"DELETE from carousel WHERE photo = '../$photo' ");  
 	
 		if(!unlink($photo)){
 		echo false;

@@ -11,7 +11,7 @@
 			$filename = $_FILES["archivo"]["name"][$key]; //Obtenemos el nombre original del archivo
 			$source = $_FILES["archivo"]["tmp_name"][$key]; //Obtenemos un nombre temporal del archivo
 			        
-			$directorio = '../upload'; //Declaramos un  variable con la ruta donde guardaremos los archivos
+			$directorio = 'upload'; //Declaramos un  variable con la ruta donde guardaremos los archivos
 			
 			//Validamos si la ruta de destino existe, en caso de no existir la creamos
 			if(!file_exists($directorio)){
@@ -19,7 +19,7 @@
 			}
 			
 			$dir=opendir($directorio); //Abrimos el directorio de destino
-			$target_path = $directorio.'/'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
+			$target_path = $directorio.'../'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
 			
 			//Movemos y validamos que el archivo se haya cargado correctamente
 			//El primer campo es el origen y el segundo el destino
