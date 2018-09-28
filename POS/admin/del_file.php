@@ -10,7 +10,7 @@
        // $id=$_GET['service2'];
 
     
-   mysqli_query($conn,"DELETE from carousel WHERE photo = '../$photo' ");  
+   mysqli_query($conn,"call deleteimg('$photo')");  
 	
 		if(!unlink($photo)){
 		echo false;

@@ -1,4 +1,5 @@
- <link href="../css/alertify.css" rel="stylesheet">
+
+  <link href="../css/alertify.css" rel="stylesheet">
 <!-- Delete Product -->
     <div class="modal fade" id="delproduct_<?php echo $pid; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -126,7 +127,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <center><h4 class="modal-title" id="myModalLabel">Edit Product</h4></center>
+                    <center><h4 class="modal-title" id="myModalLabel">Add Product</h4></center>
                 </div>
                 <div class="modal-body">
 				<div class="container-fluid">
@@ -171,7 +172,7 @@
                                    
                 
                                         
-                                        echo "<img src='$photo' width='300' />";
+                                        echo "<img src='$photo' width=200px  />";
                                     
                                        echo " 
                                        
