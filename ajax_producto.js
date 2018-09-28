@@ -188,10 +188,9 @@ function listar(){
        "bDestroy": true,
         "sPaginationType": "full_numbers",
         "ajax": {
-          "type": "GET",
-          "url": 'http://www.fchmaintenanceservices.com/POS/admin/list_.php',
-          "type":"json",
-            }
+          "type": "POST",
+          "url": "../admin/list_.php"
+              },
         "columns": [
           { "data": "productid"},
           { "data": "product_name"},

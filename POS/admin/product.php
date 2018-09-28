@@ -52,7 +52,8 @@
 <?php include('script.php'); ?>
 <?php include('modal.php'); ?>
 <?php include('add_modal.php'); ?>
+<?php //include('list_.php'); ?>
 <script src="custom.js"></script>
 <link rel="stylesheet" href="css/tables.css">
-<script src="js/ajax_producto.js" charset="utf-8"></script>
+<script src="ajax_producto.js" charset="utf-8"></script>
 </body>
