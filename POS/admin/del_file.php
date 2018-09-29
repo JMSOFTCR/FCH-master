@@ -6,11 +6,12 @@
        // $service = $_POST['id'];
 
 
-        $photo=$_GET['service'];
+        $id=$_GET['service'];
+        $photo=$_GET['service2'];    
        // $id=$_GET['service2'];
 
     
-   mysqli_query($conn,"call deleteimg('$photo')");  
+   mysqli_query($conn,"call deleteimg('$id')");  
 	
 		if(!unlink($photo)){
 		echo false;

@@ -1,7 +1,7 @@
 <?php
 	include('session.php');
 
-    $id=$_GET['id'];
+    $id=$_archivo['id'];
 
     //Como el elemento es un arreglos utilizamos foreach para extraer todos los valores
 	foreach($_FILES["archivo"]['tmp_name'] as $key => $tmp_name)

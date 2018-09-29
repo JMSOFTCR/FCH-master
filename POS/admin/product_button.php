@@ -122,7 +122,114 @@
 </div>
 
  <!-- add photo -->
-    <div class="modal fade" id="addphoto_<?php echo $pid; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ 
+ <div class="modal fade" id="addphoto_<?php echo $pid; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <center><h4 class="modal-title" id="myModalLabel">Add Product</h4></center>
+                </div>
+                <div class="modal-body">
+				<div class="container-fluid">
+					<?php
+						$a=mysqli_query($conn,"select * from product left join category on category.categoryid=product.categoryid left join supplier on supplier.userid=product.supplierid where productid='$pid'");
+						$b=mysqli_fetch_array($a);
+					?>
+					<div style="height:10px;"></div>
+                    <form id="uploadimage" role="form" method="POST" action="" enctype="multipart/form-data">
+                            
+                              <div style="height:10px;"></div>					
+                                <div class="form-group input-group">
+                                <span class="input-group-addon" style="width:120px;">Photo:</span> 
+                                <input type="file" style="width:400px;" class="form-control" name="archivo[]" id="archivo" multiple="" accept="image/*" />
+                                <input type="submit" value="Upload" class="submit" />
+                                </div>
+                              <div id="respuesta"></div>
+                               
+                         <div class="col-sm-10">
+						
+                                   
+
+                                   
+						<?php 
+                                      
+                                   $sql = "select * from carousel as c where c.productid = '$pid'"; 
+                                    $result = mysqli_query($conn, $sql);
+                                
+                                                               
+
+                                        if(mysqli_num_rows($result) > 0){
+                                        while($row = mysqli_fetch_array($result)){
+                                        $id = $row['idphoto'];
+                                        $photo = $row['photo'];
+                                       
+                                              for($i=0; $i < count($photo); $i++){
+                                
+                                   
+                
+                                        
+                                        echo "<img src='$photo' width=200px  />";
+                                    
+                                       echo " 
+                                       
+                                         <a class='btn btn-danger glyphicon glyphicon-remove' href='del_file.php/?service=$id&service2=$photo'>Borrar</a>
+                                      
+                                       ";                                    } 
+
+                                    }
+                                     
+                                    }
+                                   
+                                    
+                                        
+                                   ?>
+                
+    		   
+                          
+						
+	
+					</div>                     
+				
+            
+    		  
+                                
+                            
+                       <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
+                    <button type="submit" value="Upload" class="submit btn btn-success"><i class="fa fa-check-square-o"></i> Add Photo</button>
+					</form>
+                </div>
+                        
+				</div>
+			
+				</div>
+                
+        </div>
+</div>
+</div>
+ 
+ <script>
+     $(function(){
+        $("input[name='archivo']").on("change", function(){
+            var formData = new FormData($("#uploadimage")[0]);
+            var ruta = "addphoto.php";
+            $.ajax({
+                url: ruta,
+                type: "POST",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function(datos)
+                {
+                    $("#respuesta").html(datos);
+                }
+            });
+        });
+     });
+</script>
+ 
+ <!--   <div class="modal fade" id="addphoto_<?php echo $pid; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -148,12 +255,7 @@
                          <div class="col-sm-10">
 						
                                    
-                           
-<!--
-						
-                                    <form action="http://url.pagina.destino" method="post">
-                                    <input type="hidden" name="variable1" value="valor1" />
--->
+
                                    
 						<?php 
                                       
@@ -164,7 +266,7 @@
 
                                         if(mysqli_num_rows($result) > 0){
                                         while($row = mysqli_fetch_array($result)){
-                                        $id = $row['productid'];
+                                        $id = $row['idphoto'];
                                         $photo = $row['photo'];
                                        
                                               for($i=0; $i < count($photo); $i++){
@@ -176,7 +278,7 @@
                                     
                                        echo " 
                                        
-                                         <a class='btn btn-danger glyphicon glyphicon-remove' href='del_file.php/?service=$photo'>Borrar</a>
+                                         <a class='btn btn-danger glyphicon glyphicon-remove' href='del_file.php/?service=$id&service2=$photo'>Borrar</a>
                                       
                                        ";                                    } 
 
@@ -191,7 +293,7 @@
     		   
                           
 						
-					<!-- </form> -->	
+	
 					</div>                     
 				
             
@@ -210,6 +312,6 @@
                 
         </div>
 </div>
-</div>
+</div>-->
 
 
