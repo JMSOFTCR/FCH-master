@@ -1,46 +1,37 @@
 <?php
-	include('session.php');
+if (isset($_FILES["archivo"]))
+{
+    $file = $_FILES["file"];
+    $nombre = $file["name"];
+    $tipo = $file["type"];
+    $ruta_provisional = $file["tmp_name"];
+    $size = $file["size"];
+    $dimensiones = getimagesize($ruta_provisional);
+    $width = $dimensiones[0];
+    $height = $dimensiones[1];
+    $carpeta = "imagenes/";
 
-    $id=$_archivo['id'];
-
-    //Como el elemento es un arreglos utilizamos foreach para extraer todos los valores
-	foreach($_FILES["archivo"]['tmp_name'] as $key => $tmp_name)
-	{
-		//Validamos que el archivo exista
-		if($_FILES["archivo"]["name"][$key]) {
-			$filename = $_FILES["archivo"]["name"][$key]; //Obtenemos el nombre original del archivo
-			$source = $_FILES["archivo"]["tmp_name"][$key]; //Obtenemos un nombre temporal del archivo
-			        
-			$directorio = 'upload'; //Declaramos un  variable con la ruta donde guardaremos los archivos
-			
-			//Validamos si la ruta de destino existe, en caso de no existir la creamos
-			if(!file_exists($directorio)){
-				mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
-			}
-			
-			$dir=opendir($directorio); //Abrimos el directorio de destino
-			$target_path = $directorio.'/'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
-			
-			//Movemos y validamos que el archivo se haya cargado correctamente
-			//El primer campo es el origen y el segundo el destino
-			if(move_uploaded_file($source, $target_path)) {	
-				echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
-				} else {	
-				echo "Ha ocurrido un error, por favor inténtelo de nuevo.<br>";
-			}
-			closedir($dir); //Cerramos el directorio de destino
-		      
-         
-             mysqli_query($conn,"call GuardarImagen('$id','$target_path')"); 
-             $pid=mysqli_insert_id($conn);
-             
-             
-        }
-	}
-    ?>
-	<script>
-			window.alert('Product added successfully!');
-			window.location.href="http://www.fchmaintenanceservices.com/POS/admin/";
-		</script>
-          
+    if ($tipo != 'image/jpg' && $tipo != 'image/jpeg' && $tipo != 'image/png' && $tipo != 'image/gif')
+    {
+      echo "Error, el archivo no es una imagen"; 
+    }
+    else if ($size > 1024*1024)
+    {
+      echo "Error, el tamaño máximo permitido es un 1MB";
+    }
+    else if ($width > 500 || $height > 500)
+    {
+        echo "Error la anchura y la altura maxima permitida es 500px";
+    }
+    else if($width < 60 || $height < 60)
+    {
+        echo "Error la anchura y la altura mínima permitida es 60px";
+    }
+    else
+    {
+        $src = $carpeta.$nombre;
+        move_uploaded_file($ruta_provisional, $src);
+        echo "<img src='$src'>";
+    }
+}
 ?>
