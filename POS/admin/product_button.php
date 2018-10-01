@@ -1,24 +1,6 @@
 
-   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
- <script>
-     $(function(){
-        $("input[name='archivo']").on("change", function(){
-            var formData = new FormData($("#uploadimage")[0]);
-            var ruta = "addphoto.php";
-            $.ajax({
-                url: ruta,
-                type: "POST",
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function(datos)
-                {
-                    $("#respuesta").html(datos);
-                }
-            });
-        });
-     });
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
 
   <link href="../css/alertify.css" rel="stylesheet">
 <!-- Delete Product -->
@@ -157,21 +139,21 @@
 						$a=mysqli_query($conn,"select * from product left join category on category.categoryid=product.categoryid left join supplier on supplier.userid=product.supplierid where productid='$pid'");
 						$b=mysqli_fetch_array($a);
 					?>
-					<div style="height:10px;"></div>
-                   <form id="uploadimage" action="" method="post" enctype="multipart/form-data">
-<input type="file" name="file" id="file" required />
-<input type="submit" value="Upload" class="submit" />
-</form>
-<div id="respuesta"></div>
-                    <form id="uploadimage" role="form" method="POST" action="" enctype="multipart/form-data">
+				
+                   
+                            
+                            <form onsubmit="return false" class="oculto" method="post" enctype="multipart/form-data" id="formUpload">
+	                        <input type="file" name="image" onchange="upload_img();">
+                            <input type="submit" value="Upload" class="submit" />
+
                             
                               <div style="height:10px;"></div>					
                                 <div class="form-group input-group">
                                 <span class="input-group-addon" style="width:120px;">Photo:</span> 
-                                <input type="file" style="width:400px;" class="form-control" name="archivo" id="archivo" multiple="" accept="image/*" />
+                                <input type="file" style="width:400px;" class="form-control" name="file" id="file" multiple="" accept="image/*" />
                                 <input type="submit" value="Upload" class="submit" />
                                 </div>
-                              <div id="respuesta"></div>
+                             
                                
                          <div class="col-sm-10">
 						
@@ -223,7 +205,7 @@
                             
                        <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
-                    <button type="submit" value="Upload" class="submit btn btn-success"><i class="fa fa-check-square-o"></i> Add Photo</button>
+                    <button type="submit" class="submit btn btn-success"><i class="fa fa-check-square-o"></i> Add Photo</button>
 					</form>
                 </div>
                         
@@ -235,7 +217,20 @@
 </div>
 </div>
  
+<script>
+function upload_img(){
 
+	var formData = new FormData($("#formUpload")[0]);
+	$.ajax({
+	type: 'POST',
+	url: 'addphoto.php',
+	data: formData,
+	contentType: false,
+	processData: false
+	});
+
+}
+</script>
  
  <!--   <div class="modal fade" id="addphoto_<?php echo $pid; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
