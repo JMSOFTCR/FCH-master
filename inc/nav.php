@@ -101,8 +101,10 @@ background-image: url("img/Fondo/gearblue.png");"
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="rental_equipment.php">Cleaning Rental Equipment</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="deliver.php">Equipment Deliver</a>
-                        <div class="dropdown-divider"></div>
+<!--
+                            <a class="dropdown-item" href="deliver.php">Equipment Deliver</a>
+                            <div class="dropdown-divider"></div>
+-->
                         <a class="dropdown-item" href="equipment_restoration.php">Equipment Restoration</a>       
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Training</a>
