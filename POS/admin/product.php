@@ -1,5 +1,7 @@
 <?php include('session.php'); ?>
 <?php include('header.php'); ?>
+<script src="js/sweetAlert.min.js" charset="utf-8"></script>
+
 <body>
 <div id="wrapper">
 <?php include('navbar.php'); ?>
@@ -16,42 +18,31 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12">
-            <table width="100%" class="table table-striped table-bordered table-hover" id="prodTable">
+        <div class="table-responsive col-lg-12">
+            <table width="100%" class="table table-striped table-bordered table-hover" data-source="data-source" id="datatable">
                 <thead>
                     <tr>
-                        <th>Product Name</th>
-						<th>Supplier</th>
-						<th>Category</th>
-                        <th>Price</th>
-						<th>Quantity</th>
-						<th>Photo</th>
-						<th>Action</th>
+											<th>Id Product</th>
+                      <th>Product Name</th>
+											<th>Supplier</th>
+											<th>Category</th>
+											<th></th>
+											<th></th>
+											<th></th>
+											<th></th>
+											<th></th>
+											<th></th>
+											<th></th>
+											<th></th>
+					            <th>Price</th>
+											<th>Quantity</th>
+											<th>Photo</th>
+											<th></th>
+											<th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-				<?php
-					$pq=mysqli_query($conn,"select * from product left join category on category.categoryid=product.categoryid left join supplier on supplier.userid=product.supplierid");
-					while($pqrow=mysqli_fetch_array($pq)){
-						$pid=$pqrow['productid'];
-					?>
-						<tr>
-							<td><?php echo $pqrow['product_name']; ?></td>
-							<td><?php echo $pqrow['company_name']; ?></td>
-							<td><?php echo $pqrow['category_name']; ?></td>
-							<td><?php echo $pqrow['product_price']; ?></td>
-							<td><?php echo $pqrow['product_qty']; ?></td>
-							<td><img src="../<?php if(empty($pqrow['photo'])){echo "upload/noimage.jpg";}else{echo $pqrow['photo'];} ?>" height="30px" width="30px;"></td>
-							<td>
-								<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#editprod_<?php echo $pid; ?>"><i class="fa fa-edit"></i> Edit</button>
-								<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delproduct_<?php echo $pid; ?>"><i class="fa fa-trash"></i> Delete</button>
-								<?php include('product_button.php'); ?>
-							</td>
-						</tr>
-					<?php
-					}
-				?>
-                </tbody>
+			          </tbody>
             </table>
         </div>
     </div>
@@ -61,5 +52,8 @@
 <?php include('script.php'); ?>
 <?php include('modal.php'); ?>
 <?php include('add_modal.php'); ?>
+<?php //include('list_.php'); ?>
 <script src="custom.js"></script>
+<link rel="stylesheet" href="css/tables.css">
+<script src="ajax_producto.js" charset="utf-8"></script>
 </body>

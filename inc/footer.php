@@ -54,24 +54,10 @@
                 <a class="dropdown-item" href="green_cleaning.php" >Green Cleaning</a>
   </div>
 </div>
-                  <div class="col-xs-12">
-  <button class="alinear btn btn-success btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Products
-  </button>
-  <div class="dropdown-menu">
-  
-               <a class="dropdown-item" href="equipment_seccion.php">New Equipment</a>
-                <a class="dropdown-item" href="">Cleaning Chemicals</a>
-                <a class="dropdown-item" href="Floor_seccion.php">Floor Care</a>
-                <a class="dropdown-item" href="batteries.php">Batteries</a>
-                <a class="dropdown-item" href="parts_and_accessories.php">Parts and Accessories</a>
-                <a class="dropdown-item" href="green_cleaning.php" >Green Cleaning</a>
-     
-             
-  </div>
-</div>
-                    <a class="btn btn-success btn-sm alinear col-xs-12" href="contact.php">Contact</a>
-                   <a class="btn btn-success btn-sm alinear col-xs-12" href="about.php">About Us</a>          
+
+                    <a class="btn btn-success btn-sm alinear col-xs-12" href="">Pads</a>
+                   <a class="btn btn-success btn-sm alinear col-xs-12" href="">Cleaning Supplies</a>          
+                   <a class="btn btn-success btn-sm alinear col-xs-12" href="">Use Equipment</a>          
                 </div>
             </div>
 

@@ -22,7 +22,6 @@
       $can_paginas=ceil($nro_reg / $reg_por_pagina);
       ?>
         
-      
   </head>
 
   <body>
