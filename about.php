@@ -44,7 +44,6 @@
       <div style="height: 70px;"></div>
 
     <!-- Page Content -->
-    <div class="container">
 <div class="container">
 
       <!-- Page Heading/Breadcrumbs -->
@@ -81,7 +80,6 @@
         </div>
       </div>
       <!-- /.row -->
-        <hr>
        
         <!--<h3 style="text-align:center; color:green">Anthony Chan</h3>
         <p>At the age of 18, in beautiful Costa Rica, Anthony Chan broke away from tradition.  Instead of carrying on with the family restaurants, Anthony pursued a career in Microelectronics.  By 25 the call of adventure caused him to turn his back on a promising career and leave the country of his birth. He set his sights on Canada.  With little more in his pockets than good advice from his Grandfather, who taught him that there are many opportunities in this world,  we need only have the courage to seize them.  Anthony quickly learned his most valuable asset, to himself and to his new country, was his hope for the future and his determination to succeed.
