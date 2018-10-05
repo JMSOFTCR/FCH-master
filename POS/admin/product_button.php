@@ -143,7 +143,7 @@
                                 <input type="file" style="width:400px;" class="form-control" name="archivo[]" multiple="" accept="image/*" />
                                 </div>
                                 <div>
-                                    asdasdasdasdasdassa
+                                   
                                 </div>
                               
                                
@@ -234,7 +234,7 @@ function deletephoto(id)
         
         $.ajax({
             type:"POST",
-            url:"del_file",
+            url:"del_file.php",
             data:cadena,
             success:function(r){
                 if(r==1){    
