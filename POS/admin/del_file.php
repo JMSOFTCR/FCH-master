@@ -3,25 +3,23 @@
         
 
 
-        $service = $_POST['id'];
+       // $service = $_POST['id'];
 
 
-       // $photo=$_GET['Nom'];
+        $id=$_GET['service'];
+        $photo=$_GET['service2'];    
+       // $id=$_GET['service2'];
+
     
-   mysqli_query($conn,"DELETE from carousel WHERE photo LIKE '%$service' ");  
-		chmod($file,0777);
+   mysqli_query($conn,"call deleteimg('$id')");  
+	
 		if(!unlink($photo)){
 		echo false;
 		}                                       
 
 ?>
 
-
-
-
-
-
-
-
- 
-	
+<script>
+			window.alert('Photo deleted successfully!');
+			window.location.href="http://www.fchmaintenanceservices.com/POS/admin/";
+		</script>
