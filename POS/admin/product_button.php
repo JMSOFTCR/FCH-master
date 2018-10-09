@@ -126,7 +126,7 @@
 
  <!-- add photo -->
  
- <div class="modal fade" id="addphoto_<?php echo $pid; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="addphoto_<?php echo $pid; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -216,8 +216,8 @@
         </div>
 </div>
 </div>
- 
-<script>
+ -->
+<!--<script>
 function upload_img(){
 
 	var formData = new FormData($("#formUpload")[0]);
@@ -230,9 +230,9 @@ function upload_img(){
 	});
 
 }
-</script>
+</script>-->
  
- <!--   <div class="modal fade" id="addphoto_<?php echo $pid; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal fade" id="addphoto_<?php echo $pid; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -315,6 +315,5 @@ function upload_img(){
                 
         </div>
 </div>
-</div>-->
-
+</div>
 
