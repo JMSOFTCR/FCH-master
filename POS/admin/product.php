@@ -44,6 +44,7 @@
 							<td><img src="../<?php if(empty($pqrow['photo'])){echo "upload/noimage.jpg";}else{echo $pqrow['photo'];} ?>" height="30px" width="30px;"></td>
 							<td>
 								<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#editprod_<?php echo $pid; ?>"><i class="fa fa-edit"></i> Edit</button>
+								<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#addphoto_<?php echo $pid; ?>"><i class="fa fa-edit"></i> Add Photo</button>
 								<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delproduct_<?php echo $pid; ?>"><i class="fa fa-trash"></i> Delete</button>
 								<?php include('product_button.php'); ?>
 							</td>

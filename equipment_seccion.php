@@ -108,6 +108,36 @@
         </div></a></div>
         
         </div>
+        <div class="col-sm-4">
+                   
+          <div class="ih-item square colored effect14 top_to_bottom"><a href="#">
+        <div class="img"><img src="img/Equipment_Seccion/new/centaur.png" alt="img"></div>
+        <div class="info">
+          <h3>Centaur</h3>
+          <p></p>
+        </div></a></div>
+        
+        </div>
+        <div class="col-sm-4">
+                   
+          <div class="ih-item square colored effect14 top_to_bottom"><a href="#">
+        <div class="img"><img src="img/Equipment_Seccion/new/coming.jpg" alt="img"></div>
+        <div class="info">
+          <h3>Coming Soon</h3>
+          <p></p>
+        </div></a></div>
+        
+        </div>
+        <div class="col-sm-4">
+                   
+          <div class="ih-item square colored effect14 top_to_bottom"><a href="#">
+        <div class="img"><img src="img/Equipment_Seccion/new/coming.jpg" alt="img"></div>
+        <div class="info">
+          <h3>Coming Soon</h3>
+          <p></p>
+        </div></a></div>
+        
+        </div>
     <!-- end colored -->
 
 
@@ -116,7 +146,7 @@
        
 
       <!-- Pagination -->
-      <ul class="pagination justify-content-center">
+   <!--   <ul class="pagination justify-content-center">
         <li class="page-item">
           <a class="page-link" href="#" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
@@ -139,7 +169,7 @@
             <span class="sr-only">Next</span>
           </a>
         </li>
-      </ul>
+      </ul>-->
 
     </div>
     <!-- /.container -->

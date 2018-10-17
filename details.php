@@ -76,7 +76,7 @@
        	$sql2 = "select * from carousel as c where c.productid = \"$id\"";
     	$result2 = mysqli_query($conn, $sql2);
     	if ($rs = mysqli_fetch_array($result2)) {
-    		echo '<img style="width:50%; height:200px;" src=POS/'.$rs["1"].' class="big-img">';}
+    		echo '<img style="width:70%; height:100%;" src=POS/admin/'.$rs["1"].' class="big-img">';}
        	?>
        </div>
        </div>
@@ -86,7 +86,7 @@
        		<div class="form-group">
        	<?php  
        	foreach ($result2 as $rst) {
-       	echo '<button class="lit-img" value='.$rst["photo"].'><img src=POS/'.$rst["photo"].' style="width:60px;height:60px;"></button>';
+       	echo '<button class="lit-img" value='.$rst["photo"].'><img src=POS/admin/'.$rst["photo"].' style="width:60px;height:60px;"></button>';
        		}
        	?>
        	</div>
@@ -96,7 +96,7 @@
               
                 <div class="col-sm-4" style="background-color:#ffffff; border:1px solid; border-radius:5px;">
 <!--        <h1 style="color: #00d361">₡<?php echo number_format($price,2); ?></h1>-->
-       <h1 style="color: #00d361">Cooming soon</h1>
+       <h1 style="color: #00d361">Coming soon</h1>
         <hr>
         <a style="color: gray"><?php echo $product_name; ?></a>
         <hr>
@@ -170,7 +170,7 @@ $tech1 = str_replace("\n", "<br>", $tech);
 
 <div role="tabpanel" class="tab-pane fade" id="video" aria-labelledby="hats-tab">
     <br>
-    <p><?php echo $video; ?></p>
+    <p style="text-align:center"><?php echo $video; ?></p>
 </div>
   <br>
 </div>
@@ -197,7 +197,7 @@ $tech1 = str_replace("\n", "<br>", $tech);
       $("#envCart").submit(function(e){
         e.preventDefault();
         var newP = $("<div>");
-        newP.html('<img style="height: 70px; width: 70px;border-radius:50px" alt="First slide image" src="POS/<?php echo $photo ?>"/>');
+        newP.html('<img style="height: 70px; width: 70px;border-radius:50px" alt="First slide image" src="POS/admin/<?php echo $photo ?>"/>');
         newP.addClass("slide-tr");
         // append prepend after
         $("#divani").append(newP);
@@ -224,7 +224,7 @@ $tech1 = str_replace("\n", "<br>", $tech);
         },1000);
       });
       $(".lit-img").on("click",function(){
-      	var img = $('<img style="width:70%; height:200px;" src=POS/'+$(this).val()+' class="big-img">');
+      	var img = $('<img style="width:70%; height:100%;" src=POS/admin/'+$(this).val()+' class="big-img">');
       	$(".bs-example").empty();
       	$(".bs-example").append(img);
       });
