@@ -1,13 +1,11 @@
 <?php 
     session_start(); 
     error_reporting(E_PARSE);
-	include('modal.php');
+	//include('modal.php');
 ?> 
 
 	
 	<style>
-
-        
          h1, h2, h3, p, li, h4, a { font-family: 'Lora', serif; 
         }
         
@@ -47,44 +45,13 @@ background-image: url("img/Fondo/gearblue.png");"
              
                 <a class="nav-item nav-link" href="#"><i class="fa fa-twitter text-white" ></i></a>
                 
-                <?php
-                          if(!$_SESSION['id']==""){
-                                echo ' 
-                                    
-                                     <!-- Example split danger button -->
-                               
-                                     <div class="">
-                                     <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><li><i class="fa fa-user"></i>
-        Mi cuenta
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-     
-      <a class="dropdown-item" href="#account" data-toggle="modal"><img src="svg/si-glyph-flower.svg"/ style="width:24px; height:24px;"> My Account</a>
-                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#profile" data-toggle="modal"><img src="svg/si-glyph-man-doctor.svg"/ style="width:24px; height:24px;"> My Profile</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#logout" data-toggle="modal"><img src="svg/si-glyph-turn-off.svg"/ style="width:24px; height:24px;"> Logout</a>
-            
-         </div>
-        </li></li>
-                                            <li id="cartme" style="cursor:pointer">
-                                            <a class="nav-item nav-link" id="cart_control" title="Shopping Cart" data-toggle="popover"><i class="fa fa-shopping-cart fa-fw" id="cartir"></i></a>
-                                            </li>
-                                   
-                                    </div>
-                                  
-                                 ';
-                            }else{
-                                echo ' 
-                                          <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-user text-white"> Login</i></a>
-                                          	<li id="cartme" style="cursor:pointer">
-                                            <a class="nav-item nav-link" id="cart_control" title="Shopping Cart" data-toggle="popover"><i class="fa fa-shopping-cart fa-fw" id="cartir"></i></a>
-                                            </li>
-                                 ';
-                            }
-                        ?>
-                      
+              <!--Codigo php de abajo -->
+
+                 <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-user text-white"> Login</i></a>
+                  <li id="cartme" style="cursor:pointer">
+                  <a class="nav-item nav-link" id="cart_control" title="Shopping Cart" data-toggle="popover"><i class="fa fa-shopping-cart fa-fw" id="cartir"></i></a>
+                  </li>
+                      <!-- incluye el segmento de arriba -->
             </div>
             <div id="Cont-Popover" style="display:none;">
             </div>
@@ -263,3 +230,42 @@ width:auto;
 }
 
 </style>
+
+            
+                <!--?php
+                          if(!$_SESSION['id']==""){
+                                echo ' 
+                                    
+                                      Example split danger button 
+                               
+                                     <div class="">
+                                     <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><li><i class="fa fa-user"></i>
+        Mi cuenta
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+     
+      <a class="dropdown-item" href="#account" data-toggle="modal"><img src="svg/si-glyph-flower.svg"/ style="width:24px; height:24px;"> My Account</a>
+                                     <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#profile" data-toggle="modal"><img src="svg/si-glyph-man-doctor.svg"/ style="width:24px; height:24px;"> My Profile</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#logout" data-toggle="modal"><img src="svg/si-glyph-turn-off.svg"/ style="width:24px; height:24px;"> Logout</a>
+            
+         </div>
+        </li></li>
+                                            <li id="cartme" style="cursor:pointer">
+                                            <a class="nav-item nav-link" id="cart_control" title="Shopping Cart" data-toggle="popover"><i class="fa fa-shopping-cart fa-fw" id="cartir"></i></a>
+                                            </li>
+                                   
+                                    </div>
+                                  
+                                 ';
+                            }else{
+                                echo ' 
+                                          <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-user text-white"> Login</i></a>
+                                            <li id="cartme" style="cursor:pointer">
+                                            <a class="nav-item nav-link" id="cart_control" title="Shopping Cart" data-toggle="popover"><i class="fa fa-shopping-cart fa-fw" id="cartir"></i></a>
+                                            </li>
+                                 ';
+                            }
+                        ?-->
