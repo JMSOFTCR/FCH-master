@@ -24,6 +24,7 @@
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 70px;">
                     <P style="color: white">We are the number 1 company in the equipment maintenance and repair market.</P>
                     <a href="#"><i class="fa fa-facebook" style="font-size:50px; color:#0a00ff;"></i></a>
+                    <a href="https://www.youtube.com/channel/UCtuyh4iWWcRLytRFtAokr5w/videos"><i class="fa fa-youtube" style="font-size:50px; color:#a21515;"></i></a>
                     <a href="#"><i class="fa fa-twitter" style="font-size:50px; color:#08e3ff; text-indent: 8px;"></i></a>
                     <a href="#"><i class="fa fa-linkedin" style="font-size:50px; color:#ededed;text-indent: 8px;"></i></a>
                     <a href="#"><i class="fa fa-whatsapp" style="font-size:50px; color:#00eb2d; text-indent: 8px;"></i></a>
@@ -38,7 +39,7 @@
                       </h4>
                     <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 85px;">
                    
-                   <a class="col-xs-12 col-lg-12 alinear btn btn-success btn-sm" href="index.php">Home</a>
+                   <a style="margin-top:20px;" class="col-xs-12 col-lg-12 alinear btn btn-success btn-sm" href="index.php">Home</a>
                     
                     <div class="col-xs-12">
   <button class="btn btn-success btn-sm dropdown-toggle alinear" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -122,7 +123,7 @@
     <div class="container">
     <div class="row index-social-link text-center d-flex">
             <p class="d-flex flex-row copy-c"><p>&copy; 2017 FCHMAINTENANCE</p>
-            <p class="ml-auto p-2">&copy;FAMILY CHAN HOLDING GRUP</p>
+            <p class="ml-auto p-2">&copy;FAMILY CHAN HOLDING GROUP</p>
         </div>  
     <div class="row index-social-link text-center d-flex flex-row-reverse">
            

@@ -8,7 +8,7 @@
 	<style>
 
         
-         h1, h2, h3, p, li, h4, a { font-family: 'Lora', serif; 
+         h1, h2, h3, p, li, h4,  { font-family: 'Lora', serif; 
         }
         
          a{color: aliceblue}
@@ -28,7 +28,7 @@ background-image: url("img/Fondo/gearblue.png");"
   integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
   crossorigin="anonymous">
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
 <nav class="navbar navbar-expand-lg"style="background-color: #116deb;">
     <div class="container">
         <a class="navbar-brand" href="#">
@@ -152,6 +152,7 @@ background-image: url("img/Fondo/gearblue.png");"
 </nav>
     <script src="js/eskju.jquery.scrollflow.min.js"></script>
     <script src="js/parallax.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script>
 $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
   if (!$(this).next().hasClass('show')) {
