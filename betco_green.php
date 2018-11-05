@@ -46,55 +46,59 @@
 
         <!-- Page Heading/Breadcrumbs -->
 
-        
-            <div style="height: 30px;"></div>
-            <h1 class="mt-4 mb-3">Advance
-                <small>Equipment</small>
-            </h1>
 
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a style="color: #000;" href="index.php">Home</a></li>
-                <li class="breadcrumb-item"><a style="color: #000;" href="equipment_seccion.php">New Equipment</a></li>
-                <li class="breadcrumb-item active">Advance Equipment</li>
-            </ol>  
-		
-    <div id="A_Equipment" class="flex-container">
-      
-    		<?php
+        <div style="height: 30px;"></div>
+        <h1 class="mt-4 mb-3"> Green
+            <small>Betco</small>
+        </h1>
+
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a style="color: #000;" href="index.php">Home</a></li>
+            <li class="breadcrumb-item"><a style="color: #000;" href="equipment_seccion.php">Chemicals</a></li>
+            <li class="breadcrumb-item active">Green Betco</li>
+        </ol>
+
+        <div id="A_Equipment" class="flex-container">
+
+            <?php
     		while($row=mysqli_fetch_array($query)){
                 
              $id=$row['productid'];
              $name=$row['product_name'];
              $photo=$row['photo'];
     			?>
-                                
-                  <!-- colored -->
-                  <div class="ih-item square colored effect4" >
-                      <a id="enviar">
-                          <div class="img">
-                            <img src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img">
-                          </div>
 
-                          <div class="info">
-                              <h3><?php echo $name; ?></h3>
-                              <h4>$ <?php echo $price; ?></h4>
-                              <form action="details.php?id=<?php echo $id; ?>" method="post" name="Detalle">
+                <!-- colored -->
+                <div class="ih-item square colored effect4">
+                    <a id="enviar">
+                        <div class="img">
+                            <img src="POS/<?php if (empty($photo)){echo " upload/noimage.jpg ";}else{echo $photo;} ?>" alt="img">
+                        </div>
+
+                        <div class="info">
+                            <h3>
+                                <?php echo $name; ?>
+                            </h3>
+                            <h4>$
+                                <?php echo $price; ?>
+                            </h4>
+                            <form action="details.php?id=<?php echo $id; ?>" method="post" name="Detalle">
                                 <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
                                 <input name="Detalles" type="submit" value="Detalles" class="btn btn-info" />
-                              </form>
-                          </div>
-                      </a>
-                  </div>
-                      <!-- end colored -->
-          <?php
+                            </form>
+                        </div>
+                    </a>
+                </div>
+                <!-- end colored -->
+                <?php
             }
           ?>
-          </div>
-        
+        </div>
+
         <div style="height: 50px;"></div>
-      <!-- Pagination -->
-      <div align="center">
-      <?php
+        <!-- Pagination -->
+        <div align="center">
+            <?php
        if($nro_pagina>1){
           echo "<a style='color:black;' href='betco_green.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
        }
@@ -111,8 +115,8 @@
            echo "<a style='color:black;' href='betco_green.php?num=".($nro_pagina+1)."'> Siguiente ></a> "; 
        }
        ?>
-      </div>
-      <!--End Pagination -->
+        </div>
+        <!--End Pagination -->
 
     </div>
     <!-- /.container -->

@@ -48,14 +48,14 @@
 
         
             <div style="height: 30px;"></div>
-            <h1 class="mt-4 mb-3">Advance
-                <small>Equipment</small>
+            <h1 class="mt-4 mb-3">Green
+                <small>Pionner</small>
             </h1>
 
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a style="color: #000;" href="index.php">Home</a></li>
-                <li class="breadcrumb-item"><a style="color: #000;" href="equipment_seccion.php">New Equipment</a></li>
-                <li class="breadcrumb-item active">Advance Equipment</li>
+                <li class="breadcrumb-item"><a style="color: #000;" href="equipment_seccion.php">Chemicals</a></li>
+                <li class="breadcrumb-item active">Green Pionner</li>
             </ol>  
 		
     <div id="A_Equipment" class="flex-container">
@@ -80,7 +80,7 @@
                               <h4>$ <?php echo $price; ?></h4>
                               <form action="details.php?id=<?php echo $id; ?>" method="post" name="Detalle">
                                 <input name="id_txt" type="hidden" value="<?php echo $id; ?>" />
-                                <input name="Detalles" type="submit" value="Detalles" class="btn btn-info" />
+                                <input name="Details" type="submit" value="Details" class="btn btn-info" />
                               </form>
                           </div>
                       </a>
