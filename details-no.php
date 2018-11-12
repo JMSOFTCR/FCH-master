@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
       <link href="vendor/bootstrap/css/footer.css" rel="stylesheet">
-    <title>PCINNOVATIONS</title>
+    <title>FCHMAINTENANCE</title>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main2.css" rel="stylesheet">
@@ -38,10 +38,10 @@
     <!-- Page Content -->
     <div class="container">
         <?php
-        if (isset($_POST['id_txt'])){
-    $id = $_POST['id_txt'];
-    $nro_reg=$_POST['id_txt'];      
-    $sql = "select distinct * from product as p where p.productid = \"$id\"";
+        if (isset($_GET['id'])){
+    $id = $_GET['id'];
+    $nro_reg=$_GET['id'];      
+    $sql = "select * from product as p where p.productid = \"$id\"";
     $result = mysqli_query($conn, $sql);
                                 }
 
@@ -62,22 +62,21 @@
         }
         ?>
         <br>
-        <div class="col-xs-12"></div>
-        
-        <h8><a href="index.php" style=""> Inicio </a> /<a href="" style=""><?php echo $category_name; ?></a> <a style="color: black"><?php echo $product_name; ?></a></h8>
+        <div class="col-xs-12"><hr></div>
+        <h1><?php echo $product_name; ?></h1>
+        <h8><a href="index.php" style="color: green"> Home </a> > <a href="" style="color: green"><?php echo $category_name; ?></a> > <a style="color: gray"><?php echo $product_name; ?></a></h8>
    
         <hr>
-        
-    <div class="row d-flex" style="background:white;">
+    <div class="row">
         <div class="col-sm-5">
                          
        <div class="bs-example">
        	<div id="carousel-example-captions" class="carousel slide" data-ride="carousel">
        	<?php 
-       	$sql2 = "select distinct * from carousel as c where c.productid = \"$_POST[id_txt]\"";
+       	$sql2 = "select * from carousel as c where c.productid = \"$id\"";
     	$result2 = mysqli_query($conn, $sql2);
     	if ($rs = mysqli_fetch_array($result2)) {
-    		echo '<img style=" height: 70%; width: 100%;" src=POS/admin/'.$rs["1"].' class="big-img">';}
+    		echo '<img style="width:70%; height:100%;" src=POS/admin/'.$rs["1"].' class="big-img">';}
        	?>
        </div>
        </div>
@@ -95,8 +94,9 @@
    		</div>
    		</div>
               
-                <div class="col-sm-3 ml-auto p-2" style="background-color:#f0f0f0; height:290px; border:1px solid; border-radius:5px; margin: 30px;">
-        <h3 style="color: black">₡<?php echo number_format($price); ?></h3>
+                <div class="col-sm-4" style="background-color:#ffffff; border:1px solid; border-radius:5px;">
+<!--        <h1 style="color: #00d361">₡<?php echo number_format($price,2); ?></h1>-->
+       <h1 style="color: #00d361">Coming soon</h1>
         <hr>
         <a style="color: gray"><?php echo $product_name; ?></a>
         <hr>
@@ -108,8 +108,8 @@
   <div class="form-group">
     <input id="idp" type="hidden" value="<?php echo $id; ?>" >
     <label for="qty">Qty:</label>
-    <input type="number" style="width:80px;height:30x" class="form-control" id="qty" min="0" step="1" value="0" onchange="valid()">
-    <button type="submit" class="btn btn-danger disabled" required style="margin-left:5px;" disabled="true" id="btnCart"><i style="width:50px;" class="fa fa-shopping-cart text-white"></i> </button>
+    <input type="number" style="width:80px;height:30x" class="form-control" id="qty" min="0" step="1" onchange="valid()">
+    <button type="submit" class="btn btn-success disabled" required style="margin-left:5px;" disabled="true" id="btnCart">Add to Cart</button>
     <div id="divani"></div>
   
   </div>
@@ -129,7 +129,7 @@
               <hr> 
         
             <br>
-<div class="descripcion" style="background-color:#ffffff;  border-radius:5px; padding-left:20px">
+<div class="descripcion" style="background-color:#ffffff; border:1px solid; border-radius:5px; padding-left:20px">
 
 <ul id="clothing-nav" class="nav nav-tabs" role="tablist" >
 	
@@ -170,13 +170,11 @@ $tech1 = str_replace("\n", "<br>", $tech);
 
 <div role="tabpanel" class="tab-pane fade" id="video" aria-labelledby="hats-tab">
     <br>
-    <p><?php echo $video; ?></p>
+    <p style="text-align:center"><?php echo $video; ?></p>
 </div>
   <br>
 </div>
 </div>
-     <br>
-     <br>
       </div>
       </div>    
       
@@ -226,7 +224,7 @@ $tech1 = str_replace("\n", "<br>", $tech);
         },1000);
       });
       $(".lit-img").on("click",function(){
-      	var img = $('<img style=" height: 70%; width: 100%;" src=POS/admin/'+$(this).val()+' class="big-img">');
+      	var img = $('<img style="width:70%; height:100%;" src=POS/admin/'+$(this).val()+' class="big-img">');
       	$(".bs-example").empty();
       	$(".bs-example").append(img);
       });

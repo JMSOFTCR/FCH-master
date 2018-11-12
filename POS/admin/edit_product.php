@@ -36,7 +36,7 @@
 		}
 	}
 
-	mysqli_query($conn,"update product set product_name='$name', supplierid='$supplier', categoryid='$category', product_price='$price', photo='$location', product_qty='$qty', description='$description', tech='$tech', video='$video' where productid='$id'");
+	mysqli_query($conn,"call update_product('$id','$name', '$supplier', '$category', '$price', '$location', '$qty','$description', '$tech', '$video')");
 
 	if($qty!=$prow['product_qty']){
 		mysqli_query($conn,"insert into inventory (userid,action,productid,quantity,inventory_date) values ('".$_SESSION['id']."','Update Quantity', '$id', '$qty', NOW())");
