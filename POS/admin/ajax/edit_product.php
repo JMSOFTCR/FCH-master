@@ -13,7 +13,26 @@
 	$tech = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_tech"],ENT_QUOTES)));
 	$video = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_video"],ENT_QUOTES)));
 	$stock = intval($_POST["edit_stock"]);
-	
+	$fileInfo = PATHINFO($_FILES["image"]["name"]);
+
+	if (empty($_FILES["image"]["name"])){
+		$location=$prow['photo'];
+	}
+	else{
+		if ($fileInfo['extension'] == "jpg" OR $fileInfo['extension'] == "png") {
+			$newFilename = $fileInfo['filename'] . "_" . time() . "." . $fileInfo['extension'];
+			move_uploaded_file($_FILES["image"]["tmp_name"], "../upload/" . $newFilename);
+			$location = "upload/" . $newFilename;
+		}
+		else{
+			$location=$prow['photo'];
+			?>
+				<script>
+					window.alert('Photo not updated. Please upload JPG or PNG photo only!');
+				</script>
+			<?php
+		}
+	}
 	
 	$id=intval($_POST['edit_id']);
 	// UPDATE data into database

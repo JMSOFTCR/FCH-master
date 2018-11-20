@@ -50,10 +50,10 @@
                             <span style="width:120px;" class="input-group-addon">Photo:</span>
                             <input type="file" style="width:150px;" accept="*/*" class="form-control" name="image">
 						</div>
-						<div class="form-group input-group">
+						<!--<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">PDF INFO:</span>
                             <input type="file" style="width:150px;" accept="*/*" class="form-control" id="PDF_p" name="PDF">
-						</div>
+						</div>-->
 						<div class="form-group">
                         <label for="exampleTextarea">Description</label>
                         <textarea class="form-control" name="description" id="description_p" rows="10"></textarea>

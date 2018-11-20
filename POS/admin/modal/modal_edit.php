@@ -8,8 +8,8 @@
 					</div>
 					<div class="modal-body">	
 					<div class="form-group">
-							<label>Product ID</label>
-							<input type="text" name="edit_id" id="edit_id" class="form-control" required>
+							
+							<input type="hidden" name="edit_id" id="edit_id" class="form-control" required>
 						</div>				
 						<div class="form-group">
 							<label>Product name</label>

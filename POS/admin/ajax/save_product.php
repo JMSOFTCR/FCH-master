@@ -1,5 +1,4 @@
 <?php
-
 	if (empty($_POST['name'])){
 		$errors[] = "Ingresa el nombre del producto.";
 	} elseif (!empty($_POST['name'])){
@@ -14,7 +13,6 @@
     $video = mysqli_real_escape_string($conn,(strip_tags($_POST["video"],ENT_QUOTES)));
 	$stock = intval($_POST["stock"]);
 	$fileInfo = PATHINFO($_FILES["image"]["name"]);
-
 	if (empty($_FILES["image"]["name"])){
 		$location="";
 	}
