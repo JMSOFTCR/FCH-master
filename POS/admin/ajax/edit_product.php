@@ -16,7 +16,7 @@
 	$fileInfo = PATHINFO($_FILES["image"]["name"]);
 
 	if (empty($_FILES["image"]["name"])){
-		$location=$prow['photo'];
+		$location="";
 	}
 	else{
 		if ($fileInfo['extension'] == "jpg" OR $fileInfo['extension'] == "png") {
@@ -25,11 +25,9 @@
 			$location = "upload/" . $newFilename;
 		}
 		else{
-			$location=$prow['photo'];
+			$location="";
 			?>
-				<script>
-					window.alert('Photo not updated. Please upload JPG or PNG photo only!');
-				</script>
+			
 			<?php
 		}
 	}

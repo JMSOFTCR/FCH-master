@@ -1,3 +1,4 @@
+<meta http-equiv=content-type content=text/html; charset=utf-8>
 <?php include '../../conn.php' ?>
 <div id="addProductModal" class="modal fade">
 		<div class="modal-dialog">
@@ -47,8 +48,8 @@
 							<input type="number" name="stock" id="stock" class="form-control" required>
 						</div>	
 						<div class="form-group input-group">
-                            <span style="width:120px;" class="input-group-addon">Photo:</span>
-                            <input type="file" style="width:150px;" accept="*/*" class="form-control" name="image">
+                            <span style="width:120px;" class="input-group-addon">Photo: (dimensions:400 x 400)</span>
+                            <input type="file" style="width:150px;" accept="*/*" class="form-control" name="image" id="image">
 						</div>
 						<!--<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">PDF INFO:</span>

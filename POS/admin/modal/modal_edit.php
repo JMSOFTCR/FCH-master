@@ -32,7 +32,7 @@
 						<div style="height:10px;"></div>
 						<div class="form-group input-group">
                             <span class="input-group-addon" style="width:120px;">Supplier:</span>
-                            <select style="width:400px;" class="form-control" name="supplier">
+                            <select style="width:400px;" class="form-control" name="edit_supplier" id="edit_supplier">
 								<option value="edit_supplier"></option>
 								<?php
 									$s=mysqli_query($conn,"select * from supplier where userid != '".$b['supplierid']."'");
@@ -54,12 +54,12 @@
 						</div>
 						<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">Photo:</span>
-                            <input type="file" style="width:150px;" accept="*/*" class="form-control" id="image_p" name="image">
+                            <input type="file" id="image" name="image" style="width:150px;" accept="*/*" class="form-control" >
 						</div>
-						<div class="form-group input-group">
+					<!--	<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">PDF INFO:</span>
                             <input type="file" style="width:150px;" accept="*/*" class="form-control" id="PDF_p" name="PDF">
-						</div>	
+						</div>	-->
 						<div class="form-group">
                         <label for="exampleTextarea">Description</label>
                         <br>
