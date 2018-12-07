@@ -3,7 +3,7 @@
 <body>
 <div id="wrapper">
 <?php include('navbar.php'); ?>
-<div style="height:50px;"></div>
+<div style="height:60px"></div>
 <div id="page-wrapper">
 <div class="container-fluid">
 

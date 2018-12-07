@@ -28,7 +28,7 @@
 
 <body>
 
-    <div id="wrapper">
+    <div >
 
         <!-- Sidebar -->
         <div id="sidebar-wrapper" style="background-color:rgba(17, 203, 211, 0.6)">
