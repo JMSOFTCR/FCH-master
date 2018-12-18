@@ -4,7 +4,7 @@
 
 <head>
 
-    <meta charset="utf-8">
+   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -31,7 +31,7 @@
     <div >
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper" style="background-color:rgba(17, 203, 211, 0.6)">
+        <div id="sidebar-wrapper" style="background-color:rgba(214, 224, 224, 0.6)">
             <ul class="sidebar-nav fixed-top" >
                 <li class="sidebar-brand">
                     <a href="index.php" ><img style="width:60%;" src="img/all_logos-12.png"><img/>
@@ -99,9 +99,7 @@
                     </ul>
                 </li>
                 <div class="dropdown-divider"></div>            
-                <li>
-                    <a href="#">Contact</a>
-                </li>
+              
                 <div class="dropdown-divider"></div>
                 <li>
                     <a class="" style="background-color:rgba(253, 227, 227, 0.3) " href="#logout" data-toggle="modal">Exit</a>

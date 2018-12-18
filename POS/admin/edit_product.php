@@ -4,7 +4,11 @@
 	} elseif (!empty($_POST['edit_id'])){
 	require_once ("../../conn.php");//Contiene funcion que conecta a la base de datos
 	// escaping, additionally removing everything that could be (html/javascript-) code
+
+        
 	$d=mysqli_real_escape_string($conn,(strip_tags($_POST["edit_id"],ENT_QUOTES)));
+    $p=mysqli_query($conn,"select * from product where productid='$d'");
+	$prow=mysqli_fetch_array($p);       
 	$name = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_name"],ENT_QUOTES)));
 	$category = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_category"],ENT_QUOTES)));
 	$supplier = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_supplier"],ENT_QUOTES)));
@@ -16,7 +20,7 @@
 	$fileInfo = PATHINFO($_FILES["image"]["name"]);
 
 	if (empty($_FILES["image"]["name"])){
-	
+	   $location=$prow['photo'];
 	}
 	else{
 		if ($fileInfo['extension'] == "jpg" OR $fileInfo['extension'] == "png") {
@@ -25,13 +29,13 @@
 			$location = "upload/" . $newFilename;
 		}
 		else{
-		
+            $location=$prow['photo'];
 			?>
 			
 			<?php
 		}
 	}
-	
+	mysqli_query('set names utf8');
 	$id=intval($_POST['edit_id']);
 	// UPDATE data into database
     $sql = "call update_product('$id','$name', '$supplier', '$category', '$price', '$location', '$stock','$description', '$tech', '$video')";

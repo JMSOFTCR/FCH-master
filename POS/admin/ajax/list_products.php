@@ -1,9 +1,9 @@
-<?php
+    <?php 
+
 	
 	/* Connect To Database*/
 	require_once ("../../conn.php");
  
-	
 $action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
 if($action == 'ajax'){
 	$query = mysqli_real_escape_string($conn,(strip_tags($_REQUEST['query'], ENT_QUOTES)));
@@ -59,6 +59,7 @@ if($action == 'ajax'){
                         	$photo=$row['photo'];
 							$product_id=$row['productid'];
 							$prod_name=$row['product_name'];
+                            //$prod_name = utf8_decode($prod_name2);
 							$category=$row['category_name'];
 							$price=$row['product_price'];	
 							$stock=$row['product_qty'];	

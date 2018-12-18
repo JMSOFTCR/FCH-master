@@ -33,7 +33,9 @@
 	}
  
 	// REGISTER data into database
+    
     $sql = "call addproduct('$name','$category','$price','$stock', '$supplier', '$description', '$location', '$tech','$video')";
+    //mysqli_set_charset($conn,$sql);
     $query = mysqli_query($conn,$sql);
      // if product has been added successfully
     if ($query) {

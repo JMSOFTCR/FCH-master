@@ -40,9 +40,9 @@
     $query = mysqli_query($conn,$sql);
      // if product has been added successfully
     if ($query) {
-        $messages[] = "El producto ha sido guardado con éxito.";
+       
     } else {
-        $errors[] = "Lo sentimos, el registro falló. Por favor, regrese y vuelva a intentarlo.";
+       
     }
 		
 	} else 
@@ -52,15 +52,7 @@
 if (isset($errors)){
 			
 			?>
-			<div class="alert alert-danger" role="alert">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong>Error!</strong> 
-					<?php
-						foreach ($errors as $error) {
-								echo $error;
-							}
-						?>
-			</div>
+			
 			<?php
 			}
 			if (isset($messages)){

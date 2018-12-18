@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 29, 2018 at 10:10 PM
+-- Generation Time: Dec 13, 2018 at 09:09 PM
 -- Server version: 5.6.39-cll-lve
 -- PHP Version: 5.6.30
 
@@ -21,22 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `fchmaintenance`
 --
-
-DELIMITER $$
---
--- Procedures
---
-$$
-
-$$
-
-$$
-
-$$
-
-$$
-
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -584,7 +568,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`userid`, `username`, `password`, `access`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1),
+(1, 'admin', '22d7f24ccf2c2dc8ca22f70885fb21a4', 1),
 (2, 'pepe', '81dc9bdb52d04dc20036dbd8313ed055', 2),
 (4, 'supplier', 'fa3ddb86f38fb6a8284636249f6551aa', 3),
 (5, 'Betco', 'supplier', 3),
