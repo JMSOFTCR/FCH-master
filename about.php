@@ -20,18 +20,19 @@
     <style>
         h1, h2, h3, p, li { font-family: 'Lora', serif; }
         
-        img{
+                img{
           width: 100%;
           height: 100%;
         }
         div .img{
-          width: 300px;
-          height:300px;
+          width: 100%;
+          height:100%;
         }
         .ih-item.square{
-          width: 310px !important;
-          height: 310px !important;
+          width: 100% !important;
+          height: 240px !important;
         }
+
       </style>
   </head>
 

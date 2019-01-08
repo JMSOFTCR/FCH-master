@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,121 +10,92 @@
       
       <link href="vendor/bootstrap/css/footer.css" rel="stylesheet">
     <title>FCHMAINTENANCE</title>
-    <?php include './inc/link.php'; ?>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/modern-business.css" rel="stylesheet">
-    <link href="css/card.css" rel="stylesheet">
-      
-    <?php include('pospos/conn.php');
-     $query=mysqli_query($conn,"select * from product where categoryid = 1 order by product_name");  
-    $nro_reg=mysqli_num_rows($query); 
 
+
+        <style>
     
-      
-    $reg_por_pagina=8; 
-      
-    @$nro_pagina=$_GET['num']; 
-    
-    if(is_numeric($nro_pagina))
-        $inicio=($nro_pagina-1)*$reg_por_pagina;
-        else 
-        $inicio=0;
-      
-      
-       $query=mysqli_query($conn,"select * from product where categoryid = 1 order by product_name limit $inicio,$reg_por_pagina");  
-      
-      $can_paginas=ceil($nro_reg / $reg_por_pagina);
-      ?>
-        
+            
+  </style>
       
   </head>
 
   <body>
 
     <!-- Navigation -->
-    <?php include './inc/nav.php';?>  
+    <?php include './inc/nav.php'; ?>  
     <!-- Page Content -->
     <div class="container">
-
+   <div style="height:80px;" ></div>
       <!-- Page Heading/Breadcrumbs -->
-    
-<div class="container">
-
-     <h1 class="mt-4 mb-3">Floor Scrubber 
-        <small>Parts</small>
+      <h1 class="mt-4 mb-3">Floor Parts
+        <small>And Accessories</small>
       </h1>
 
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a href="index.html">Home</a>
+          <a href="index.php">Home</a>
         </li>
-        <li class="breadcrumb-item active">Parts and Accessories</li>
+        <li class="breadcrumb-item active">Parts And Accessories</li>
       </ol>
-
-    
-	<div style="height: 50px;"></div>
-	<div> 
         
-	<?php
-		$inc=4;
-		
-		while($row=mysqli_fetch_array($query)){
-            
-         $id=$row['productid'];
-         $name=$row['product_name'];
-         $photo=$row['photo'];
-			
-			$inc = ($inc == 4) ? 1 : $inc+1; 
-			if($inc == 1) echo "<div class='row'>";  
-			
-			?>
-				<div class="col-lg-3">
-                    
-  <div class="card">
-    <img class="card-img-top img-fluid" src="pospos/<?php if (empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title"></h4>
-      <p class="card-text"></p>
-         <div class="card-footer">
-             <form action="details.php" method="post" name="Detalle"><input name="id_txt" type="hidden" value="<?php echo $id; ?>" /><input name="Detalles" type="submit" value="<?php echo $name; ?>" class="btn btn-success" /></form>
-<!--              <a href="details.php?id=<?php echo $row['productid']; ?>" class="btn btn-success"><?php echo $name; ?></a>-->
+         <div class="row">
+  <div class="col-sm-4">
+        
+         <!-- colored -->
+    <div class="ih-item square colored effect14 top_to_bottom" style="height:315px"><a href="tires_and_wells.php">
+        <div class="img"><img src="img/Parts_and_accessories/FLOOR_SCRUBBER_PARTS/Tires_and_Wheels/tires.png" alt="img" style="height:300px;"></div>
+        <div class="info">
+          <h3>Tires And Wheels</h3>
+          <p></p>
+        </div></a></div>
+      
+            </div> 
+     <div class="col-sm-4">
+        
+         <!-- colored -->
+    <div class="ih-item square colored effect14 top_to_bottom" style="height:315px;"><a href="sub_scrabber.php">
+        <div class="img"><img src="img/Parts_and_accessories/FLOOR_SCRUBBER_PARTS/SCRUBBER_CASTERS/scrubber.png" alt="img" style="height:300px;" ></div>
+        <div class="info">
+          <h3>Scrubber Casters</h3>
+          <p></p>
+        </div></a></div>
+      
             </div>
-    </div>
-  </div>
-            
-				</div>
-			<?php
-           
-		if($inc == 4) echo "</div><div style='height: 30px;'></div>";
-		}
-		if($inc == 1) echo "<div class='col-lg-3></div><div class='col-lg-3'></div><div class='col-lg-3'></div></div>"; 
-		if($inc == 2) echo "<div class='col-lg-3'></div><div class='col-lg-3'></div></div>"; 
-		if($inc == 3) echo "<div class='col-lg-3'></div></div>"; 
-	?>
-	</div>
-</div>
-        <div style="height: 50px;"></div>
+        </div>
+     
+       
+
       <!-- Pagination -->
-      <div align="center">
-      <?php
-          if($nro_pagina>1)
-              echo "<a href='floor_scrubber_parts.php?num=".($nro_pagina-1)."'> Anterior ></a> ";
+      <ul class="pagination justify-content-center">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+            <span class="sr-only">Previous</span>
+          </a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="" aria-label="Next">
               
-       for ($i=1; $i<=$can_paginas; $i++){
-           if ($i==$nro_pagina)
-               echo $i." ";
-           else 
-               echo "<a href='floor_scrubber_parts.php?num=$i'>$i</a> ";
-       } 
-          
-          if($nro_pagina<$can_paginas)
-               echo "<a href='floor_scrubber_parts.php?num=".($nro_pagina+1)."'> Siguiente ></a> ";
-          
-       ?>
-      </div>
+            <span aria-hidden="true">&raquo;</span>
+            <span class="sr-only">Next</span>
+          </a>
+        </li>
+      </ul>
+
     </div>
     <!-- /.container -->
 

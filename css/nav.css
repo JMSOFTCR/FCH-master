@@ -1,0 +1,136 @@
+
+
+
+.alinear{
+     display: inline-block;
+     width: 70%;
+     margin-top: 3px;
+     margin-bottom: 3px;
+     margin-left: 3px;
+     margin-right: 3px;
+    }
+    
+
+    
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu a::after {
+  transform: rotate(-90deg);
+  position: absolute;
+  right: 6px;
+  top: .8em;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: .1rem;
+  margin-right: .1rem;
+}
+    
+    .dropdown-divider {
+  height: 0;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  border-top: 1px solid #e9ecef;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  color: #16181b;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: .5s;
+  /*color: rgba(255, 14, 14, 0.46);*/
+  color: #00ff00;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #0aff00;
+  text-decoration: none;
+ /* background-color: #ff0000;*/
+}
+.nav-link:focus{
+  color: #00ff1d;
+  border-radius: 10px;
+}
+.nav-link:hover{
+  transition: .4s;
+  color:#00ff1d;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+  color: rgba(0, 255, 29, 0.75);
+}    
+        
+ h1, h2, h3, p, li, h4, a 
+    { 
+     font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+line-height: 1.1;
+color: #292733;
+
+    }
+        
+a{color: black}
+
+  .navbar-expand-lg{
+    background-color: #116deb;
+  }
+
+  @media screen and (max-width: 700px)
+  {
+     a#item1{
+      visibility: hidden;
+      margin:0;
+      padding:0;
+      display: none;
+     
+    }
+  }
+ /*Boton de buscar*/
+  .search-btn{ /* boton de busqueda*/
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #50b176;
+    justify-content: center;
+    align-items: center;
+    float: right;
+    margin-right:10px; 
+}
+li:hover>.search-txt { /* Activará cuando hagamos hover mientras se mantendra width:0px*/
+    width: 235px;
+    padding: 0 10px;
+    background: white;
+    color: #0D0D0D;
+    border-radius: 40px;
+}
+
+.search-txt {  /* Caja de texto sin hover*/
+  margin-top: 10px; 
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 25px;
+  width: 0px;
+}

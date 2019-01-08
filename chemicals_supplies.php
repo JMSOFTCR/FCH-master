@@ -48,7 +48,7 @@
   <div class="col-sm-4">
         
          <!-- colored -->
-    <div class="ih-item square colored effect14 top_to_bottom"><a href="#">
+    <div class="ih-item square colored effect14 top_to_bottom"><a href="betco_chemicals.php">
         <div class="img"><img src="img/chemicals_supplies/Betco.png" alt="img" ></div>
         <div class="info">
           <h3>BETCO</h3>
@@ -59,7 +59,7 @@
        
                 
   <div class="col-sm-4">   
-        <div class="ih-item square colored effect14 top_to_bottom"><a href="#">
+        <div class="ih-item square colored effect14 top_to_bottom"><a href="pionner_chemicals.php">
         <div class="img"><img src="img/chemicals_supplies/pionner.gif" alt="img" ></div>
         <div class="info">
           <h3>PIONNER</h3>
@@ -69,8 +69,8 @@
                       </div>
                             
   <div class="col-sm-4">   
-        <div class="ih-item square colored effect14 top_to_bottom"><a href="#">
-        <div class="img"><img src="img/chemicals_supplies/cooming.gif" alt="img" ></div>
+        <div class="ih-item square colored effect14 top_to_bottom"><a href="fch_chemicals.php">
+        <div class="img"><img src="img/chemicals_supplies/Dextron.png" alt="img" ></div>
         <div class="info">
           <h3>Cooming Soon</h3>
           <p></p>

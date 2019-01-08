@@ -1,5 +1,10 @@
 <?php include('session.php'); ?>
 <?php include('header.php'); ?>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="sweetalert/sweetalert2.min.css">
+<link rel="stylesheet" href="css/custom.css">
+<script src="sweetalert/sweetalert2.min.js"></script>
 <body>
 <div id="wrapper">
 <?php include('navbar.php'); ?>
@@ -10,49 +15,30 @@
         <div class="col-lg-12">
             <h1 class="page-header">Products
 				<span class="pull-right">
-					<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addproduct"><i class="fa fa-plus-circle"></i> Add Product</button>
+					<button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#addProductModal"><i class="fa fa-plus-circle"></i> Add Product</button>
 				</span>
 			</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-12">
-            <table width="100%" class="table table-striped table-bordered table-hover" id="prodTable">
-                <thead>
-                    <tr>
-                        <th>Product Name</th>
-						<th>Supplier</th>
-						<th>Category</th>
-                        <th>Price</th>
-						<th>Quantity</th>
-						<th>Photo</th>
-						<th>Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-				<?php
-					$pq=mysqli_query($conn,"select * from product left join category on category.categoryid=product.categoryid left join supplier on supplier.userid=product.supplierid");
-					while($pqrow=mysqli_fetch_array($pq)){
-						$pid=$pqrow['productid'];
-					?>
-						<tr>
-							<td><?php echo $pqrow['product_name']; ?></td>
-							<td><?php echo $pqrow['company_name']; ?></td>
-							<td><?php echo $pqrow['category_name']; ?></td>
-							<td><?php echo $pqrow['product_price']; ?></td>
-							<td><?php echo $pqrow['product_qty']; ?></td>
-							<td><img src="../<?php if(empty($pqrow['photo'])){echo "upload/noimage.jpg";}else{echo $pqrow['photo'];} ?>" height="30px" width="30px;"></td>
-							<td>
-								<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#editprod_<?php echo $pid; ?>"><i class="fa fa-edit"></i> Edit</button>
-								<button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delproduct_<?php echo $pid; ?>"><i class="fa fa-trash"></i> Delete</button>
-								<?php include('product_button.php'); ?>
-							</td>
-						</tr>
-					<?php
-					}
-				?>
-                </tbody>
-            </table>
+		<div class='col-sm-4 pull-right'>
+				<div id="custom-search-input">
+                            <div class="input-group col-md-12">
+                                <input type="text" class="form-control" placeholder="Buscar"  id="q" onkeyup="load(1);" />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-info" type="button" onclick="load(1);">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </span>
+                            </div>
+                </div>
+			</div>
+			<div class='clearfix'></div>
+			<hr>
+			<div id="loader"></div><!-- Carga de datos ajax aqui -->
+			<div id="resultados"></div><!-- Carga de datos ajax aqui -->
+			<div class='outer_div'></div><!-- Carga de datos ajax aqui -->
         </div>
     </div>
 </div>
@@ -60,6 +46,12 @@
 </div>
 <?php include('script.php'); ?>
 <?php include('modal.php'); ?>
-<?php include('add_modal.php'); ?>
+
+<?php include("modal/modal_add.php");?>
+	<!-- Edit Modal HTML -->
+	<?php include("modal/modal_edit.php");?>
+	<!-- Delete Modal HTML -->
+	<?php include("modal/modal_delete.php");?>
+<script src="js/services.js"></script>
 <script src="custom.js"></script>
 </body>

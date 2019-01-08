@@ -14,8 +14,11 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="css/main2.css" rel="stylesheet">
+   <link href="css/slider.css" rel="stylesheet" type="text/css" />
+   
       <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
   integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
@@ -133,68 +136,37 @@
           <p>We hope you can find everything you need. FCH Maintenance is focused on providing high-quality service and customer satisfaction - we will do everything we can to meet your expectations.</p>
         </div>
         <div class="col-lg-6">
-        <iframe width="300" height="300" src="https://www.youtube.com/embed/dxAAcAL8e6s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dxAAcAL8e6s?rel=0&amp;start=0;autoplay=1" frameborder="0" allow="autoplay=1; encrypted-media" allowfullscreen></iframe>
         </div>
       </div> 
-      
-      </div>
-      <!-- /.row -->
-        
-            <hr>
-        
-       <div class="container">
+             <div class="container">
         <div class="row">
-<!--
-         <div class="col-lg-12">
-             <button class="prev">&laquo;</button>
-<button class="next">&raquo;</button>
-
-<div class="carousel-no-style">
-    <ul>
-        <li><img src="img/suppliers/advance.jpg" style="width:150px; height:118px;"></li>
-        <li><img src="img/suppliers/clarke.jpg" style="width:150px; height:118px;"></li>
-        <li><img src="img/suppliers/aztec.jpg" style="width:150px; height:118px;"></li>
-        <li><img src="img/suppliers/betco.jpg" style="width:150px; height:118px;"></li>
-        <li><img src="img/suppliers/viper.jpg" style="width:150px; height:118px;"></li>
-    </ul>
-</div>
-        </div>
---> 
-              
+  
         <div style="text-align:center" class="col-lg-12 scrollflow scrollflow -pop -opacity">
           <h2 >Our brands</h2>
           <h4 style="color:black">We represent these brands</h4>
           <h6 style="color:black">Nationally and internationally, we manage the best brands in the market to provide an excellent service to our customers</h6>
         </div>
-      </div>   
-
-
-               <div  class="col-lg-12 scrollflow scrollflow -pop -opacity" id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-        <div class="carousel-inner w-100" role="listbox">
-            <div class="carousel-item row no-gutters active">
-                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/Tennant.png"></div>
-                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/PioneerEclipseLogo.jpg"></div>
-                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/bet.png"></div>
-                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/Kawasaki_Logo.jpg"></div>
-            </div>
-            <div class="carousel-item row no-gutters">
-                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/Aztec.png"></div>
-                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/advance.png"></div>
-                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/clarke.png"></div>
-                <div class="col-3 float-left"><img class="img-fluid" src="img/suppliers/viper.png"></div>
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-
-
-</div>
+      
+       <ul id="flexiselDemo3" style="background:rgba(255, 255, 255, 0.67);">
+    <li><img src="img/suppliers/Tennant.png" /></li>
+    <li><img src="img/suppliers/PioneerEclipseLogo.jpg" /></li>
+    <li><img src="img/suppliers/bet.png" /></li>
+    <li><img src="img/suppliers/Kawasaki_Logo.jpg" /></li>                                                 
+    <li><img src="img/suppliers/Aztec.png" /></li>                                                 
+    <li><img src="img/suppliers/advance.png" /></li>                                                 
+    <li><img src="img/suppliers/clarke.png" /></li>                                                 
+    <li><img src="img/suppliers/viper.png" /></li>                                                 
+    <li><img src="img/suppliers/twister.png" /></li>                                                 
+    <li><img src="img/suppliers/nss.png" /></li>                                                 
+    <li><img src="img/suppliers/trojan.png" /></li>                                                 
+    <li><img src="img/suppliers/centaur.png" /></li>                                                 
+         </ul> 
+      </div> 
+      </div>
+      <!-- /.row -->
+        
+            <hr>   
       
       <hr>
 
@@ -218,12 +190,27 @@
  
       
     <!-- Bootstrap core JavaScript -->  
-
     <script src="js/eskju.jquery.scrollflow.min.js"></script>
     <script src="vendor/popper/popper.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.flexisel.js"></script>
+
+<script type="text/javascript">
 
 
+$(window).load(function() {    
+    $("#flexiselDemo3").flexisel({
+        visibleItems: 3,
+        itemsToScroll: 1,         
+        autoPlay: {
+            enable: true,
+            interval: 1000,
+            pauseOnHover: true
+        }        
+    });
+});
+
+</script>
   </body>
 
 </html
