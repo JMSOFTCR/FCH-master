@@ -9,9 +9,9 @@ if($action == 'ajax'){
 	$query = mysqli_real_escape_string($conn,(strip_tags($_REQUEST['query'], ENT_QUOTES)));
  
 	$tables="product";
-	$campos="*";
+	$campos="product_name";
 	$sWhere=" product_name LIKE '%".$query."%'";
-	$sWhere.=" order by product_name";
+	$sWhere.="order by product_name";
 	
 	
 	include 'pagination.php'; //include pagination file

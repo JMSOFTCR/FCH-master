@@ -16,7 +16,7 @@
                         <input type="text" name="edit_name" id="edit_name" class="form-control" required>
                     </div>
                     <div class="form-group input-group">
-                        <span class="input-group-addon" style="width:120px;">Category:</span>
+                        <span class="input-group-addon" style="width:120px;" >Category:</span>
                         <select style="width:400px;" class="form-control" name="edit_category" id="edit_category">
 								<option value="edit_category" name="edit_category" id="edit_category"></option>
 								<?php
