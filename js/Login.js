@@ -1,6 +1,6 @@
-jQuery(document).on("submit", "#login_form", function(e) {
+$(document).on("submit", "#login_form", function(e) {
     e.preventDefault();
-    jQuery.ajax({
+    $.ajax({
         url: 'proccess/login.php',
         type: 'POST',
         dataType: 'json',

@@ -114,16 +114,12 @@
 
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-    
       <!-- Modal content-->
       <div class="modal-content bg-success">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title"><img src="img/logo_nav.png" href="index.php" width="80%;" class="animated bounceInLeft"></h4>
         </div>
-          <style>
-           
-          </style>
         <div class="modal-body">
           <form method="" action='' name="login_form" id="login_form">
               <p><input type="text" class="span3" name="username" placeholder="Email" style="border-radius:7px;"></p>
@@ -138,10 +134,9 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
     </div>
   </div>
-
+    <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/Login.js"></script>
     <script type="text/javascript" src="js/sweetalert2.all.min.js"></script>
 
