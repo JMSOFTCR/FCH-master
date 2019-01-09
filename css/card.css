@@ -18,15 +18,16 @@ div #A_Equipment {
     justify-content: flex-start;
 }
 .flex-container>div .img {
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    height: 100%;
 }
+/* 
 img {
     width: 100%;
     height: 100% !important;
     /* object-fit: cover; */
-    /* quita la distorsion pero recorta la imagen */
-}
+    /* quita la distorsion pero recorta la imagen * /
+} */
 /*        Clarke_equipment.php   // Cascade */
 
 .flex-container {

@@ -37,7 +37,7 @@
                       <h4 class="text-uppercase">
                         <strong>Quick Page</strong>
                       </h4>
-                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 85px;">
+                    <!-- <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 85px;"> -->
                    
                    <a style="margin-top:20px;" class="col-xs-12 col-lg-12 alinear btn btn-success btn-sm" href="index.php">Home</a>
                     
