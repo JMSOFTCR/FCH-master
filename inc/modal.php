@@ -114,42 +114,30 @@
 
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-    
       <!-- Modal content-->
       <div class="modal-content bg-success">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title"><img src="img/logo_nav.png" href="index.php" width="80%;" class="animated bounceInLeft"></h4>
         </div>
-          <style>
-           
-          </style>
         <div class="modal-body">
-          <form method="post" action='proccess/login.php' name="login_form">
+          <form method="" action='' name="login_form" id="login_form">
               <p><input type="text" class="span3" name="username" placeholder="Email" style="border-radius:7px;"></p>
               <p><input type="password" class="span3" name="password" placeholder="Password" style="border-radius:7px;"></p>
               <br>
-              <p><button type="submit" class="btn btn-primary animated infinite pulse">Sign in</button>
+              <button type="submit" class="btn btn-primary animated infinite pulse">Sign in</button>
                 <a href="#">Forgot Password?</a>
-              </p>
             </form>
-            <center>
-			<?php
-				
-				if(isset($_SESSION['msg'])){
-					echo $_SESSION['msg'];
-					unset($_SESSION['msg']);
-				}
-			?>
-			</center>
         </div>
           
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
     </div>
   </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/Login.js"></script>
+    <script type="text/javascript" src="js/sweetalert2.all.min.js"></script>
 
 <!-- /.modal -->

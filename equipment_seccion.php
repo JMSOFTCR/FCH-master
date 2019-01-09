@@ -48,7 +48,7 @@
   <div class="col-sm-4">
         
          <!-- colored -->
-    <div class="ih-item square colored effect14 top_to_bottom"><a href="advance_equipment.php">
+    <div class="ih-item square colored effect14 top_to_bottom"><a href="products.php?cat=8">
         <div class="img"><img src="img/Equipment_Seccion/new/advance.png" alt="img" ></div>
         <div class="info">
           <h3>Advance</h3>
@@ -59,7 +59,7 @@
        
                 
   <div class="col-sm-4">   
-        <div class="ih-item square colored effect14 top_to_bottom"><a href="clarke_equipment.php">
+        <div class="ih-item square colored effect14 top_to_bottom"><a href="products.php?cat=9">
         <div class="img"><img src="img/Equipment_Seccion/new/clarke.png" alt="img" ></div>
         <div class="info">
           <h3>Clarke</h3>
@@ -69,7 +69,7 @@
                       </div>
                     
               <div class="col-sm-4">
-         <div class="ih-item square colored effect14 top_to_bottom"><a href="betco_equipment.php">
+         <div class="ih-item square colored effect14 top_to_bottom"><a href="products.php?cat=7">
         <div class="img"><img src="img/Equipment_Seccion/new/betco.png" alt="img"></div>
         <div class="info">
           <h3>Betco</h3>
@@ -80,7 +80,7 @@
              
         <div class="col-sm-4">
                    
-          <div class="ih-item square colored effect14 top_to_bottom"><a href="pioneer_equipment.php">
+          <div class="ih-item square colored effect14 top_to_bottom"><a href="products.php?cat=13">
         <div class="img"><img src="img/Equipment_Seccion/new/pioner.png" alt="img"></div>
         <div class="info">
           <h3>Pioner Eclipse</h3>
@@ -90,7 +90,7 @@
         </div>    
         <div class="col-sm-4">
                    
-          <div class="ih-item square colored effect14 top_to_bottom"><a href="viper_equipment.php">
+          <div class="ih-item square colored effect14 top_to_bottom"><a href="products.php?cat=15">
         <div class="img"><img src="img/Equipment_Seccion/new/viper.png" alt="img"></div>
         <div class="info">
           <h3>Viper</h3>
@@ -100,10 +100,40 @@
         </div>
         <div class="col-sm-4">
                    
-          <div class="ih-item square colored effect14 top_to_bottom"><a href="aztec_equipment.php">
+          <div class="ih-item square colored effect14 top_to_bottom"><a href="products.php?cat=16">
         <div class="img"><img src="img/Equipment_Seccion/new/aztec.png" alt="img"></div>
         <div class="info">
           <h3>Aztec</h3>
+          <p></p>
+        </div></a></div>
+        
+        </div>
+        <div class="col-sm-4">
+                   
+          <div class="ih-item square colored effect14 top_to_bottom"><a href="#">
+        <div class="img"><img src="img/Equipment_Seccion/new/centaur.png" alt="img"></div>
+        <div class="info">
+          <h3>Centaur</h3>
+          <p></p>
+        </div></a></div>
+        
+        </div>
+        <div class="col-sm-4">
+                   
+          <div class="ih-item square colored effect14 top_to_bottom"><a href="#">
+        <div class="img"><img src="img/Equipment_Seccion/new/coming.jpg" alt="img"></div>
+        <div class="info">
+          <h3>Coming Soon</h3>
+          <p></p>
+        </div></a></div>
+        
+        </div>
+        <div class="col-sm-4">
+                   
+          <div class="ih-item square colored effect14 top_to_bottom"><a href="#">
+        <div class="img"><img src="img/Equipment_Seccion/new/coming.jpg" alt="img"></div>
+        <div class="info">
+          <h3>Coming Soon</h3>
           <p></p>
         </div></a></div>
         
@@ -116,7 +146,7 @@
        
 
       <!-- Pagination -->
-      <ul class="pagination justify-content-center">
+   <!--   <ul class="pagination justify-content-center">
         <li class="page-item">
           <a class="page-link" href="#" aria-label="Previous">
             <span aria-hidden="true">&laquo;</span>
@@ -139,7 +169,7 @@
             <span class="sr-only">Next</span>
           </a>
         </li>
-      </ul>
+      </ul>-->
 
     </div>
     <!-- /.container -->

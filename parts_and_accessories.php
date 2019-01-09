@@ -57,7 +57,7 @@
   <div class="col-sm-4">
         
          <!-- colored -->
-    <div class="ih-item square colored effect14 top_to_bottom"><a href="sub_scrabber.php">
+    <div class="ih-item square colored effect14 top_to_bottom"><a href="floor_scrubber_parts.php">
         <div class="img"><img src="img/Parts_and_accessories/FLOOR_SCRUBBER_PARTS/FLOOR_SCRUBBER_PARTS.jpg" alt="img"></div>
         <div class="info">
           <h3>Floor Scrubber Parts</h3>
@@ -68,7 +68,7 @@
      <div class="col-sm-4">
         
          <!-- colored -->
-    <div class="ih-item square colored effect14 top_to_bottom"><a href="sub_scrabber.php">
+    <div class="ih-item square colored effect14 top_to_bottom"><a href="products.php?cat=1">
         <div class="img"><img src="img/Parts_and_accessories/PROPANE_BUFFERS_PARTS/PROPANE_BUFFERS%20PARTS.jpg" alt="img" ></div>
         <div class="info">
           <h3>Propane Buffers Parts</h3>

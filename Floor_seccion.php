@@ -48,7 +48,7 @@
   <div class="col-sm-4">
         
          <!-- colored -->
-    <div class="ih-item square colored effect14 top_to_bottom" style="height:230px"><a href="pads.php">
+    <div class="ih-item square colored effect14 top_to_bottom" style="height:230px"><a href="products.php?cat=14">
         <div class="img"><img src="img/Floor_care/Pads/Pads.jpeg" alt="img" style="height:220px; "></div>
         <div class="info">
           <h3>Floor Pads</h3>

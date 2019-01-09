@@ -23,7 +23,7 @@
                             <span style="width:120px;" class="input-group-addon">Category:</span>
                             <select style="width:400px;" id="category_p" class="form-control" name="category">
 								<?php
-									$cat=mysqli_query($conn,"select * from category");
+									$cat=mysqli_query($conn,"select * from category order by category_name asc");
 									while($catrow=mysqli_fetch_array($cat)){
 										?>
 											<option value="<?php echo $catrow['categoryid']; ?>"><?php echo $catrow['category_name']; ?></option>
@@ -80,7 +80,6 @@
 			</div>
 		</div>
 </div>
-
 
   <div class="modal fade" id="addcustomer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">

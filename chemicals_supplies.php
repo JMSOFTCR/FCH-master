@@ -48,7 +48,7 @@
   <div class="col-sm-4">
         
          <!-- colored -->
-    <div class="ih-item square colored effect14 top_to_bottom"><a href="#">
+    <div class="ih-item square colored effect14 top_to_bottom"><a href="products.php?cat=17">
         <div class="img"><img src="img/chemicals_supplies/Betco.png" alt="img" ></div>
         <div class="info">
           <h3>BETCO</h3>
@@ -59,7 +59,7 @@
        
                 
   <div class="col-sm-4">   
-        <div class="ih-item square colored effect14 top_to_bottom"><a href="#">
+        <div class="ih-item square colored effect14 top_to_bottom"><a href="products.php?cat=18">
         <div class="img"><img src="img/chemicals_supplies/pionner.gif" alt="img" ></div>
         <div class="info">
           <h3>PIONNER</h3>
@@ -69,8 +69,8 @@
                       </div>
                             
   <div class="col-sm-4">   
-        <div class="ih-item square colored effect14 top_to_bottom"><a href="#">
-        <div class="img"><img src="img/chemicals_supplies/cooming.gif" alt="img" ></div>
+        <div class="ih-item square colored effect14 top_to_bottom"><a href="products.php?cat=19">
+        <div class="img"><img src="img/chemicals_supplies/Dextron.png" alt="img" ></div>
         <div class="info">
           <h3>Cooming Soon</h3>
           <p></p>
@@ -83,33 +83,7 @@
 
 </div>
 <!-- end Top to Bottom-->
-       
-
-      <!-- Pagination -->
-      <ul class="pagination justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="" aria-label="Next">
-              
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
+      
 
     </div>
     <!-- /.container -->

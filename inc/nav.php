@@ -1,108 +1,140 @@
 <?php 
     session_start(); 
     error_reporting(E_PARSE);
-	include('modal.php');
+    include('modal.php');
 ?> 
-
-	
-	<style>
-
-        
-         h1, h2, h3, p, li, h4, a { font-family: 'Lora', serif; 
-        }
-        
-         a{color: aliceblue}
-        
-body{
-background-image: url("img/Fondo/gearblue.png");"
-    }
-  </style>
-
    <link href="css/ihover.css" rel="stylesheet">
    <link href="css/footer.css" rel="stylesheet">
-  
- <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet"> 
+   <link href="css/nav.css" rel="stylesheet">
  
-<link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
-  integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
-  crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
+<style>
+  
+         h1, h2, h3, p, li, h4,  { font-family: 'Lora', serif; 
+        }
+        
+       body{
+        background-image: url("img/Fondo/gearblue.png");"
+    }
+</style>
 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<nav class="navbar navbar-expand-lg"style="background-color: #116deb;">
+<nav class="navbar navbar-expand" style="background-color: #50b176;">
+   
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" style="background-color:rgba(87, 240, 74, 0.3);">
+           <span class="fa fa-sort-desc"></span>
+       </button>
+        <div style="height: 15px;" class="collapse navbar-collapse" id="navbarCollapse1">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <h5 class="nav-item nav-link" href="#" style="color:#000000; margin-right:0px;"><i class="fa fa-phone text-black"></i> : 1-800-678-0502</h5>
+                </li>
+                <li class="nav-item">
+                    <a id="item1" class="nav-item nav-link" href="#" style="color:#fdfdfd;"><i class="fa fa-envelope-o"></i> </a>
+                </li>
+                <li class="nav-item">
+                    <a id="item1" class="nav-item nav-link" href="#"><i class="fa fa-facebook fa-x5 text-black"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a id="item1" class="nav-item nav-link" href="#"><i class="fa fa-twitter text-black" ></i></a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <?php
+                          if(!$_SESSION['id']==""):
+                                echo ' 
+                                     <!-- Example split danger button -->
+                                     
+                                     
+                <div class="">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <li>
+                        <i class="fa fa-user"></i>Mi cuenta
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    
+                            <a class="dropdown-item" href="#account" data-toggle="modal"><img src="svg/si-glyph-flower.svg"/ style="width:24px; height:24px;">
+                            My Account
+                            </a>
+                            <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#profile" data-toggle="modal"><img src="svg/si-glyph-man-doctor.svg"/ style="width:24px; height:24px;">
+                                My Profile
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#logout" data-toggle="modal"><img src="svg/si-glyph-turn-off.svg"/ style="width:24px; height:24px;"> Logout
+                                </a>
+                            
+                        </div>
+                    </li>
+
+                        </li>
+                        <h4>
+                            <li id="cartme" style="cursor:pointer">
+                            <a class="nav-item nav-link" id="cart_control" title="Carrito de compras" data-toggle="popover">
+                                <i class="fa fa-shopping-cart fa-fw" id="cartir"></i>
+                            </a>
+                            </li>
+                        </h4>                   
+                </div>
+                                 ';
+                            else:
+                                echo ' 
+                                  <li class="nav-item">
+                                <input class="search-txt" type="text" name="" placeholder="Search Something">
+                                 <a id="item1" style="color: #e84118;" class="nav-item nav-link search-btn" href="#">
+                                   <i class="fa fa-search" style="font-size:18px"></i>
+                               </a>
+                           </li>
+                                  <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#myModal">
+                                    <i class="fa fa-user text-black"> Login</i>
+                                  </a>
+                                  <h4>
+                                  <li id="cartme" style="cursor:pointer">
+                                    <a  class="nav-item nav-link" id="cart_control" title="Carrito de compras" data-toggle="popover">
+                                      <i class="fa fa-shopping-cart fa-fw" id="cartir"></i>
+                                    </a>
+                                  </li>
+                                  </h4>
+                                 ';
+                            endif;
+                        ?>
+                         </ul>
+                 </div>
+        </div>
+</nav>
+
+<!-- end nav 1-->
+<nav class="navbar navbar-expand-lg style='background-color: #116deb;'">
     <div class="container">
         <a class="navbar-brand" href="#">
-           <img src="img/logo_nav.png" href="index.php" width="90%" height="100%" class="animated bounceInLeft">
+           <img id="logo" src="img/logo_nav.png" href="index.php" width="90%" height="100%"; !important class="animated bounceInLeft">
        </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" style="background-color:rgba(87, 240, 74, 0.3);">
-           <span class="navbar-toggler-icon"></span>
+           <span class="fa fa-sort-desc"></span>
        </button>
 
-        <div class="collapse navbar-collapse flex-column align-items-end" id="navbarCollapse">
+        <div class="collapse navbar-collapse" id="navbarCollapse">
             <!-- navbar1 -->
-            <div class="navbar-nav mb-lg-0">
-                <h5 class="nav-item nav-link" href="#" style="color:#7ff57f; margin-right:100px;"><i class="fa fa-phone text-white"></i> : 1-800-678-0502</h5>
-                <a class="nav-item nav-link" href=""><i class="fa fa-facebook text-white"></i></a>
-             
-                <a class="nav-item nav-link" href="#"><i class="fa fa-twitter text-white" ></i></a>
-                
-                <?php
-                          if(!$_SESSION['id']==""){
-                                echo ' 
-                                    
-                                     <!-- Example split danger button -->
-                               
-                                     <div class="">
-                                     <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><li><i class="fa fa-user"></i>
-        Mi cuenta
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-     
-      <a class="dropdown-item" href="#account" data-toggle="modal"><img src="svg/si-glyph-flower.svg"/ style="width:24px; height:24px;"> My Account</a>
-                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#profile" data-toggle="modal"><img src="svg/si-glyph-man-doctor.svg"/ style="width:24px; height:24px;"> My Profile</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#logout" data-toggle="modal"><img src="svg/si-glyph-turn-off.svg"/ style="width:24px; height:24px;"> Logout</a>
-            
-         </div>
-        </li></li>
-                                            <li id="cartme" style="cursor:pointer">
-                                            <a class="nav-item nav-link" id="cart_control" title="Shopping Cart" data-toggle="popover"><i class="fa fa-shopping-cart fa-fw" id="cartir"></i></a>
-                                            </li>
-                                   
-                                    </div>
-                                  
-                                 ';
-                            }else{
-                                echo ' 
-                                          <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-user text-white"> Login</i></a>
-                                          	<li id="cartme" style="cursor:pointer">
-                                            <a class="nav-item nav-link" id="cart_control" title="Shopping Cart" data-toggle="popover"><i class="fa fa-shopping-cart fa-fw" id="cartir"></i></a>
-                                            </li>
-                                 ';
-                            }
-                        ?>
-                      
-            </div>
-            <div id="Cont-Popover" style="display:none;">
-            </div>
-
-            <!-- navbar2 -->
-            <ul class="navbar-nav mt-0">
+  
+            <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php">HOME</a>
+                    <a class="nav-link" href="index.php" style="color:white">HOME</a>
                 </li>
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SERVICES</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"aria-expanded="false" style="color:white">
+                   SERVICES
+                    </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="repair_maintenance.php">Equipment Maintenance and Repair</a>
+                       <a class="dropdown-item" href="repair_maintenance.php">Equipment Maintenance and Repair</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="rental_equipment.php">Cleaning Rental Equipment</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="deliver.php">Equipment Deliver</a>
-                        <div class="dropdown-divider"></div>
+<!--
+                            <a class="dropdown-item" href="deliver.php">Equipment Deliver</a>
+                            <div class="dropdown-divider"></div>
+-->
                         <a class="dropdown-item" href="equipment_restoration.php">Equipment Restoration</a>       
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Training</a>
@@ -110,26 +142,29 @@ background-image: url("img/Fondo/gearblue.png");"
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PRODUCTS</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
+                    PRODUCTS
+                    </a>
+
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="equipment_seccion.php">New Equipment</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="chemicals_supplies.php">Cleaning Chemicals and Supplies</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="Floor_seccion.php">Floor Care</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="batteries.php">Batteries</a>
+                        <a class="dropdown-item" href="products.php?cat=6">Batteries</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="parts_and_accessories.php">Parts and Accessories</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="green_cleaning.php" >Green Cleaning</a>
-                        <div class="dropdown-divider"></div>  
-                    </div>
+                        <div class="dropdown-divider"></div> 
+                    </ul>
+                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.php" style="color:white">CONTACT</a>
                 </li>
-                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php">CONTACT</a>
-                </li>
-          <li class="nav-item dropdown">
+                <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="about.php" id="navbarDropdownAbout" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:white">
                 ABOUT
               </a>
@@ -144,29 +179,30 @@ background-image: url("img/Fondo/gearblue.png");"
                   <div class="dropdown-divider"></div>
               </div>
             </li>
-            </ul>
+             </ul>
         </div>
     </div>
 </nav>
+   <div id="Cont-Popover" style="display:none;">
+            </div>
     <script src="js/eskju.jquery.scrollflow.min.js"></script>
-    <script src="js/parallax.js"></script>
 <script>
-$('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
-  if (!$(this).next().hasClass('show')) {
-    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+    $('.dropdown-menu a.dropdown-toggle').on('click', function(e) { // desencadena el evento sobre estas clases
+  if (!$(this).next().hasClass('show')) { // si es mientras no sea apunte a un siguiente 
+    $(this).parents('.dropdown-menu').first().find('.show').removeClass("show"); 
   }
-  var $subMenu = $(this).next(".dropdown-menu");
-  $subMenu.toggleClass('show');
+  var $subMenu = $(this).next(".dropdown-menu"); // hacemos la referencia al sisguiente
+  $subMenu.toggleClass('show'); // mostramos el sigiente
 
 
   $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
     $('.dropdown-submenu .show').removeClass("show");
   });
 
-
   return false;
 });
-$(document).ready(function(){
+    
+    $(document).ready(function(){
   $("#Cont-Popover").load("PopOver.php");
     $('[data-toggle="popover"]').popover({
       html:true,
@@ -175,8 +211,6 @@ $(document).ready(function(){
       }
     });
 });
-
-
 </script>
 
 <style>
@@ -263,3 +297,42 @@ width:auto;
 }
 
 </style>
+
+            
+                <!--?php
+                          if(!$_SESSION['id']==""){
+                                echo ' 
+                                    
+                                      Example split danger button 
+                               
+                                     <div class="">
+                                     <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><li><i class="fa fa-user"></i>
+        Mi cuenta
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+     
+      <a class="dropdown-item" href="#account" data-toggle="modal"><img src="svg/si-glyph-flower.svg"/ style="width:24px; height:24px;"> My Account</a>
+                                     <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#profile" data-toggle="modal"><img src="svg/si-glyph-man-doctor.svg"/ style="width:24px; height:24px;"> My Profile</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#logout" data-toggle="modal"><img src="svg/si-glyph-turn-off.svg"/ style="width:24px; height:24px;"> Logout</a>
+            
+         </div>
+        </li></li>
+                                            <li id="cartme" style="cursor:pointer">
+                                            <a class="nav-item nav-link" id="cart_control" title="Shopping Cart" data-toggle="popover"><i class="fa fa-shopping-cart fa-fw" id="cartir"></i></a>
+                                            </li>
+                                   
+                                    </div>
+                                  
+                                 ';
+                            }else{
+                                echo ' 
+                                          <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-user text-white"> Login</i></a>
+                                            <li id="cartme" style="cursor:pointer">
+                                            <a class="nav-item nav-link" id="cart_control" title="Shopping Cart" data-toggle="popover"><i class="fa fa-shopping-cart fa-fw" id="cartir"></i></a>
+                                            </li>
+                                 ';
+                            }
+                        ?-->

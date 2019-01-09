@@ -31,10 +31,10 @@
 		}
 	}
 
-	$aaa = mysqli_query($conn,"insert into product (product_name,categoryid,product_price,product_qty, supplierid, description, photo, tech, video) values ('$name','$category','$price','$qty', '$supplier', '$description', '$location', '$tech','$video')");
+	$aaa = mysqli_query($conn,"call addproduct('$name','$category','$price','$qty', '$supplier', '$description', '$location', '$tech','$video')");
 	$pid=mysqli_insert_id($conn);
 	//mysqli_query($conn "call PaCarousel('$location')");
-	mysqli_query($conn,"insert into inventory (userid, action, productid, quantity, inventory_date) values ('".$_SESSION['id']."', 'Add Product', '$pid', '$qty', NOW())");
+	mysqli_query($conn,"call addinvetory('".$_SESSION['id']."', 'Add Product', '$pid', '$qty', NOW())");
 
 	return $aaa;
 
