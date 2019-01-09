@@ -1,7 +1,7 @@
 <?php
 function paginate($page, $tpages, $adjacents) {
-	$prevlabel = "<span style='font-size:16px;'>&lsaquo; Anterior</span>";
-	$nextlabel = "<span style='font-size:16px;'>Siguiente &rsaquo;</span>";
+	$prevlabel = "<span class='before-next' '>&lsaquo; Anterior</span>";
+	$nextlabel = "<span class='before-next' '>Siguiente &rsaquo;</span>";
 	$out = '<ul class="pagination">';
 	
 	// previous label
@@ -29,7 +29,7 @@ function paginate($page, $tpages, $adjacents) {
 	$pmax = ($page<($tpages-$adjacents)) ? ($page+$adjacents) : $tpages;
 	for($i=$pmin; $i<=$pmax; $i++) {
 		if($i==$page) {
-			$out.= "<li class='active page-item'><a style='font-size:18px; padding:8px;'>$i</a></li>";
+			$out.= "<li class='active page-item'><a style='font-size:18px;'>$i</a></li>";
 		}else if($i==1) {
 			$out.= "<li class='page-item'><a href='javascript:void(0);' onclick='loadProducts(1)'>$i</a></li>";
 		}else {

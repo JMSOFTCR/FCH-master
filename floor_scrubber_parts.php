@@ -47,7 +47,7 @@
   <div class="col-sm-4">
         
          <!-- colored -->
-    <div class="ih-item square colored effect14 top_to_bottom" style="height:315px"><a href="tires_and_wells.php">
+    <div class="ih-item square colored effect14 top_to_bottom" style="height:315px"><a href="products.php?cat=3">
         <div class="img"><img src="img/Parts_and_accessories/FLOOR_SCRUBBER_PARTS/Tires_and_Wheels/tires.png" alt="img" style="height:300px;"></div>
         <div class="info">
           <h3>Tires And Wheels</h3>
@@ -58,7 +58,7 @@
      <div class="col-sm-4">
         
          <!-- colored -->
-    <div class="ih-item square colored effect14 top_to_bottom" style="height:315px;"><a href="sub_scrabber.php">
+    <div class="ih-item square colored effect14 top_to_bottom" style="height:315px;"><a href="products.php?cat=1">
         <div class="img"><img src="img/Parts_and_accessories/FLOOR_SCRUBBER_PARTS/SCRUBBER_CASTERS/scrubber.png" alt="img" style="height:300px;" ></div>
         <div class="info">
           <h3>Scrubber Casters</h3>

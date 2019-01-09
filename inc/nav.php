@@ -153,7 +153,7 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="Floor_seccion.php">Floor Care</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="batteries.php">Batteries</a>
+                        <a class="dropdown-item" href="products.php?cat=6">Batteries</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="parts_and_accessories.php">Parts and Accessories</a>
                         <div class="dropdown-divider"></div>

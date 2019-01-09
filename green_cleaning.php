@@ -58,7 +58,7 @@
   <div class="col-sm-4 grid">
         
          <!-- colored -->
-    <div class="ih-item square colored effect14 top_to_bottom"><a href="betco_green.php">
+    <div class="ih-item square colored effect14 top_to_bottom"><a href="products.php?cat=11">
         <div class="img_producto">
           <img src="img/Green_Cleaning/betco.jpg" alt="img"></div>
         <div class="info">
@@ -70,7 +70,7 @@
       <div class="col-sm-4">
         
          <!-- colored -->
-    <div class="ih-item square colored effect14 top_to_bottom" ><a href="pioner_green.php">
+    <div class="ih-item square colored effect14 top_to_bottom" ><a href="products.php?cat=12">
         <div class="img_producto"><img src="img/Green_Cleaning/352_L5_RTU_Eclipse-Glass-Cleaner_400x400.png" alt="img" ></div>
         <div class="info">
           <h3>Pioner Eclipse</h3>
