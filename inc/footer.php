@@ -1,6 +1,6 @@
 <?php 
-	include('modal-login.php');
-	include('modal.php');
+//	include('modal-login.php');
+	include_once('modal.php');
 ?>   
 
 <style>

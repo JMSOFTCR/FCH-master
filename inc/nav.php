@@ -2,7 +2,6 @@
     session_start(); 
     error_reporting(E_PARSE);
     include('modal.php');
-  
 ?> 
    <link href="css/ihover.css" rel="stylesheet">
    <link href="css/footer.css" rel="stylesheet">
@@ -10,15 +9,13 @@
  
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-
 <style>
   
          h1, h2, h3, p, li, h4,  { font-family: 'Lora', serif; 
         }
         
        body{
-background-image: url("img/Fondo/gearblue.png");"
+        background-image: url("img/Fondo/gearblue.png");"
     }
 </style>
 
@@ -47,7 +44,8 @@ background-image: url("img/Fondo/gearblue.png");"
                           if(!$_SESSION['id']==""):
                                 echo ' 
                                      <!-- Example split danger button -->
-                               
+                                     
+                                     
                 <div class="">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -107,7 +105,7 @@ background-image: url("img/Fondo/gearblue.png");"
 </nav>
 
 <!-- end nav 1-->
-<nav class="navbar navbar-expand-lg style="background-color: #116deb;"">
+<nav class="navbar navbar-expand-lg style='background-color: #116deb;'">
     <div class="container">
         <a class="navbar-brand" href="#">
            <img id="logo" src="img/logo_nav.png" href="index.php" width="90%" height="100%"; !important class="animated bounceInLeft">
@@ -214,3 +212,127 @@ background-image: url("img/Fondo/gearblue.png");"
     });
 });
 </script>
+
+<style>
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu a::after {
+  transform: rotate(-90deg);
+  position: absolute;
+  right: 6px;
+  top: .8em;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-left: .1rem;
+  margin-right: .1rem;
+}
+    
+    .dropdown-divider {
+  height: 0;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  border-top: 1px solid #b9b9b9;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #6ba06b;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  color: #08f008;
+  text-decoration: none;
+  background-color: rgba(14, 255, 42, 0.46);
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: #08f008;
+  text-decoration: none;
+  background-color: #08f008;
+}
+    
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+  color: #08f008;
+}    
+
+    .navbar-toggler-icon {
+  display: inline-block;
+  background-color:  aliceblue;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle; 
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+}
+#cart-control{cursor:pointer}
+.fa-shopping-cart:hover{color:white;}
+
+.popover{max-width:600px;
+max-height:300px;
+width:auto;
+}
+.conten{
+  background-color: white;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 5px 6px 0px 0px rgba(6, 6, 6, 0.19);
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width:300px;
+  height:50px;
+}
+
+</style>
+
+            
+                <!--?php
+                          if(!$_SESSION['id']==""){
+                                echo ' 
+                                    
+                                      Example split danger button 
+                               
+                                     <div class="">
+                                     <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><li><i class="fa fa-user"></i>
+        Mi cuenta
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+     
+      <a class="dropdown-item" href="#account" data-toggle="modal"><img src="svg/si-glyph-flower.svg"/ style="width:24px; height:24px;"> My Account</a>
+                                     <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#profile" data-toggle="modal"><img src="svg/si-glyph-man-doctor.svg"/ style="width:24px; height:24px;"> My Profile</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#logout" data-toggle="modal"><img src="svg/si-glyph-turn-off.svg"/ style="width:24px; height:24px;"> Logout</a>
+            
+         </div>
+        </li></li>
+                                            <li id="cartme" style="cursor:pointer">
+                                            <a class="nav-item nav-link" id="cart_control" title="Shopping Cart" data-toggle="popover"><i class="fa fa-shopping-cart fa-fw" id="cartir"></i></a>
+                                            </li>
+                                   
+                                    </div>
+                                  
+                                 ';
+                            }else{
+                                echo ' 
+                                          <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-user text-white"> Login</i></a>
+                                            <li id="cartme" style="cursor:pointer">
+                                            <a class="nav-item nav-link" id="cart_control" title="Shopping Cart" data-toggle="popover"><i class="fa fa-shopping-cart fa-fw" id="cartir"></i></a>
+                                            </li>
+                                 ';
+                            }
+                        ?-->
