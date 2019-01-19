@@ -6,9 +6,7 @@
 	// escaping, additionally removing everything that could be (html/javascript-) code
 
         
-	$d=mysqli_real_escape_string($conn,(strip_tags($_POST["edit_id"],ENT_QUOTES)));
-    $p=mysqli_query($conn,"select * from product where productid='$d'");
-	$prow=mysqli_fetch_array($p);       
+	$d=mysqli_real_escape_string($conn,(strip_tags($_POST["edit_id"],ENT_QUOTES)));      
 	$name = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_name"],ENT_QUOTES)));
 	$category = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_category"],ENT_QUOTES)));
 	$supplier = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_supplier"],ENT_QUOTES)));
@@ -18,6 +16,9 @@
 	$video = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_video"],ENT_QUOTES)));
 	$stock = intval($_POST["edit_stock"]);
 	$fileInfo = PATHINFO($_FILES["image"]["name"]);
+
+	$p=mysqli_query($conn,"select * from product where productid='$d'");
+	$prow=mysqli_fetch_array($p); 
 
 	if (empty($_FILES["image"]["name"])){
 	   $location=$prow['photo'];

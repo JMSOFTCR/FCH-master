@@ -12,6 +12,19 @@
 <div id="page-wrapper">
 <div class="container-fluid">
 	<div class="row">
+
+    <form action="pdf.php" method="POST"  enctype="multipart/form-data" >
+       <div class="form-group">
+           <label for="">Text</label>
+           <input class="form-control" type="text" name="id" id="id">
+        </div>
+        <div class="form-group">
+            <label for="">Archivo</label>
+            <input class="form-control" type="file" name="archivo" id="archivo">
+        </div>
+        <input type="submit" class="btn btn-warning" id="send" value="Enviar pdf">
+    </form>
+
         <div class="col-lg-12">
             <h1 class="page-header">Products
 				<span class="pull-right">

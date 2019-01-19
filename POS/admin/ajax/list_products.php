@@ -60,10 +60,12 @@ if($action == 'ajax'){
 							$product_id=$row['productid'];
 							$prod_name=$row['product_name'];
                             //$prod_name = utf8_decode($prod_name2);
-							$category=$row['category_name'];
+							$category=$row['categoryid'];
+							$categoryName=$row['category_name'];
 							$price=$row['product_price'];	
 							$stock=$row['product_qty'];	
-                            $supplier=$row['company_name'];
+							$supplier=$row['userid'];
+							$supplierName = $row['company_name'];
 							$description=$row['description'];	
 							$tech=$row['tech'];	
 							$video=$row['video'];					
@@ -73,11 +75,12 @@ if($action == 'ajax'){
 							<td class='text-center'><img src="../<?php if(empty($photo)){echo "upload/noimage.jpg";}else{echo $photo;} ?>" height="30px" width="30px;"></td>
 							<td ><?php echo $product_id;?></td>
 							<td ><?php echo $prod_name;?></td>
-							<td ><?php echo $supplier;?></td>
-							<td ><?php echo $category;?></td>
+							<td ><?php echo $supplierName;?></td>
+							<td ><?php echo $categoryName;?></td>
 							<td class='text-right'><?php echo number_format($price,2);?></td>
 							<td>
-								<a href="#"  data-target="#editProductModal" class="edit" data-toggle="modal" data-id='<?php echo $product_id; ?>' data-name="<?php echo $prod_name;?>" data-category="<?php echo $category?>" data-supplier="<?php echo $supplier?>" data-photo="<?php echo $photo?>" data-description="<?php echo $description?>" data-tech="<?php echo $tech?>" data-video="<?php echo $video?>" data-stock="<?php echo $stock?>" data-price="<?php echo $price;?>"><i class="material-icons" data-toggle="tooltip" title="Editar" >&#xE254;</i></a>
+								<a href="#" data-target="#editProductModal" class="edit" data-toggle="modal" data-id='<?php echo $product_id; ?>' data-name="<?php echo $prod_name;?>" data-category="<?php echo $category?>" data-supplier="<?php echo $supplier?>" data-photo="<?php echo $photo?>"
+								 data-description="<?php echo $description?>" data-tech="<?php echo $tech?>" data-video='<?php echo $video?>' data-stock="<?php echo $stock?>" data-price="<?php echo $price;?>"><i class="material-icons" data-toggle="tooltip" title="Editar" >&#xE254;</i></a>
 								<a href="#deleteProductModal" class="delete" data-toggle="modal" data-id="<?php echo $product_id;?>"><i class="material-icons" data-toggle="tooltip" title="Eliminar">&#xE872;</i></a>
                     		</td>
 						</tr>

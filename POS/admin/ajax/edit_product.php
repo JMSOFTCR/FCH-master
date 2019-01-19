@@ -4,7 +4,7 @@
 	} elseif (!empty($_POST['edit_id'])){
 	require_once ("../../conn.php");//Contiene funcion que conecta a la base de datos
 	// escaping, additionally removing everything that could be (html/javascript-) code
-	$d=mysqli_real_escape_string($conn,(strip_tags($_POST["edit_id"],ENT_QUOTES)));
+	$id=mysqli_real_escape_string($conn,(strip_tags($_POST["edit_id"],ENT_QUOTES)));
 	$name = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_name"],ENT_QUOTES)));
 	$category = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_category"],ENT_QUOTES)));
 	$supplier = mysqli_real_escape_string($conn,(strip_tags($_POST["edit_supplier"],ENT_QUOTES)));

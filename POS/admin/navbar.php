@@ -1,4 +1,4 @@
-
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,20 +9,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>FCHMAINTENANCE</title>
+    <title>FCHMAINTENANCE</title> -->
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- Custom styles for this template -->
     <link href="css/nav.css" rel="stylesheet">
     <style>
-        
         html {
-            font-size: 16px;
-            
-        }
-        
+            font-size: 16px;   
+        } 
     </style>
 </head>
 

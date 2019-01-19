@@ -3,15 +3,15 @@
 <div id="addProductModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-				<form name="add_product" id="add_product">
-					<div class="modal-header">						
+				<form method="POST" name="add_product" id="add_product" enctype="multipart/form-data">
+					<div class="modal-header bg-success text-white">						
 						<h4 class="modal-title">Add Product</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">					
 						<div class="form-group">
 							<label>Product Name</label>
-							<input type="text" name="name" id="name" class="form-control" required>
+							<input type="text" name="name" id="name" class="form-control" required autocomplete="off">
 						</div>
 						<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">Category:</span>
@@ -47,30 +47,33 @@
 							<label>Stock</label>
 							<input type="number" name="stock" id="stock" class="form-control" required>
 						</div>	
+
 						<div class="form-group input-group">
-                            <span style="width:120px;" class="input-group-addon">Photo: (dimensions:400 x 400)</span>
-                            <input type="file" style="width:150px;" accept="*/*" class="form-control" name="image" id="image">
+							<span style="width:200px;" class="input-group-addon"><b>Photo:(dimensions:400 x 400)</b></span>							
+							<input style="height:45px;" class="form-control" accept="*/*" type="file" name="images" id="images">
 						</div>
-						<!--<div class="form-group input-group">
-                            <span style="width:120px;" class="input-group-addon">PDF INFO:</span>
-                            <input type="file" style="width:150px;" accept="*/*" class="form-control" id="PDF_p" name="PDF">
-						</div>-->
+						
+						<div class="form-group input-group">
+							<span style="width:200px;" class="input-group-addon"><b>PDF:</b></span>							
+							<input style="height:45px;" class="form-control" accept="*/*" type="file" name="pdf" id="pdf">
+						</div>
+
 						<div class="form-group">
-                        <label for="exampleTextarea">Description</label>
-                        <textarea class="form-control" name="description" id="description_p" rows="10"></textarea>
+							<label for="exampleTextarea"><b>Description</b></label>
+							<textarea class="form-control" name="description" id="description_p" rows="7"></textarea>
                         </div>
                         <div class="form-group">
-                        <label for="exampleTextarea">Tech Specs</label>
-                        <textarea class="form-control" name="tech" id="tech_p" rows="10"></textarea>
+							<label for="exampleTextarea"><b>Tech Specs</b></label>
+							<textarea class="form-control" name="tech" id="tech_p" rows="7"></textarea>
                         </div>
                         <div class="form-group">
-                        <label for="exampleTextarea">Video</label>
-                        <textarea class="form-control" id="video_p" name="video" rows="10"></textarea>
+							<label for="exampleTextarea"><b>Video</b></label>
+							<textarea class="form-control" id="video_p" name="video" rows="7"></textarea>
                         </div>				
 					</div>
 					<div class="modal-footer">
 						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-						<input type="submit" class="btn btn-success" value="Guardar datos">
+						<input type="submit" class="btn btn-success" id="saveStore" value="Guardar datos">
 					</div>
 				</form>
 			</div>
