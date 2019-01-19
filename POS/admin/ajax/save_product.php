@@ -94,4 +94,6 @@
 		echo json_encode(['error'=>true,'msg'=>'Unknow']);
 	}
 
+	// Este codigo se puede optimizar aun mas
 ?>
+

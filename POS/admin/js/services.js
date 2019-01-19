@@ -1,7 +1,6 @@
 
 $(function() {
     load(1);
-   
 });
 function load(page){
     var query=$("#q").val();
