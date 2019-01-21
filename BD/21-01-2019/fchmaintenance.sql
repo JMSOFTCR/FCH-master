@@ -2,10 +2,10 @@
 -- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Dec 13, 2018 at 09:09 PM
--- Server version: 5.6.39-cll-lve
--- PHP Version: 5.6.30
+-- Servidor: localhost:3306
+-- Tiempo de generación: 21-01-2019 a las 15:29:44
+-- Versión del servidor: 5.6.39-cll-lve
+-- Versión de PHP: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,53 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `fchmaintenance`
+-- Base de datos: `fchmaintenance`
 --
+
+DELIMITER $$
+--
+-- Procedimientos
+--
+CREATE DEFINER=`cpses_uve9kahywo`@`localhost` PROCEDURE `addinventory` (IN `userid` INT(11), IN `action` VARCHAR(50), IN `productid` INT(11), IN `quantity` DOUBLE, IN `inventory_date` DATETIME)  BEGIN 
+INSERT INTO inventory(userid, action, productid, quantity, inventory_date) VALUES (userid, action, productid, quantity, inventory_date);
+END$$
+
+CREATE DEFINER=`cpses_uve9kahywo`@`localhost` PROCEDURE `addproduct` (IN `product_name` VARCHAR(150), IN `categoryid` INT(11), IN `product_price` DOUBLE, IN `product_qty` DOUBLE, IN `supplierid` INT(11), IN `description` VARCHAR(1000), IN `photo` VARCHAR(400), IN `tech` VARCHAR(3000), IN `video` VARCHAR(1000))  BEGIN
+INSERT INTO product (product_name, categoryid, product_price, product_qty, supplierid, description, photo, tech, video) VALUES (product_name, categoryid , product_price , product_qty , supplierid , description , photo , tech, video);
+END$$
+
+CREATE DEFINER=`cpses_uve9kahywo`@`localhost` PROCEDURE `deleteimg` (IN `id` INT(11))  BEGIN
+DELETE FROM carousel WHERE idphoto = id;
+END$$
+
+CREATE DEFINER=`cpses_uve9kahywo`@`localhost` PROCEDURE `GuardarImagen` (IN `Productid` INT, IN `Photo` VARCHAR(100))  BEGIN
+   INSERT INTO carousel (idphoto,productid, photo) VALUES (default,Productid, Photo);
+   END$$
+
+CREATE DEFINER=`cpses_uve9kahywo`@`localhost` PROCEDURE `listaproduct` ()  BEGIN
+select * from product left join category on category.categoryid=product.categoryid left join supplier on supplier.userid=product.supplierid;
+END$$
+
+CREATE DEFINER=`cpses_uve9kahywo`@`localhost` PROCEDURE `update_product` (`_productid` INT, `_product_name` VARCHAR(150), `_supplierid` INT, `_categoryid` INT, `_product_price` DOUBLE, `_photo` VARCHAR(200), `_product_qty` DOUBLE, `_description` VARCHAR(1000), `_tech` VARCHAR(3000), `_video` VARCHAR(1000))  BEGIN
+update product set 
+product_name = _product_name,
+supplierid = _supplierid,
+categoryid = _categoryid,
+product_price = _product_price,
+photo = _photo,
+product_qty = _product_qty,
+description = _description,
+tech = _tech,
+video = _video
+where productid = _productid;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `carousel`
+-- Estructura de tabla para la tabla `carousel`
 --
 
 CREATE TABLE `carousel` (
@@ -35,7 +75,7 @@ CREATE TABLE `carousel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `carousel`
+-- Volcado de datos para la tabla `carousel`
 --
 
 INSERT INTO `carousel` (`productid`, `photo`, `idphoto`) VALUES
@@ -125,7 +165,7 @@ INSERT INTO `carousel` (`productid`, `photo`, `idphoto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Estructura de tabla para la tabla `cart`
 --
 
 CREATE TABLE `cart` (
@@ -138,7 +178,7 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
+-- Estructura de tabla para la tabla `category`
 --
 
 CREATE TABLE `category` (
@@ -147,7 +187,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `category`
+-- Volcado de datos para la tabla `category`
 --
 
 INSERT INTO `category` (`categoryid`, `category_name`) VALUES
@@ -174,7 +214,7 @@ INSERT INTO `category` (`categoryid`, `category_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer`
+-- Estructura de tabla para la tabla `customer`
 --
 
 CREATE TABLE `customer` (
@@ -185,7 +225,7 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `customer`
+-- Volcado de datos para la tabla `customer`
 --
 
 INSERT INTO `customer` (`userid`, `customer_name`, `address`, `contact`) VALUES
@@ -195,7 +235,7 @@ INSERT INTO `customer` (`userid`, `customer_name`, `address`, `contact`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inventory`
+-- Estructura de tabla para la tabla `inventory`
 --
 
 CREATE TABLE `inventory` (
@@ -208,7 +248,7 @@ CREATE TABLE `inventory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `inventory`
+-- Volcado de datos para la tabla `inventory`
 --
 
 INSERT INTO `inventory` (`inventoryid`, `userid`, `action`, `productid`, `quantity`, `inventory_date`) VALUES
@@ -352,7 +392,7 @@ INSERT INTO `inventory` (`inventoryid`, `userid`, `action`, `productid`, `quanti
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Estructura de tabla para la tabla `product`
 --
 
 CREATE TABLE `product` (
@@ -369,7 +409,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `product`
+-- Volcado de datos para la tabla `product`
 --
 
 INSERT INTO `product` (`productid`, `categoryid`, `product_name`, `product_price`, `product_qty`, `photo`, `supplierid`, `description`, `video`, `tech`) VALUES
@@ -453,7 +493,7 @@ INSERT INTO `product` (`productid`, `categoryid`, `product_name`, `product_price
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sales`
+-- Estructura de tabla para la tabla `sales`
 --
 
 CREATE TABLE `sales` (
@@ -464,7 +504,7 @@ CREATE TABLE `sales` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `sales`
+-- Volcado de datos para la tabla `sales`
 --
 
 INSERT INTO `sales` (`salesid`, `userid`, `sales_total`, `sales_date`) VALUES
@@ -486,7 +526,7 @@ INSERT INTO `sales` (`salesid`, `userid`, `sales_total`, `sales_date`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sales_detail`
+-- Estructura de tabla para la tabla `sales_detail`
 --
 
 CREATE TABLE `sales_detail` (
@@ -497,7 +537,7 @@ CREATE TABLE `sales_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `sales_detail`
+-- Volcado de datos para la tabla `sales_detail`
 --
 
 INSERT INTO `sales_detail` (`sales_detailid`, `salesid`, `productid`, `sales_qty`) VALUES
@@ -527,7 +567,7 @@ INSERT INTO `sales_detail` (`sales_detailid`, `salesid`, `productid`, `sales_qty
 -- --------------------------------------------------------
 
 --
--- Table structure for table `supplier`
+-- Estructura de tabla para la tabla `supplier`
 --
 
 CREATE TABLE `supplier` (
@@ -538,7 +578,7 @@ CREATE TABLE `supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `supplier`
+-- Volcado de datos para la tabla `supplier`
 --
 
 INSERT INTO `supplier` (`userid`, `company_name`, `company_address`, `contact`) VALUES
@@ -553,7 +593,7 @@ INSERT INTO `supplier` (`userid`, `company_name`, `company_address`, `contact`) 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Estructura de tabla para la tabla `user`
 --
 
 CREATE TABLE `user` (
@@ -564,7 +604,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Volcado de datos para la tabla `user`
 --
 
 INSERT INTO `user` (`userid`, `username`, `password`, `access`) VALUES
@@ -580,128 +620,128 @@ INSERT INTO `user` (`userid`, `username`, `password`, `access`) VALUES
 (11, 'VIPER', '14c879f3f5d8ed93a09f6090d77c2cc3', 3);
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `carousel`
+-- Indices de la tabla `carousel`
 --
 ALTER TABLE `carousel`
   ADD PRIMARY KEY (`idphoto`),
   ADD KEY `productid` (`productid`);
 
 --
--- Indexes for table `cart`
+-- Indices de la tabla `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`cartid`);
 
 --
--- Indexes for table `category`
+-- Indices de la tabla `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`categoryid`);
 
 --
--- Indexes for table `customer`
+-- Indices de la tabla `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`userid`);
 
 --
--- Indexes for table `inventory`
+-- Indices de la tabla `inventory`
 --
 ALTER TABLE `inventory`
   ADD PRIMARY KEY (`inventoryid`);
 
 --
--- Indexes for table `product`
+-- Indices de la tabla `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`productid`);
 
 --
--- Indexes for table `sales`
+-- Indices de la tabla `sales`
 --
 ALTER TABLE `sales`
   ADD PRIMARY KEY (`salesid`);
 
 --
--- Indexes for table `sales_detail`
+-- Indices de la tabla `sales_detail`
 --
 ALTER TABLE `sales_detail`
   ADD PRIMARY KEY (`sales_detailid`);
 
 --
--- Indexes for table `supplier`
+-- Indices de la tabla `supplier`
 --
 ALTER TABLE `supplier`
   ADD PRIMARY KEY (`userid`);
 
 --
--- Indexes for table `user`
+-- Indices de la tabla `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`userid`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `carousel`
+-- AUTO_INCREMENT de la tabla `carousel`
 --
 ALTER TABLE `carousel`
   MODIFY `idphoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
--- AUTO_INCREMENT for table `cart`
+-- AUTO_INCREMENT de la tabla `cart`
 --
 ALTER TABLE `cart`
   MODIFY `cartid` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `category`
+-- AUTO_INCREMENT de la tabla `category`
 --
 ALTER TABLE `category`
   MODIFY `categoryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `inventory`
+-- AUTO_INCREMENT de la tabla `inventory`
 --
 ALTER TABLE `inventory`
   MODIFY `inventoryid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
 
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT de la tabla `product`
 --
 ALTER TABLE `product`
   MODIFY `productid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
--- AUTO_INCREMENT for table `sales`
+-- AUTO_INCREMENT de la tabla `sales`
 --
 ALTER TABLE `sales`
   MODIFY `salesid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `sales_detail`
+-- AUTO_INCREMENT de la tabla `sales_detail`
 --
 ALTER TABLE `sales_detail`
   MODIFY `sales_detailid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT de la tabla `user`
 --
 ALTER TABLE `user`
   MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `carousel`
+-- Filtros para la tabla `carousel`
 --
 ALTER TABLE `carousel`
   ADD CONSTRAINT `productid` FOREIGN KEY (`productid`) REFERENCES `product` (`productid`);
