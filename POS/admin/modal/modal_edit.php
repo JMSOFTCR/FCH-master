@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <form name="edit_product" id="edit_product">
-                <div class="modal-header">
+                <div class="modal-header bg-info text-white">
                     <h4 class="modal-title">Editar Producto</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
@@ -18,7 +18,7 @@
                     <div class="form-group input-group">
                         <span class="input-group-addon" style="width:120px;" >Category:</span>
                         <select style="width:400px;" class="form-control" name="edit_category" id="edit_category">
-								<option value="edit_category" name="edit_category" id="edit_category"></option>
+								<!-- <option value="edit_category" name="edit_category" id="edit_category"></option> -->
 								<?php
 									$c=mysqli_query($conn,"select * from category where categoryid != '".$b['categoryid']."'");
 									while($crow=mysqli_fetch_array($c)){
@@ -27,7 +27,7 @@
 										<?php
 									}
 								?>
-							</select>
+						</select>
                     </div>
                     <div style="height:10px;"></div>
                     <div class="form-group input-group">
@@ -54,12 +54,13 @@
                     </div>
                     <div class="form-group input-group">
                         <span style="width:120px;" class="input-group-addon">Photo:</span>
-                        <input type="file" id="image" name="image" style="width:150px;" accept="*/*" class="form-control">
+                        <input style="height:45px;" type="file" id="image" name="image" style="width:150px;" accept="*/*" class="form-control">
                     </div>
-                    <!--	<div class="form-group input-group">
-                            <span style="width:120px;" class="input-group-addon">PDF INFO:</span>
-                            <input type="file" style="width:150px;" accept="*/*" class="form-control" id="PDF_p" name="PDF">
-						</div>	-->
+                    <div class="form-group input-group">
+                        <span style="width:120px;" class="input-group-addon">PDF:</span>							
+                        <input style="height:45px;" class="form-control" accept="*/*" type="file" name="pdf_edit" id="pdf_edit">
+					</div>
+        
                     <div class="form-group">
                         <label for="exampleTextarea">Description</label>
                         <br>
@@ -71,7 +72,7 @@
                         <textarea class="form-control" name="edit_tech" id="edit_tech" cols="70" rows="10"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="exampleTextarea">Video</label>
+                        <label for="exampleTextarea">Videos</label>
                         <br>
                         <textarea class="form-control" name="edit_video" id="edit_video" cols="70" rows="10"></textarea>
                     </div>
@@ -79,7 +80,7 @@
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                    <input type="submit" class="btn btn-info" value="Guardar datos">
+                    <input type="submit" class="btn btn-info" id="saveEdit" value="Guardar datos">
                 </div>
             </form>
         </div>
