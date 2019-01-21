@@ -72,8 +72,8 @@
                         </div>				
 					</div>
 					<div class="modal-footer">
-						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-						<input type="submit" class="btn btn-success" id="saveStore" value="Guardar datos">
+						<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+						<input type="submit" class="btn btn-success" id="saveStore" value="Save Product">
 					</div>
 				</form>
 			</div>

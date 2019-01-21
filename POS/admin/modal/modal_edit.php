@@ -3,7 +3,7 @@
         <div class="modal-content">
             <form name="edit_product" id="edit_product">
                 <div class="modal-header bg-info text-white">
-                    <h4 class="modal-title">Editar Producto</h4>
+                    <h4 class="modal-title">Edit Product</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -45,7 +45,7 @@
 							</select>
                     </div>
                     <div class="form-group">
-                        <label>Precio</label>
+                        <label>Price</label>
                         <input type="text" name="edit_price" id="edit_price" class="form-control" required>
                     </div>
                     <div class="form-group">
@@ -79,8 +79,8 @@
                     <div style="height:10px;"></div>
                 </div>
                 <div class="modal-footer">
-                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
-                    <input type="submit" class="btn btn-info" id="saveEdit" value="Guardar datos">
+                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                    <input type="submit" class="btn btn-info" id="saveEdit" value="Save">
                 </div>
             </form>
         </div>
