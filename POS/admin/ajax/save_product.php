@@ -27,6 +27,9 @@
 		{
 			if ($fileInfo['extension'] == "jpg" OR $fileInfo['extension'] == "png") {
 				$newFilename = $fileInfo['filename'] . "_" . time() . "." . $fileInfo['extension'];
+				if(!file_exists(folderDirectory."upload")){
+					mkdir(folderDirectory."upload" , 0777,true);
+				}
 				move_uploaded_file($_FILES["images"]["tmp_name"], folderDirectory."upload/" . $newFilename);
 				$locationImg = "upload/" . $newFilename;
 			}

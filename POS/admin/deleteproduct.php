@@ -1,4 +1,5 @@
 <?php
+	sleep(2);
 	include('session.php');
 	$pid=$_POST['id'];
 

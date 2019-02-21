@@ -1,5 +1,6 @@
+<!-- <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.min.css"> -->
 <div id="editProductModal" class="modal fade">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <form name="edit_product" id="edit_product">
                 <div class="modal-header bg-info text-white">
@@ -7,10 +8,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <div class="form-group">
-
-                        <input type="hidden" name="edit_id" id="edit_id" class="form-control" required>
-                    </div>
+                    <input type="hidden" name="edit_id" id="edit_id" class="form-control" required>
                     <div class="form-group">
                         <label>Product name</label>
                         <input type="text" name="edit_name" id="edit_name" class="form-control" required>
@@ -52,6 +50,11 @@
                         <label>Stock</label>
                         <input type="number" name="edit_stock" id="edit_stock" class="form-control" required>
                     </div>
+
+                    <div class="form-group jumbotron" id="currentPhoto">
+                       
+                    </div>
+                    
                     <div class="form-group input-group">
                         <span style="width:120px;" class="input-group-addon">Photo:</span>
                         <input style="height:45px;" type="file" id="image" name="image" style="width:150px;" accept="*/*" class="form-control">

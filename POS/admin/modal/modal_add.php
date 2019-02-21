@@ -47,7 +47,7 @@
 							<label>Stock</label>
 							<input type="number" name="stock" id="stock" class="form-control" required>
 						</div>	
-
+						
 						<div class="form-group input-group">
 							<span style="width:200px;" class="input-group-addon"><b>Photo:(dimensions:400 x 400)</b></span>							
 							<input style="height:45px;" class="form-control" accept="*/*" type="file" name="images" id="images">

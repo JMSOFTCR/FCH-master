@@ -1,12 +1,11 @@
 
 $(function() {
-    load(1);
+  loadPage(1);
 });
-function load(page){
+function loadPage(page){
     var query=$("#q").val();
     var per_page=10;
     var parametros = {"action":"ajax","page":page,'query':query,'per_page':per_page};
-    $("#loader").fadeIn('slow');
     $.ajax({
         url:'ajax/list_products.php',
         data: parametros,
@@ -33,7 +32,7 @@ $('#editProductModal').on('show.bs.modal', function (event) {
   var price = button.data('price') 
   $('#edit_price').val(price)
   var photo = button.data('photo')  
-  $('#edit_photo').val(photo)
+  $('#currentPhoto').html("<label style='margin:20px;' for=''>Current Photo:</label><img width='200' height='200' src=../"+ photo+" alt=''>");
   var description = button.data('description')  
   $('#edit_description').val(description)
   var tech = button.data('tech')  
@@ -55,7 +54,7 @@ $('#deleteProductModal').on('show.bs.modal', function (event) {
 $('#saveEdit').click(function() {
   $( "#edit_product" ).submit(function(e) {
     e.preventDefault();
-    let parametros=$(this).serialize();//new FormData($(this)[0])
+    let parametros=$(this).serialize();
   
       $.ajax({
           url: "edit_product.php",
@@ -72,7 +71,7 @@ $('#saveEdit').click(function() {
                 title:'Product Update successfully!'
               })
           $("#resultados").html(datos);
-          load(1);
+          loadPage(1);
           $('#editProductModal').modal('hide');
         },
         error: function(resp) {
@@ -85,10 +84,8 @@ $('#saveEdit').click(function() {
  $('#saveStore').click(function() { // investigar como enviar imagnes de un file campo con post yq que sea con ajax
   $( "#add_product" ).submit(function(e)  {
     e.preventDefault();
-    let parametros = new FormData($(this)[0]);//$(this).serialize()+"&images="+image;
-    //parametros.append("images", $("#images").prop('files')[0]);
-
-    //alert($("#supplier_p").val()+ " category:"+$("#category_p").val());
+    let parametros = new FormData($(this)[0]);
+    
       $.ajax({
           url: "ajax/save_product.php",
           type: "POST",
@@ -98,18 +95,17 @@ $('#saveEdit').click(function() {
           processData: false,
           beforeSend: function(objeto){
             $("#resultados").html("Enviando...");
-          },
-          success: function(resp)
-          {
+          }
+        }).done(function(resp){
             if(!resp.error){
-              swal({
-                type:'success',
-                title:'Product added successfully!!'+resp.msg
-              })
-
-              $("#resultados").html(resp);
+              // $('body').removeClass('modal-open');
+              $('.modal-backdrop').remove(); // removemos el fondo oscuro
               $('#addProductModal').modal('hide');
-              load(1);
+              $("#resultados").html("<div class='alert alert-success'><strong>Success! </strong>"+resp.msg+"<button type='button' class='close' data-dismiss='alert'>&times;</button></div>");
+              loadPage(1);
+              setTimeout(function(){
+              $("#resultados").html(null);
+              },4000)
             }
             else if(resp.error){
               swal({
@@ -117,19 +113,17 @@ $('#saveEdit').click(function() {
                 title: 'Error: '+resp.msg,
               })
             }
-          },
-          error: function(resp){
-            swal({
-              type: 'error',
-              title:'Error!',
-              text:resp.responseText,
-            })
-            console.log(resp.responseText);
-          }
-      }); 
+        }).fail(function(resp){
+          swal({
+            type: 'error',
+            title:'Error!',
+            text:resp.responseText,
+          })
+          console.log(resp.responseText);
+        })
   });
  });
-
+ 
 $( "#delete_product" ).submit(function( event ) {
   var parametros = $(this).serialize();
     $.ajax({
@@ -138,22 +132,16 @@ $( "#delete_product" ).submit(function( event ) {
             data: parametros,
              beforeSend: function(objeto){
                 $("#resultados").html("Enviando...");
-              },
-            success: function(datos){
-              swal(
-                'Product Delete!',
-                '',
-                'success'
-                  )
-            $("#resultados").html(datos);
-            load(1);
-            $('#deleteProductModal').modal('hide');
-          }
-    });
+              }
+            }).done(function(datos){
+              swal('Product Delete!','','success');
+              // $('body').removeClass('modal-open') 
+              $('.modal-backdrop').remove();
+              $("#deleteProductModal").modal('toggle'); 
+              loadPage(1);
+            }).fail(function(resp){
+              $("#resultados").html(resp.responseText);
+            })
   event.preventDefault();
 });
 
-$("#send").click(function(){
-  // intentar con peticion ajax mandar el valor del campo y caerle al file 
-  alert($("#archivo").val())
-})

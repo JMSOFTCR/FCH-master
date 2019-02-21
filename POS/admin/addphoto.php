@@ -1,46 +1,92 @@
 <?php
 	include('session.php');
 
-    $id=$_GET['id'];
-
-    //Como el elemento es un arreglos utilizamos foreach para extraer todos los valores
-	foreach($_FILES["archivo"]['tmp_name'] as $key => $tmp_name)
+	$getPhoto = $_POST["getPhoto"];
+	$idProd	= $_POST['idProd'];
+	$allPhotos ="";
+	
+	if($getPhoto =="1")
 	{
-		//Validamos que el archivo exista
-		if($_FILES["archivo"]["name"][$key]) {
-			$filename = $_FILES["archivo"]["name"][$key]; //Obtenemos el nombre original del archivo
-			$source = $_FILES["archivo"]["tmp_name"][$key]; //Obtenemos un nombre temporal del archivo
-			        
-			$directorio = 'upload'; //Declaramos un  variable con la ruta donde guardaremos los archivos
-			
-			//Validamos si la ruta de destino existe, en caso de no existir la creamos
-			if(!file_exists($directorio)){
-				mkdir($directorio, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
+		$sql = "select * from carousel as c where c.productid = $idProd"; 
+		$result = mysqli_query($conn, $sql);
+		
+		if(mysqli_num_rows($result) > 0)
+		{
+			while($row = mysqli_fetch_array($result))
+			{
+				$id = $row['id'];
+				$idProd = $row['productid'];
+				$photo = $row['photo'];
+				$allPhotos.= "<img class='m-3'src='../$photo' width='200' height='200' />
+					<a onclick='deletePhoto($id,\"$photo\",$idProd)' class='btn btn-danger text-white'><i class='fa fa-trash'></i></a>";
+					// href='del_file.php/?id=$id&photo=$photo'
 			}
-			
-			$dir=opendir($directorio); //Abrimos el directorio de destino
-			$target_path = $directorio.'/'.$filename; //Indicamos la ruta de destino, así como el nombre del archivo
-			
-			//Movemos y validamos que el archivo se haya cargado correctamente
-			//El primer campo es el origen y el segundo el destino
-			if(move_uploaded_file($source, $target_path)) {	
-				echo "El archivo $filename se ha almacenado en forma exitosa.<br>";
-				} else {	
-				echo "Ha ocurrido un error, por favor inténtelo de nuevo.<br>";
-			}
-			closedir($dir); //Cerramos el directorio de destino
-		      
-         
-             mysqli_query($conn,"call GuardarImagen('$id','$target_path')"); 
-             $pid=mysqli_insert_id($conn);
-             
-             
-        }
+			echo json_encode(['error'=>false,'allPhotos'=>$allPhotos]); 
+		}
+		else
+		{
+			echo json_encode(['error'=>true,'allPhotos'=>'<h4>Not Photos yet!</h4>']);
+		} 
 	}
-    ?>
-	<script>
-			window.alert('Product added successfully!');
-			window.history.back();
-		</script>
-          
+	else
+	{
+		$fileInfo = PATHINFO($_FILES["archivo"]["name"]);
+		//Validamos que el archivo exista
+		if(empty($_FILES["archivo"]["name"]))
+		{
+			echo json_encode(['error'=>true,'allPhotos'=>'File empty']);
+		}
+		else
+		{
+			
+
+			$filename = $_FILES["archivo"]["name"]; //Obtenemos el nombre original del archivo
+			$sourceTempo = $_FILES["archivo"]["tmp_name"]; //Obtenemos un nombre temporal del archivo
+					
+			$directory = $_SERVER['DOCUMENT_ROOT']."/FCH-master/POS/upload/"; //Declaramos un  variable con la ruta donde guardaremos los archivos
+			$filename = $fileInfo['filename'] . "." . $fileInfo['extension'];
+			//Validamos si la ruta de destino existe, en caso de no existir la creamos
+			if(!file_exists($directory)){
+				mkdir($directory, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
+				move_uploaded_file($sourceTempo,$directory.$filename);
+				echo json_encode(['error'=>false,'allPhotos'=>$allPhotos]); 
+			}
+			else
+			{	
+				$dir=opendir($directory); //Abrimos el directorio de destino
+				// $filename = $fileInfo['filename'] . "_" . time() . "." . $fileInfo['extension'];
+				//Movemos y validamos que el archivo se haya cargado correctamente
+				//El primer campo es el origen y el segundo el destino
+				
+				if(move_uploaded_file($sourceTempo,$directory.$filename)) 
+				{	
+					closedir($dir); //Cerramos el directorio de destino
+				
+					mysqli_query($conn,"call GuardarImagen('$idProd','upload/$filename')"); 
+					// $pid=mysqli_insert_id($conn);
+
+					$sql = "select * from carousel as c where c.productid = $idProd"; 
+					$result = mysqli_query($conn, $sql);
+
+					if(mysqli_num_rows($result) > 0)
+					{
+						while($row = mysqli_fetch_array($result)){
+							$id = $row['id'];
+							$idProd = $row['productid'];
+							$photo = $row['photo'];
+							$allPhotos.= "<img class='m-3'src='../$photo' width='200' height='200' />
+								<a onclick='deletePhoto($id,\"$photo\",$idProd)' class='btn btn-danger text-white'><i class='fa fa-trash'></i></a>";
+						}
+						echo json_encode(['error'=>false,'allPhotos'=>$allPhotos]); 
+					}
+				} 
+				else 
+				{	
+					echo json_encode(['error'=>true, 'allPhotos'=>'Error al mover la foto']);
+				}
+			}
+			
+		}
+		
+	}
 ?>
