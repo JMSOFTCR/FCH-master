@@ -28,11 +28,12 @@
                         <th>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="infoProduct">
                 <?php
                     $pq=mysqli_query($conn,"select * from product as p where p.categoryid = \"$_POST[id_txt]\"");
                     while($row=mysqli_fetch_array($pq)){
                         $pid=$row['productid'];
+                        $nameProd = $row['product_name'];
                     ?>
                         <tr>
                             <td><?php echo $row['product_name'];?></td>
@@ -42,8 +43,8 @@
                             <td>
                                 <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#editprod_<?php echo $pid; ?>"><i class="fa fa-edit"></i> Edit</button>
                                 <button onclick="getPhoto(<?= $pid; ?>)" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addphoto"><i class="fa fa-edit"></i> Add Photo</button>
-                                <button onclick="getProductDelete(<?= $pid; ?>)" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delproduct"><i class="fa fa-trash"></i> Delete</button>
-                            </td>
+                                <button onclick="getProductDelete(<?= $pid; ?>,<?=$_POST['id_txt']?>)" class="btn btn-danger btn-sm" data-toggle="modal" ><i class="fa fa-trash"></i> Delete</button>
+                            </td>                                                                                                         <!-- data-target="#delproduct" -->
                         </tr>
                     <?php
                     

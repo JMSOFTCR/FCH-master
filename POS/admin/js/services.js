@@ -99,13 +99,15 @@ $('#saveEdit').click(function() {
         }).done(function(resp){
             if(!resp.error){
               // $('body').removeClass('modal-open');
-              $('.modal-backdrop').remove(); // removemos el fondo oscuro
               $('#addProductModal').modal('hide');
+              $('.modal-backdrop').remove(); // removemos el fondo oscuro
+              
               $("#resultados").html("<div class='alert alert-success'><strong>Success! </strong>"+resp.msg+"<button type='button' class='close' data-dismiss='alert'>&times;</button></div>");
               loadPage(1);
               setTimeout(function(){
               $("#resultados").html(null);
-              },4000)
+              },2000)
+              
             }
             else if(resp.error){
               swal({
@@ -114,13 +116,14 @@ $('#saveEdit').click(function() {
               })
             }
         }).fail(function(resp){
-          swal({
-            type: 'error',
-            title:'Error!',
-            text:resp.responseText,
-          })
+          // swal({
+          //   type: 'error',
+          //   title:'Error!',
+          //   text:resp.responseText,
+          // })
           console.log(resp.responseText);
-        })
+        });
+        $("#add_product")[0].reset(); 
   });
  });
  

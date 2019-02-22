@@ -17,7 +17,7 @@
 		if(mysqli_num_rows($result) > 0)
 		{
 			while($row = mysqli_fetch_array($result)){
-				$id = $row['id'];
+				$id = $row['id_photo'];
 				$idProd = $row['productid'];
 				$photo = $row['photo'];
 				$allPhotos.= "<img class='m-3'src='../$photo' width='200' height='200' />
@@ -36,15 +36,6 @@
 	{
 		echo json_encode(['error'=>true,'msg'=>'Please, try again','route'=>$route.$photo]);
 	} 
-	
-	                                   
+	                          
 ?>
-
-
-
-
-
-
-
- 
 	

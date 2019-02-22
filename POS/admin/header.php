@@ -21,5 +21,3 @@
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
     
 </head>
-	
-

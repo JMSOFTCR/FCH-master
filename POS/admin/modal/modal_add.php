@@ -1,7 +1,7 @@
 <meta http-equiv=content-type content=text/html; charset=utf-8>
 <?php include '../../conn.php' ?>
 <div id="addProductModal" class="modal fade">
-		<div class="modal-dialog">
+		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<form method="POST" name="add_product" id="add_product" enctype="multipart/form-data">
 					<div class="modal-header bg-success text-white">						

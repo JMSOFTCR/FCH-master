@@ -12,8 +12,10 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <center><h4 class="modal-title" id="myModalLabel">Delete Product</h4></center>
                 </div>
+                <div class="row message"></div>
                 <form role="form" method="" action="">
-                    <input type="text" name="idProdDelete" id="idProdDelete">
+                    <input type="hidden" name="idProdDelete" id="idProdDelete">
+                    <input type="hidden" name="nameProd" id="nameProd">
                     <div class="modal-body">
                         <div class="container-fluid data"> <!-- Pintaremos el ombre y una foto -->
                                        

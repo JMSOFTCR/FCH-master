@@ -1,20 +1,42 @@
-$("#addPhoto").click(function(){
-    $.ajax({
-        url: "",
-        type: "POST",
-        dataType:'json',
-        data:"",    
-        contentType: false, 
-        processData: false,
-        beforeSend:function(){
-            
+function getProductDelete(idProd,idCat){ 
+    // $("#idProdDelete").val(idProd);
+    // $("#nameProd").val(nameProd);
+    // $('.data').html("<div class='fa-3x text-center'><i class='fas fa-spinner fa-pulse'></i></div>")
+    // setTimeout(function(){
+    //     $('.data').html("<h4 class='text-center'>"+nameProd+"</h4>");},500)
+    
+    swal({
+        title: 'Are you sure you want to delete this product?',
+        text: "You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.value)
+        {
+            $.ajax({
+                url:"deleteproduct.php",
+                type:"POST",
+                dataType:"json",
+                data:{'idProd':idProd,'idCat':idCat}
+            }).done(function(resp){
+                $(".infoProduct").html(null);
+                $(".infoProduct").html(resp.products);
+                swal({
+                    type: 'success',
+                    title:'Deleted!',
+                    text:resp.msg,
+                    showConfirmButton:false,
+                    timer: 800
+                })
+            }).fail(function(resp){
+                alert(resp.responseText);
+            }); 
         }
-    }).done(function(answ){
-
-    }).fail(function(answ){
-
-    })
-});
+      })
+}
 
 function getPhoto(idProd){
     
@@ -41,25 +63,6 @@ function getPhoto(idProd){
         }
     }).fail(function(resp){
         $(".images").html(resp.allPhotos);
-    })
-}
-
-function getProductDelete(idProd){
-    $("#idProdDelete").val(idProd);
-     $('.data').html("<div class='fa-3x'><i class='fas fa-spinner fa-pulse'></i></div>");
-
-    $.ajax({
-        url:"deleteproduct.php",
-        type:"POST",
-        dataType:"json",
-        data:{'idProd':idProd},
-        beforeSend:function(){
-            $('.data').html("<div class='fa-3x'><i class='fas fa-spinner fa-pulse'></i></div>");
-        }
-    }).done(function(resp){
-        alert(resp.responseText);
-    }).fail(function(resp){
-        alert(resp.responseText);
     })
 }
 
@@ -102,25 +105,49 @@ $("#savePhoto").click(function(){
 });
 
 function deletePhoto(id,photo,idProd){
-    $.ajax({
-        url: "del_file.php",
-        type: "POST",
-        dataType:'json',
-        data: {'id':id,'photo':photo,'idProd':idProd},
-        beforeSend: function(objeto){
-            
+
+    swal({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.value) {
+
+            $.ajax({
+                url: "del_file.php",
+                type: "POST",
+                dataType:'json',
+                data: {'id':id,'photo':photo,'idProd':idProd},
+                beforeSend: function(objeto){
+                    
+                }
+            }).done(function(resp){ 
+                if(!resp.error){
+                    // $(".images").html("");
+                    $(".images").html(resp.allPhotos);
+                }
+                else
+                {
+                    $(".images").html(resp.msg);
+                }
+                
+            }).fail(function(resp){
+                alert(resp.responseText)
+            });
+
+          swal({
+            type: 'success',
+            title:'Deleted!',
+            text:'Your photo has been deleted.',
+            showConfirmButton:false,
+            timer: 800
+            })
         }
-    }).done(function(resp){ 
-        if(!resp.error){
-            // $(".images").html("");
-            $(".images").html(resp.allPhotos);
-        }
-        else
-        {
-            $(".images").html(resp.msg);
-        }
-        
-    }).fail(function(resp){
-        alert(resp.responseText)
-    });
+      })
+
+    
 }

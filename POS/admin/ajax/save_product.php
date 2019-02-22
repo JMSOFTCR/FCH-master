@@ -1,10 +1,10 @@
 <?php
-	if (empty($_POST['name']))
-	{
-		$errors[] = "Ingresa el nombre del producto.";
-		echo json_encode(['error'=>true,'msg'=>'Ingresa el nombre del producto.']);
-	}
-	elseif (!empty($_POST['name']))
+	// if (empty($_POST['name']))
+	// {
+	// 	$errors[] = "Ingresa el nombre del producto.";
+	// 	echo json_encode(['error'=>true,'msg'=>'Ingresa el nombre del producto.']);
+	// }
+	if (!empty($_POST['name']))
 	{
 		require_once ("../../conn.php");
 		$name = mysqli_real_escape_string($conn,(strip_tags($_POST["name"],ENT_QUOTES)));
@@ -94,7 +94,7 @@
 	}	
 	else 
 	{
-		echo json_encode(['error'=>true,'msg'=>'Unknow']);
+		// echo json_encode(['error'=>true,'msg'=>'Unknow']);
 	}
 
 	// Este codigo se puede optimizar aun mas
