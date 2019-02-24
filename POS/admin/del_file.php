@@ -20,8 +20,8 @@
 				$id = $row['id_photo'];
 				$idProd = $row['productid'];
 				$photo = $row['photo'];
-				$allPhotos.= "<img class='m-3'src='../$photo' width='200' height='200' />
-					<a onclick='deletePhoto($id,\"$photo\",$idProd)' class='btn btn-danger text-white'><i class='fa fa-trash'></i></a>";
+				$allPhotos.= "<div class='col-md-3'> <img class='mb-2 mt-2'src='../$photo' width='100%' height='200' />
+							 	<a onclick='deletePhoto($id,\"$photo\",$idProd)' class='btn btn-danger text-white'><i class='fa fa-trash'></i></a></div>";
 			}
 
 			echo json_encode(['error'=>false,'allPhotos'=>$allPhotos]); 

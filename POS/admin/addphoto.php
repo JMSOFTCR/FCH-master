@@ -17,10 +17,10 @@
 				$id = $row['id_photo'];
 				$idProd = $row['productid'];
 				$photo = $row['photo'];
-				$allPhotos.= "<img class='m-3'src='../$photo' width='200' height='200' />
-					<a onclick='deletePhoto($id,\"$photo\",$idProd)' class='btn btn-danger text-white'><i class='fa fa-trash'></i></a>";
+				$allPhotos.= "<div class='col-md-3'> <img class='mb-2 mt-2'src='../$photo' width='100%' height='200' />
+					 <a onclick='deletePhoto($id,\"$photo\",$idProd)' class='btn btn-danger text-white'><i class='fa fa-trash'></i></a></div>";
 					// href='del_file.php/?id=$id&photo=$photo'
-			}
+			} /// ARREGLAR ESTE FRACMENTO YA QUE METE UN DIV DENTRO DEL MISMO DIV
 			echo json_encode(['error'=>false,'allPhotos'=>$allPhotos]); 
 		}
 		else
@@ -34,17 +34,15 @@
 		//Validamos que el archivo exista
 		if(empty($_FILES["archivo"]["name"]))
 		{
-			echo json_encode(['error'=>true,'allPhotos'=>'File empty']);
+			 echo json_encode(['error'=>true,'allPhotos'=>'File empty']);
 		}
 		else
 		{
-			
-
 			$filename = $_FILES["archivo"]["name"]; //Obtenemos el nombre original del archivo
 			$sourceTempo = $_FILES["archivo"]["tmp_name"]; //Obtenemos un nombre temporal del archivo
 					
 			$directory = $_SERVER['DOCUMENT_ROOT']."/FCH-master/POS/upload/"; //Declaramos un  variable con la ruta donde guardaremos los archivos
-			$filename = $fileInfo['filename'] . "." . $fileInfo['extension'];
+			$filename = $fileInfo['filename'] .time(). "." . $fileInfo['extension'];
 			//Validamos si la ruta de destino existe, en caso de no existir la creamos
 			if(!file_exists($directory)){
 				mkdir($directory, 0777) or die("No se puede crear el directorio de extracci&oacute;n");	
@@ -74,8 +72,9 @@
 							$id = $row['id_photo'];
 							$idProd = $row['productid'];
 							$photo = $row['photo'];
-							$allPhotos.= "<img class='m-3'src='../$photo' width='200' height='200' />
-								<a onclick='deletePhoto($id,\"$photo\",$idProd)' class='btn btn-danger text-white'><i class='fa fa-trash'></i></a>";
+							
+							$allPhotos.= "<div class='col-md-3'> <img class='mb-2 mt-2'src='../$photo' width='100%' height='200' />
+							 	<a onclick='deletePhoto($id,\"$photo\",$idProd)' class='btn btn-danger text-white'><i class='fa fa-trash'></i></a></div>";
 						}
 						echo json_encode(['error'=>false,'allPhotos'=>$allPhotos]); 
 					}

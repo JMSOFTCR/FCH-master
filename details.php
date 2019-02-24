@@ -77,7 +77,7 @@
        	$sql2 = "select distinct * from carousel as c where c.productid = \"$_POST[id_txt]\"";
     	$result2 = mysqli_query($conn, $sql2);
     	if ($rs = mysqli_fetch_array($result2)) {
-    		echo '<img style=" height: 70%; width: 100%;" src=POS/admin/'.$rs["1"].' class="big-img">';}
+    		echo '<img style=" height: 70%; width: 100%;" src=POS/'.$rs["photo"].' class="big-img">';}
        	?>
        </div>
        </div>
@@ -87,7 +87,9 @@
        		<div class="form-group">
        	<?php  
        	foreach ($result2 as $rst) {
-       	echo '<button class="lit-img" value='.$rst["photo"].'><img src=POS/admin/'.$rst["photo"].' style="width:60px;height:60px;"></button>';
+         echo "<button class='lit-img' value='".$rst['photo']."'>
+                  <img src='./POS/".$rst['photo']."'style='width:60px;height:60px;'>
+              </button>";
        		}
        	?>
        	</div>
@@ -226,7 +228,9 @@ $tech1 = str_replace("\n", "<br>", $tech);
         },1000);
       });
       $(".lit-img").on("click",function(){
-      	var img = $('<img style=" height: 70%; width: 100%;" src=POS/admin/'+$(this).val()+' class="big-img">');
+        // var img = $('<img style=" height: 70%; width: 100%;" src=POS/admin/'+$(this).val()+' class="big-img">');
+        var img = $('<img style=" height: 70%; width: 100%;" src=POS/'+$(this).val()+' class="big-img">');
+
       	$(".bs-example").empty();
       	$(".bs-example").append(img);
       });

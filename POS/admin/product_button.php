@@ -126,7 +126,7 @@
 
  <!-- add photo -->
  
-<!-- <div class="modal fade" id="addphoto_<?php echo $pid; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="addphoto_< ?php echo $pid; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -135,7 +135,7 @@
                 </div>
                 <div class="modal-body">
 				<div class="container-fluid">
-					<?php
+					< ?php
 						$a=mysqli_query($conn,"select * from product left join category on category.categoryid=product.categoryid left join supplier on supplier.userid=product.supplierid where productid='$pid'");
 						$b=mysqli_fetch_array($a);
 					?>
@@ -160,7 +160,7 @@
                                    
 
                                    
-						<?php 
+						< ?php 
                                       
                                    $sql = "select * from carousel as c where c.productid = '$pid'"; 
                                     $result = mysqli_query($conn, $sql);
@@ -236,26 +236,27 @@ function upload_img(){
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
+                <h3 class="modal-title" id="myModalLabel">Image Gallery</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <center><h4 class="modal-title" id="myModalLabel"></h4></center>
+                   
                 </div>
                 <div class="modal-body">
 				<div class="container-fluid">
-					
+					<div class="message"></div>
 					<div style="height:10px;"></div>
                     <form role="form" id="savePhotoProd" enctype="multipart/form-data">
                             
                         <div style="height:10px;"></div>
-                        <input type="text" name="idProd" id="idProd">
+                        <input type="hidden" name="idProd" id="idProd">
                         <input type="hidden" name="getPhoto" value="0">					
                         <div class="form-group input-group">
                             <span class="input-group-addon" style="width:120px;">Photo:</span> 
-                            <input id="photo" type="file" style="width:400px;" class="form-control" name="archivo" accept="image/*" />
+                            <input id="photo" type="file" style="width:400px;" class="form-control" name="archivo" accept="image/*" required />
                         </div>
                         
-                    <div class="d-flex">
-                        <div class='container'> 
-                            <div class='col-md-12 text-center images'>
+                    <div class="container">
+                        <div class='d-flex flex-wrap p-4 images'> 
+                          
 						<!-- < ?php 
                                       
                             $sql = "select * from carousel as c where c.productid = '$pid'"; 
@@ -277,7 +278,6 @@ function upload_img(){
                                 Hacer un apeticion ajax de consulta cuando se apreta el boton para add Photo y otra para cuando se debe guardar y al mismo tiempo se refresca con una nueva consulta 
                             */
                         ?> -->
-                            </div>
                         </div>
 					</div>                     
                     <div class="modal-footer">

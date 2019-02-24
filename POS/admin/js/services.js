@@ -32,7 +32,7 @@ $('#editProductModal').on('show.bs.modal', function (event) {
   var price = button.data('price') 
   $('#edit_price').val(price)
   var photo = button.data('photo')  
-  $('#currentPhoto').html("<label style='margin:20px;' for=''>Current Photo:</label><img width='200' height='200' src=../"+ photo+" alt=''>");
+  $('#currentPhoto').html("<label style='margin:10px;' for=''>Current Photo:</label><img width='250' height='250' src=../"+ photo+" alt=''>");
   var description = button.data('description')  
   $('#edit_description').val(description)
   var tech = button.data('tech')  

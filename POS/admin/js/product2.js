@@ -1,10 +1,5 @@
 function getProductDelete(idProd,idCat){ 
-    // $("#idProdDelete").val(idProd);
-    // $("#nameProd").val(nameProd);
-    // $('.data').html("<div class='fa-3x text-center'><i class='fas fa-spinner fa-pulse'></i></div>")
-    // setTimeout(function(){
-    //     $('.data').html("<h4 class='text-center'>"+nameProd+"</h4>");},500)
-    
+        
     swal({
         title: 'Are you sure you want to delete this product?',
         text: "You won't be able to revert this!",
@@ -24,6 +19,7 @@ function getProductDelete(idProd,idCat){
             }).done(function(resp){
                 $(".infoProduct").html(null);
                 $(".infoProduct").html(resp.products);
+
                 swal({
                     type: 'success',
                     title:'Deleted!',
@@ -31,6 +27,7 @@ function getProductDelete(idProd,idCat){
                     showConfirmButton:false,
                     timer: 800
                 })
+
             }).fail(function(resp){
                 alert(resp.responseText);
             }); 
@@ -41,7 +38,7 @@ function getProductDelete(idProd,idCat){
 function getPhoto(idProd){
     
     $("#idProd").val(idProd);
-    $(".images").html(""); // evitamos que se quede alguna imagen pegada
+    $(".d-flex").html(""); // evitamos que se quede alguna imagen pegada
 
     let getPhoto ="1"; 
     $.ajax({
@@ -55,14 +52,14 @@ function getPhoto(idProd){
     }).done(function(resp){
         if(!resp.error)
         {   
-            $(".images").html(resp.allPhotos);
+            $(".d-flex").html(resp.allPhotos);
         }
         else
         {
-            $(".images").html(resp.allPhotos);
+            $(".d-flex").html(resp.allPhotos);
         }
     }).fail(function(resp){
-        $(".images").html(resp.allPhotos);
+        $(".d-flex").html(resp.allPhotos);
     })
 }
 
@@ -73,7 +70,6 @@ $("#savePhoto").click(function(){
 
         let parameters = new FormData($(this)[0]);
 
-        $(".images").html("");
           $.ajax({
                 url: "addphoto.php",
                 type: "POST",
@@ -82,25 +78,24 @@ $("#savePhoto").click(function(){
                 contentType: false, 
                 processData: false,
                 beforeSend: function(objeto){
-                    
+                    $(".d-flex").html();
                 }
             }).done(function(resp){
-            
-            if(!resp.error)
-            {
-                $(".images").html("");
-                $(".images").html(resp.allPhotos);
-            }
-            else
-            {
-                $(".images").html("<div class='alert alert-danger'>"+resp.allPhotos+"</div>");
-            }
-            }).fail(function(resp){
-                alert(resp.responseText)
-                $(".images").html(resp.allPhotos);
-            });
-            $("#savePhotoProd")[0].reset(); // vaciamos el formulario
-            $("#idProd").val(id);
+                if(!resp.error)
+                {   
+                    $(".d-flex").html(resp.allPhotos);
+                }
+                else
+                {
+                //      $(".message").html("<div class='alert alert-danger'>"+resp.allPhotos+"</div>");
+                //    setTimeout(function(){$(".message").html(null);},3000)
+                }
+                }).fail(function(resp){
+                    alert(resp.responseText)
+                    $(".d-flex").html(resp.allPhotos);
+                });
+                $("#savePhotoProd")[0].reset(); // vaciamos el formulario
+                $("#idProd").val(id);
       });
 });
 
@@ -126,26 +121,27 @@ function deletePhoto(id,photo,idProd){
                     
                 }
             }).done(function(resp){ 
-                if(!resp.error){
-                    // $(".images").html("");
-                    $(".images").html(resp.allPhotos);
+                if(!resp.error)
+                {
+                    $(".d-flex").html(resp.allPhotos);
                 }
                 else
                 {
-                    $(".images").html(resp.msg);
+                    $(".d-flex").html(resp.msg);
                 }
                 
             }).fail(function(resp){
                 alert(resp.responseText)
             });
 
-          swal({
-            type: 'success',
-            title:'Deleted!',
-            text:'Your photo has been deleted.',
-            showConfirmButton:false,
-            timer: 800
+            swal({
+                type: 'success',
+                title:'Deleted!',
+                text:'Your photo has been deleted.',
+                showConfirmButton:false,
+                timer: 800
             })
+            
         }
       })
 
