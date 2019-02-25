@@ -9,7 +9,7 @@
 	{
 		$sql = "select * from carousel as c where c.productid = $idProd"; 
 		$result = mysqli_query($conn, $sql);
-		
+		echo mysqli_error($conn);
 		if(mysqli_num_rows($result) > 0)
 		{
 			while($row = mysqli_fetch_array($result))
@@ -21,7 +21,7 @@
 					 <a onclick='deletePhoto($id,\"$photo\",$idProd)' class='btn btn-danger text-white'><i class='fa fa-trash'></i></a></div>";
 					// href='del_file.php/?id=$id&photo=$photo'
 			} /// ARREGLAR ESTE FRACMENTO YA QUE METE UN DIV DENTRO DEL MISMO DIV
-			echo json_encode(['error'=>false,'allPhotos'=>$allPhotos]); 
+			echo json_encode(['error'=>false,'allPhotos'=>$result]); 
 		}
 		else
 		{

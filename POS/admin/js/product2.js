@@ -50,6 +50,7 @@ function getPhoto(idProd){
             
         }
     }).done(function(resp){
+        alert()
         if(!resp.error)
         {   
             $(".d-flex").html(resp.allPhotos);
@@ -143,7 +144,5 @@ function deletePhoto(id,photo,idProd){
             })
             
         }
-      })
-
-    
+      })    
 }
