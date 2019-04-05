@@ -3,7 +3,7 @@
 <script src="js/sweetAlert.min.js" charset="utf-8"></script>
 <!-- Add Product -->
    <div class="modal fade" id="addproduct" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -11,7 +11,7 @@
                 </div>
                 <div class="modal-body">
 				<div class="container-fluid">
-                    <form method="POST" id="formAddProduct" data-locked="false" >
+                    <form method="" id="addProductForm" data-locked="" enctype="multipart/form-data">
                       <input type="hidden" id="id" name="id" >
 						<div class="container-fluid">
 						<div style="height:15px;"></div>
@@ -21,7 +21,7 @@
                         </div>
 						<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">Category:</span>
-                            <select style="width:400px;" id="category_p" class="form-control" name="category">
+                            <select style="width:400px;" id="category_p" class="form-control" name="category" required>
 								<?php
 									$cat=mysqli_query($conn,"select * from category order by category_name asc");
 									while($catrow=mysqli_fetch_array($cat)){
@@ -34,7 +34,7 @@
                         </div>
 						<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">Supplier:</span>
-                            <select style="width:400px;" class="form-control" id="supplier_p" name="supplier">
+                            <select style="width:400px;" class="form-control" id="supplier_p" name="supplier" required>
 								<?php
 									$sup=mysqli_query($conn,"select * from supplier");
 									while($suprow=mysqli_fetch_array($sup)){
@@ -51,30 +51,35 @@
                         </div>
 						<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">Quantity:</span>
-                            <input type="text" style="width:400px;" class="form-control" id="qty_p" name="qty">
+                            <input type="number" style="width:400px;" class="form-control" id="qty_p" name="stock">
                         </div>
 						<div class="form-group input-group">
                             <span style="width:120px;" class="input-group-addon">Main Photo:</span>
-                            <input type="file" style="width:400px;" accept="*/*" class="form-control" id="image_p" name="image">
+                            <input type="file" style="width:400px;" accept="*/*" class="form-control" id="image_p" name="images">
                         </div>
+                        <div class="form-group input-group">
+							<span style="width:120px;" class="input-group-addon"><b>PDF:</b></span>							
+							<input style="height:45px;" class="form-control" accept="*/*" type="file" name="pdf" id="pdf">
+						</div>
+
                         <div class="form-group">
                         <label for="exampleTextarea">Description</label>
-                        <textarea class="form-control" name="description" id="description_p" rows="10"></textarea>
+                        <textarea class="form-control" name="description" id="description_p" rows="7"></textarea>
                         </div>
                         <div class="form-group">
                         <label for="exampleTextarea">Tech Specs</label>
-                        <textarea class="form-control" name="tech" id="tech_p" rows="10"></textarea>
+                        <textarea class="form-control" name="tech" id="tech_p" rows="7"></textarea>
                         </div>
                         <div class="form-group">
                         <label for="exampleTextarea">Video</label>
-                        <textarea class="form-control" id="video_p" name="video" rows="10"></textarea>
+                        <textarea class="form-control" id="video_p" name="video" rows="7"></textarea>
                         </div>
 						</div>
 				</div>
 				</div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Cancel</button>
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+                    <button onclick="addProduct()" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
 					</form>
                 </div>
 			</div>

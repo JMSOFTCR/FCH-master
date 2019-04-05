@@ -1,7 +1,8 @@
 <?php
 
-$conn = mysqli_connect("localhost","root","","pos");
-$conn->set_charset("SET NAMES utf8 COLLATE utf8_unicode_ci"); //("SET NAMES utf8 COLLATE utf8_unicode_ci");
+$conn = mysqli_connect("localhost","Masteruserp","Airi9516","fchmaintenance");
+$conn->set_charset("SET NAMES utf8 COLLATE utf8_unicode_ci"); 
+//("SET NAMES utf8fchmaintenance  COLLATE utf8_unicode_ci"); fchmaintenance
 if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());
 }

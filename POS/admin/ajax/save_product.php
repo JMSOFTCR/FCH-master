@@ -1,12 +1,9 @@
 <?php
-	// if (empty($_POST['name']))
-	// {
-	// 	$errors[] = "Ingresa el nombre del producto.";
-	// 	echo json_encode(['error'=>true,'msg'=>'Ingresa el nombre del producto.']);
-	// }
+	require_once ("../../conn.php");
+	
 	if (!empty($_POST['name']))
 	{
-		require_once ("../../conn.php");
+		
 		$name = mysqli_real_escape_string($conn,(strip_tags($_POST["name"],ENT_QUOTES)));
 		$category = mysqli_real_escape_string($conn,(strip_tags($_POST["category"],ENT_QUOTES)));
 		$price = floatval($_POST["price"]);
@@ -17,7 +14,7 @@
 		$stock = intval($_POST["stock"]);
 		$fileInfo = PATHINFO($_FILES["images"]["name"]);
 		$filePdf = $_FILES["pdf"]["name"];
-		define('folderDirectory',$_SERVER['DOCUMENT_ROOT']."/FCH-master/POS/");
+		define('folderDirectory',$_SERVER['DOCUMENT_ROOT']."/POS/");
 
 		if (empty($_FILES["images"]["name"]))
 		{
@@ -26,7 +23,7 @@
 		else
 		{
 			if ($fileInfo['extension'] == "jpg" OR $fileInfo['extension'] == "png") {
-				$newFilename = $fileInfo['filename'] . "_" . time() . "." . $fileInfo['extension'];
+				$newFilename = $fileInfo['filename'] . "." . $fileInfo['extension'];
 				if(!file_exists(folderDirectory."upload")){
 					mkdir(folderDirectory."upload" , 0777,true);
 				}
@@ -39,8 +36,7 @@
 				$locationImg = "";
 			}
 		}
-		//echo json_encode(['error'=>false,'imagen'=>folderDirectory."upload/" . $newFilename,'pdf'=>folderDirectory.$destination.$filePdf]);
-		// REGISTER data into database
+
 		$locationPdf = "";
 
 		$sql = "call addproduct('$category','$name','$price','$stock','$locationImg','$supplier','$description','$video','$tech','$locationPdf')";
@@ -48,6 +44,11 @@
 		$query = mysqli_query($conn,$sql);
 				
 		if ($query) {
+		    
+			$sqlIdPdf = "SELECT productid FROM product WHERE product_name = '$name'";
+			$result = mysqli_query($conn,$sqlIdPdf);
+            $result = mysqli_fetch_array($result);
+			$result = $result['productid'];
 			
 			if(empty($_FILES["pdf"]["name"]))
 			{
@@ -62,12 +63,9 @@
 				}
 				else
 				{
-					$sqlIdPdf = "SELECT productid FROM product WHERE product_name = '$name'";
-					$result = mysqli_query($conn,$sqlIdPdf);
-
+				
 					if($result)
-					{	$result = mysqli_fetch_array($result);
-						$result = $result['productid'];
+					{	
 						$destination = "admin/productsPdf/$result/";
 						if(!file_exists(folderDirectory.$destination)){
 							mkdir(folderDirectory.$destination , 0777,true);
@@ -81,15 +79,18 @@
 					}					
 					else
 					{	$errors[] = "No se pudo ejectar la consulta, error: $result";
-						echo json_encode(['error'=>true,'msg'=>'No se pudo ejectar la consulta, error:'.$result,'data:'=>$destination."--".$sqlIdPdf]);
+						echo json_encode(['error'=>true,'msg'=>'No se pudo ejectar la consulta']);
 					}
 				}
 			}
-
-			echo json_encode(['error'=>false,'msg'=>'El producto ha sido guardado con éxito.']);
-		} else {
+		
+			
+// 			mysqli_query($conn,"call GuardarImagen('$result','$locationImg')"); 
+			echo json_encode(['error'=>false,'msg'=>'El producto ha sido guardado con éxito.','products'=>getAllProducts($category,$conn)]);
+		} 
+		else {
 			$errors[] = "Lo sentimos, el registro falló. Por favor, regrese y vuelva a intentarlo.";
-			echo json_encode(['error'=>true,'msg'=>'Lo sentimos, el registro falló. Por favor, regrese y vuelva a intentarlo.'.$query]);
+			echo json_encode(['error'=>true,'msg'=>'Lo sentimos, el registro falló. Por favor, regrese y vuelva a intentarlo.']);
 		}
 	}	
 	else 
@@ -97,6 +98,29 @@
 		// echo json_encode(['error'=>true,'msg'=>'Unknow']);
 	}
 
+	function getAllProducts($idCategory,$conn){
+		$tableProd="";
+		$sqlRead="select * from product as p where p.categoryid = $idCategory";
+
+		$result=mysqli_query($conn,$sqlRead);
+		if($result){
+			while($row = mysqli_fetch_array($result)){
+				$pid = $row['productid'];
+				$tableProd .="<tr>
+							  <td>". $row['product_name']. "</td>
+							  <td>". $row['product_price']."</td>
+							  <td>". $row['product_qty'].  "</td>";
+				$tableProd .="<td><button onclick='getProductEdit($pid)' class='btn btn-success btn-sm' data-toggle='modal' data-target='#editprod'><i class='fa fa-edit'></i> Edit</button>
+				<button onclick='getPhoto($pid)' class='btn btn-success btn-sm' data-toggle='modal' data-target='#addphoto'><i class='fa fa-edit'></i> Add Photo</button>
+				<button onclick='getProductDelete($pid,$idCategory)' class='btn btn-danger btn-sm' data-toggle='modal' ><i class='fa fa-trash'></i> Delete</button></td> 
+				</tr>";
+			}
+		}
+			// echo json_encode(['error'=>false,'msg'=>'Pruduct was deleted successfully','products'=>$tableProd]);
+		return $tableProd;
+	}
 	// Este codigo se puede optimizar aun mas
 ?>
+
+
 

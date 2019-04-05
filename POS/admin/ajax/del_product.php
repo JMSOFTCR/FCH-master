@@ -1,4 +1,4 @@
-
+<!-- Fa;ta por arreglar -->
 <?php
 	if (empty($_POST['delete_id'])){
 		$errors[] = "Id vacío.";

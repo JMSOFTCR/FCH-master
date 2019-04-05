@@ -19,6 +19,32 @@ function loadPage(page){
     })
 }
 
+function search(data,page){
+  let per_page=10;
+
+  if(data.length >=2)
+  {
+    $.ajax({
+      url:"ajax/list_products.php",
+      type:"POST",
+      data: {"action":"ajax","query":data,"search":1,'page':page,"per_page":per_page},
+      beforeSend:function(){
+        $("#loader").html("<div class='fa-2x'> Loading <i class='fas fa-spinner fa-pulse'></i></div>");
+        setTimeout(function(){
+          $("#loader").html("");
+        },1200)
+      },success:function(resp){
+        $("#loader").html("");
+        $(".outer_div").html("");
+        $(".outer_div").html(resp).fadeIn('slow');
+        console.log(resp);
+      },error:(resp)=>{
+        console.log(resp.responseText);
+      }   
+    });
+  }
+}
+
 $('#editProductModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   var id = button.data('id') 
@@ -54,7 +80,7 @@ $('#deleteProductModal').on('show.bs.modal', function (event) {
 $('#saveEdit').click(function() {
   $( "#edit_product" ).submit(function(e) {
     e.preventDefault();
-    let parametros=$(this).serialize();
+    let parametros=new FormData($(this)[0]);
   
       $.ajax({
           url: "edit_product.php",
@@ -62,10 +88,14 @@ $('#saveEdit').click(function() {
           dataType: 'json',
           encoding:"UTF-8",
           data: parametros,
+          contentType: false, 
+          processData: false,
           beforeSend: function(objeto){
              $("#resultados").html("Enviando...");
           },
           success: function(datos){
+            $('#addProductModal').modal('hide');
+            $('.modal-backdrop').remove(); // removemos el fondo oscuro
               swal({
                 type:'success',
                 title:'Product Update successfully!'

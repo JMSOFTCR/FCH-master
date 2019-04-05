@@ -41,18 +41,18 @@
                             <td><?php echo $row['product_qty']; ?></td>
 
                             <td>
-                                <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#editprod_<?php echo $pid; ?>"><i class="fa fa-edit"></i> Edit</button>
+                                <button onclick="getProductEdit(<?= $pid; ?>)" class="btn btn-success btn-sm" data-toggle="modal" data-target="#editprod"><i class="fa fa-edit"></i> Edit</button>
                                 <button onclick="getPhoto(<?= $pid; ?>)" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addphoto"><i class="fa fa-edit"></i> Add Photo</button>
                                 <button onclick="getProductDelete(<?= $pid; ?>,<?=$_POST['id_txt']?>)" class="btn btn-danger btn-sm" data-toggle="modal" ><i class="fa fa-trash"></i> Delete</button>
                             </td>                                                                                                         <!-- data-target="#delproduct" -->
                         </tr>
                     <?php
-                    
                     }
                 ?>
 
                 </tbody>
             </table>
+            <!-- Modals  -->
             <?php include('product_button.php'); ?>
         </div>
     </div>

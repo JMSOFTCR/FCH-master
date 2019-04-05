@@ -1,1 +1,222 @@
 [29-May-2018 01:53:24 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/mbr4zvgj8dqf/public_html/POS/conn.php on line 3
+[02-Mar-2019 14:45:44 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/uvqm17v7m9yb/public_html/POS/conn.php on line 3
+[02-Mar-2019 15:17:44 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/uvqm17v7m9yb/public_html/POS/conn.php on line 3
+[02-Mar-2019 15:21:07 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Mar-2019 15:21:07 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Mar-2019 15:21:07 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 15:21:07 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 15:21:07 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 16:15:00 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Mar-2019 16:15:00 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Mar-2019 16:15:00 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 16:15:00 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 16:15:00 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 16:30:54 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Mar-2019 16:30:54 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Mar-2019 16:30:54 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 16:30:54 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 16:30:54 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 16:54:20 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Mar-2019 16:54:20 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Mar-2019 16:54:20 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 16:54:20 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 16:54:20 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 17:53:42 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Mar-2019 17:53:42 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Mar-2019 17:53:42 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 17:53:42 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 17:53:42 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 17:56:10 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Mar-2019 17:56:10 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Mar-2019 17:56:10 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 17:56:10 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 17:56:10 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 23:09:13 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[02-Mar-2019 23:09:13 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[02-Mar-2019 23:11:33 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[02-Mar-2019 23:11:33 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[02-Mar-2019 23:12:24 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[02-Mar-2019 23:12:24 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[02-Mar-2019 23:14:44 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[02-Mar-2019 23:14:44 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[02-Mar-2019 23:20:15 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Mar-2019 23:20:15 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Mar-2019 23:20:15 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 23:20:15 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 23:20:15 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Mar-2019 23:20:33 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[02-Mar-2019 23:20:33 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[02-Mar-2019 23:58:53 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[02-Mar-2019 23:58:53 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[03-Mar-2019 00:00:38 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[03-Mar-2019 00:00:38 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[03-Mar-2019 00:00:38 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[03-Mar-2019 00:00:38 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[03-Mar-2019 00:00:38 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[03-Mar-2019 00:13:51 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[03-Mar-2019 00:13:51 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[03-Mar-2019 00:18:40 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[03-Mar-2019 00:18:40 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[03-Mar-2019 00:19:58 UTC] PHP Notice:  Undefined index: username in /home/uvqm17v7m9yb/public_html/POS/admin/modal.php on line 40
+[03-Mar-2019 00:19:58 UTC] PHP Notice:  Undefined index: password in /home/uvqm17v7m9yb/public_html/POS/admin/modal.php on line 44
+[03-Mar-2019 00:20:29 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[03-Mar-2019 00:20:29 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[03-Mar-2019 00:20:29 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[03-Mar-2019 00:20:29 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[03-Mar-2019 00:20:29 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[03-Mar-2019 00:42:01 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[03-Mar-2019 00:42:01 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[03-Mar-2019 00:42:01 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[03-Mar-2019 00:42:01 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[03-Mar-2019 00:42:01 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[03-Mar-2019 00:49:08 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[03-Mar-2019 00:49:08 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[03-Mar-2019 00:49:08 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[03-Mar-2019 00:49:08 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[03-Mar-2019 00:49:08 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[09-Mar-2019 21:46:37 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[09-Mar-2019 21:46:37 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[09-Mar-2019 21:47:38 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[09-Mar-2019 21:47:38 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[09-Mar-2019 21:47:38 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[09-Mar-2019 21:47:38 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[09-Mar-2019 21:47:38 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[11-Mar-2019 21:11:09 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[11-Mar-2019 21:11:09 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[11-Mar-2019 21:18:26 UTC] PHP Parse error:  syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/uvqm17v7m9yb/public_html/POS/conn.php on line 4
+[11-Mar-2019 21:18:30 UTC] PHP Parse error:  syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/uvqm17v7m9yb/public_html/POS/conn.php on line 4
+[11-Mar-2019 21:18:50 UTC] PHP Parse error:  syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/uvqm17v7m9yb/public_html/POS/conn.php on line 4
+[11-Mar-2019 21:18:55 UTC] PHP Parse error:  syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/uvqm17v7m9yb/public_html/POS/conn.php on line 4
+[11-Mar-2019 21:18:58 UTC] PHP Parse error:  syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/uvqm17v7m9yb/public_html/POS/conn.php on line 4
+[11-Mar-2019 21:19:20 UTC] PHP Parse error:  syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/uvqm17v7m9yb/public_html/POS/conn.php on line 4
+[11-Mar-2019 21:19:21 UTC] PHP Parse error:  syntax error, unexpected '(', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/uvqm17v7m9yb/public_html/POS/conn.php on line 4
+[11-Mar-2019 21:20:18 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[11-Mar-2019 21:20:18 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[12-Mar-2019 20:50:26 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[12-Mar-2019 20:50:26 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 03:26:55 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 03:26:55 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 03:28:08 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 03:28:08 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 03:29:28 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 03:29:28 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 03:29:43 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 03:29:43 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 03:30:01 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 03:30:01 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 03:30:20 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 03:30:20 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 03:31:14 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 03:31:14 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 03:35:22 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 03:35:22 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 03:41:55 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 03:41:55 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 03:42:25 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 03:42:25 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 03:43:26 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 03:43:26 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 03:45:23 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 03:45:23 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 03:51:33 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 03:51:33 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 03:59:05 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[13-Mar-2019 03:59:05 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[13-Mar-2019 03:59:05 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[13-Mar-2019 03:59:05 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[13-Mar-2019 03:59:05 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[13-Mar-2019 04:12:20 UTC] PHP Notice:  Undefined index: username in /home/uvqm17v7m9yb/public_html/POS/admin/modal.php on line 40
+[13-Mar-2019 04:12:20 UTC] PHP Notice:  Undefined index: password in /home/uvqm17v7m9yb/public_html/POS/admin/modal.php on line 44
+[13-Mar-2019 04:13:39 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[13-Mar-2019 04:13:39 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[13-Mar-2019 04:13:39 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[13-Mar-2019 04:13:39 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[13-Mar-2019 04:13:39 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[13-Mar-2019 04:25:47 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 04:25:47 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 04:26:49 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[13-Mar-2019 04:26:49 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[13-Mar-2019 04:26:49 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[13-Mar-2019 04:26:49 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[13-Mar-2019 04:26:49 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[13-Mar-2019 05:18:47 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 05:18:47 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 05:19:49 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 05:19:49 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 05:23:47 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 05:23:47 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 05:23:47 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 05:23:47 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[13-Mar-2019 05:24:53 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[13-Mar-2019 05:24:53 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[14-Mar-2019 01:26:32 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[14-Mar-2019 01:26:32 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[14-Mar-2019 01:26:40 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[14-Mar-2019 01:26:40 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[14-Mar-2019 01:34:31 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[14-Mar-2019 01:34:31 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[14-Mar-2019 01:34:31 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[14-Mar-2019 01:34:31 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[14-Mar-2019 01:34:31 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[15-Mar-2019 23:32:06 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[15-Mar-2019 23:32:06 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[26-Mar-2019 07:19:03 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[26-Mar-2019 07:19:03 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[26-Mar-2019 07:19:03 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[26-Mar-2019 07:19:03 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[26-Mar-2019 07:19:03 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[26-Mar-2019 23:58:03 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[26-Mar-2019 23:58:03 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[26-Mar-2019 23:58:03 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[26-Mar-2019 23:58:03 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[26-Mar-2019 23:58:03 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[27-Mar-2019 00:00:44 UTC] PHP Warning:  unlink(/home/uvqm17v7m9yb/public_html/POS/admin/upload/404-no-encontrado.jpg): No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/del_file.php on line 13
+[27-Mar-2019 00:01:47 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[27-Mar-2019 00:01:47 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[27-Mar-2019 00:01:47 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[27-Mar-2019 00:01:47 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[27-Mar-2019 00:01:47 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[27-Mar-2019 00:45:05 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[27-Mar-2019 00:45:05 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[27-Mar-2019 00:45:05 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[27-Mar-2019 00:45:05 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[27-Mar-2019 00:45:05 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[27-Mar-2019 00:46:56 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[27-Mar-2019 00:46:56 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[27-Mar-2019 00:46:56 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[27-Mar-2019 00:46:56 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[27-Mar-2019 00:46:56 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[27-Mar-2019 01:44:37 UTC] PHP Warning:  unlink(/home/uvqm17v7m9yb/public_html/POS/admin/upload/404-no-encontrado.jpg): No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/del_file.php on line 13
+[27-Mar-2019 02:14:24 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[27-Mar-2019 02:14:24 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[27-Mar-2019 02:14:24 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[27-Mar-2019 02:14:24 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[27-Mar-2019 02:14:24 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[29-Mar-2019 04:08:59 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[29-Mar-2019 04:08:59 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[29-Mar-2019 04:13:00 UTC] PHP Notice:  Undefined index: username in /home/uvqm17v7m9yb/public_html/POS/admin/modal.php on line 40
+[29-Mar-2019 04:13:00 UTC] PHP Notice:  Undefined index: password in /home/uvqm17v7m9yb/public_html/POS/admin/modal.php on line 44
+[29-Mar-2019 18:51:21 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[29-Mar-2019 18:51:21 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[29-Mar-2019 18:51:48 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[29-Mar-2019 18:51:48 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[29-Mar-2019 18:59:37 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[29-Mar-2019 18:59:37 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[29-Mar-2019 18:59:41 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[29-Mar-2019 18:59:41 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[29-Mar-2019 19:04:19 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[29-Mar-2019 19:04:19 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[29-Mar-2019 19:05:13 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[29-Mar-2019 19:05:13 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[29-Mar-2019 19:05:13 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[29-Mar-2019 19:05:13 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[29-Mar-2019 19:05:13 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Apr-2019 06:05:04 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[02-Apr-2019 06:05:04 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37
+[02-Apr-2019 06:07:13 UTC] PHP Warning:  include(conn.php): failed to open stream: No such file or directory in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Apr-2019 06:07:13 UTC] PHP Warning:  include(): Failed opening 'conn.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 4
+[02-Apr-2019 06:07:13 UTC] PHP Notice:  Undefined variable: con in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Apr-2019 06:07:13 UTC] PHP Notice:  Undefined index: userlog in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[02-Apr-2019 06:07:13 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/uvqm17v7m9yb/public_html/POS/admin/logout.php on line 6
+[05-Apr-2019 04:48:33 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 22
+[05-Apr-2019 04:48:33 UTC] PHP Notice:  Undefined variable: b in /home/uvqm17v7m9yb/public_html/POS/admin/modal/modal_edit.php on line 37

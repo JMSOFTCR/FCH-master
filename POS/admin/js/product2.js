@@ -1,3 +1,34 @@
+function addProduct(){
+    $("#addProductForm").submit(function(e){
+        e.preventDefault();
+
+        let parameters = new FormData($(this)[0]);
+       
+        $.ajax({
+            url:"ajax/save_product.php",
+            type:"POST",
+            dataType:"json",
+            data:parameters,
+            contentType: false, 
+            processData: false,
+        }).done(function(resp){
+            // $('#addproduct').modal('hide');
+            // $('.modal-backdrop').remove(); // removemos el fondo oscuro
+            swal({
+                type: 'success',
+                title:'Product added successfully!',
+                showConfirmButton:false,
+                timer: 800
+            })
+            $('.infoProduct').html(resp.products);
+        }).fail(function(resp){
+            console.log(resp.responseText)
+            
+        }); 
+        $("#addProductForm")[0].reset();
+    })
+}
+
 function getProductDelete(idProd,idCat){ 
         
     swal({
@@ -17,22 +48,115 @@ function getProductDelete(idProd,idCat){
                 dataType:"json",
                 data:{'idProd':idProd,'idCat':idCat}
             }).done(function(resp){
-                $(".infoProduct").html(null);
-                $(".infoProduct").html(resp.products);
+                if(!resp.error)
+                {
+                    $(".infoProduct").html(null);
+                    $(".infoProduct").html(resp.products);
 
-                swal({
-                    type: 'success',
-                    title:'Deleted!',
-                    text:resp.msg,
-                    showConfirmButton:false,
-                    timer: 800
-                })
-
+                    swal({
+                        type: 'success',
+                        title:'Deleted!',
+                        text:resp.msg,
+                        showConfirmButton:false,
+                        timer: 800
+                    })
+                }
+                else if(resp.error)
+                {
+                    swal({
+                        type:'error',
+                        title:'Failed!',
+                        text:resp.msg,
+                        showConfirmButton:true
+                    })
+                }
             }).fail(function(resp){
-                alert(resp.responseText);
+                console.log(resp.responseText);
             }); 
         }
       })
+}
+
+function getProductEdit(idProd){
+   let query = '1'; // con esto le caemos al mismo archivo y hacemos distintas operaciones 
+   
+    $.ajax({
+        url:'edit_product.php',
+        type:'POST',
+        dataType:'json',
+        data:{'edit_id':idProd,'query':query},
+    }).done((resp)=>{
+        if(!resp.error){
+            $("#edit_id").val(idProd);
+            $("#edit_name").val(resp.edit_name);
+            $("#edit_category").html(resp.category);
+            $("#edit_supplier").html(resp.supplier);
+            $("#edit_price").val(resp.edit_price);
+            $("#edit_stock").val(resp.edit_stock);
+            $("#edit_description").val(resp.edit_description);
+            $("#edit_tech").val(resp.edit_tech);
+            $("#edit_video").val(resp.edit_video);
+            
+        }
+        else
+        {
+            swal({
+                type:'error',
+                title:'Failed!',
+                text:resp.msg,
+                showConfirmButton:true
+            })
+        }
+        
+    }).fail((resp)=>{
+        console.log(resp.responseText)
+    });
+}
+
+function updateProduct(){
+    $('#form_edit').submit(function(e){
+        e.preventDefault();
+        let id = $("#edit_id").val();
+        let parameters = new FormData($(this)[0]);
+        $.ajax({
+            url:"edit_product.php",
+            type:"POST",
+            dataType:"json",
+            data:parameters,
+            contentType: false, 
+            processData: false,
+            beforeSend: function(objeto){
+                $(".infoProduct").html();
+            }
+        }).done((resp)=>{
+            console.log(resp.products);
+            if(!resp.error){
+                swal({
+                    type: 'success',
+                    title:'Updated!',
+                    text:resp.msg,
+                    showConfirmButton:false,
+                    timer: 1000
+                })
+                $(".infoProduct").html(resp.products);
+            }
+            else{
+                swal({
+                    type: 'error',
+                    title:'Error!',
+                    text:resp.msg,
+                    showConfirmButton:false,
+                    timer: 1000
+                })
+            }
+           
+        }).fail((resp)=>{
+            console.log(resp.responseText)
+        });
+        $("#form_edit")[0].reset(); // vaciamos el formulario
+        // $('#edit_id').val(id);
+        // $('#query').val("0");
+    });
 }
 
 function getPhoto(idProd){
@@ -50,7 +174,6 @@ function getPhoto(idProd){
             
         }
     }).done(function(resp){
-        alert()
         if(!resp.error)
         {   
             $(".d-flex").html(resp.allPhotos);
@@ -92,7 +215,8 @@ $("#savePhoto").click(function(){
                 //    setTimeout(function(){$(".message").html(null);},3000)
                 }
                 }).fail(function(resp){
-                    alert(resp.responseText)
+                    // alert(resp.responseText)
+                    console.log(resp.responseText);
                     $(".d-flex").html(resp.allPhotos);
                 });
                 $("#savePhotoProd")[0].reset(); // vaciamos el formulario
@@ -124,25 +248,31 @@ function deletePhoto(id,photo,idProd){
             }).done(function(resp){ 
                 if(!resp.error)
                 {
+                    swal({
+                        type: 'success',
+                        title:'Deleted!',
+                        text:'Your photo has been deleted.',
+                        showConfirmButton:false,
+                        timer: 800
+                    })
                     $(".d-flex").html(resp.allPhotos);
                 }
                 else
                 {
+                    swal({
+                        type: 'success',
+                        title:'Deleted!',
+                        text:'Your photo has been deleted.',
+                        showConfirmButton:false,
+                        timer: 800
+                    })
                     $(".d-flex").html(resp.msg);
                 }
                 
             }).fail(function(resp){
-                alert(resp.responseText)
+                console.log(resp.responseText)
             });
 
-            swal({
-                type: 'success',
-                title:'Deleted!',
-                text:'Your photo has been deleted.',
-                showConfirmButton:false,
-                timer: 800
-            })
-            
         }
       })    
 }

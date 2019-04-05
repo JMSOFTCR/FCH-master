@@ -8,6 +8,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
+                    <input type="hidden" name="query" value="0">
                     <input type="hidden" name="edit_id" id="edit_id" class="form-control" required>
                     <div class="form-group">
                         <label>Product name</label>
@@ -57,7 +58,7 @@
                     
                     <div class="form-group input-group">
                         <span style="width:120px;" class="input-group-addon">Photo:</span>
-                        <input style="height:45px;" type="file" id="image" name="image" style="width:150px;" accept="*/*" class="form-control">
+                        <input style="height:45px;" type="file" id="image" name="image" style="width:150px;" accept="image/*" class="form-control">
                     </div>
                     <div class="form-group input-group">
                         <span style="width:120px;" class="input-group-addon">PDF:</span>							
