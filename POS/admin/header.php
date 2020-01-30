@@ -9,15 +9,17 @@
 
     <title>FCHMAINTENANCE</title>
 	
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
     <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 	<link href="../css/style.css" rel="stylesheet">	
-	
 	 <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    
 </head>
 	
 

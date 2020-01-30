@@ -41,23 +41,27 @@
 
                             <td>
                                 <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#editprod_<?php echo $pid; ?>"><i class="fa fa-edit"></i> Edit</button>
-                                <button class="btn btn-success btn-sm" data-toggle="modal" data-target="#addphoto_<?php echo $pid; ?>"><i class="fa fa-edit"></i> Add Photo</button>
-                                <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delproduct_<?php echo $pid; ?>"><i class="fa fa-trash"></i> Delete</button>
-                                <?php include('product_button.php'); ?>
+                                <button onclick="getPhoto(<?= $pid; ?>)" class="btn btn-success btn-sm" data-toggle="modal" data-target="#addphoto"><i class="fa fa-edit"></i> Add Photo</button>
+                                <button onclick="getProductDelete(<?= $pid; ?>)" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#delproduct"><i class="fa fa-trash"></i> Delete</button>
                             </td>
                         </tr>
                     <?php
+                    
                     }
                 ?>
+
                 </tbody>
             </table>
+            <?php include('product_button.php'); ?>
         </div>
     </div>
 </div>
 </div>
 </div>
+
 <?php include('script.php'); ?>
 <?php include('modal.php'); ?>
 <?php include('add_modal.php'); ?>
-<script src="assets/js/ajax_productos.js" charset="utf-8"></script>
+<script src="js/product2.js"></script>
+<!-- <script src="assets/js/ajax_productos.js" charset="utf-8"></script> -->
 </body>

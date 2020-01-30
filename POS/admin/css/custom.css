@@ -108,7 +108,7 @@ table.table .avatar {
     min-width: 30px;
     min-height: 30px;
     color: #262626;
-    margin: 10px;
+    margin: 3px;
     line-height: 30px;
     text-align: center;
     padding: 5px;
@@ -197,7 +197,7 @@ table.table .avatar {
     background: #ddd;
 }
 /* Modal styles */
-.modal .modal-dialog {
+/* .modal .modal-dialog {
     max-width: 600px;
 }
 .modal .modal-header, .modal .modal-body, .modal .modal-footer {
@@ -227,4 +227,4 @@ table.table .avatar {
 }	
 .modal form label {
     font-weight: normal;
-}
+} */

@@ -1,12 +1,11 @@
 
 $(function() {
-    load(1);
+  loadPage(1);
 });
-function load(page){
+function loadPage(page){
     var query=$("#q").val();
     var per_page=10;
     var parametros = {"action":"ajax","page":page,'query':query,'per_page':per_page};
-    $("#loader").fadeIn('slow');
     $.ajax({
         url:'ajax/list_products.php',
         data: parametros,
@@ -19,6 +18,7 @@ function load(page){
         }
     })
 }
+
 $('#editProductModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
   var id = button.data('id') 
@@ -26,13 +26,13 @@ $('#editProductModal').on('show.bs.modal', function (event) {
   var name = button.data('name') 
   $('#edit_name').val(name)
   var category = button.data('category') 
-  $('#edit_category').val(category)
+  $('#edit_category').val(category);//html("<option value=" + 1 + ">" + category + "</option>");
   var stock = button.data('stock') 
   $('#edit_stock').val(stock)
   var price = button.data('price') 
   $('#edit_price').val(price)
   var photo = button.data('photo')  
-  $('#edit_photo').val(photo)
+  $('#currentPhoto').html("<label style='margin:20px;' for=''>Current Photo:</label><img width='200' height='200' src=../"+ photo+" alt=''>");
   var description = button.data('description')  
   $('#edit_description').val(description)
   var tech = button.data('tech')  
@@ -51,81 +51,79 @@ $('#deleteProductModal').on('show.bs.modal', function (event) {
 })
 
 
-/*$( "#edit_product" ).submit(function( event ) {
-  var parametros = $(this).serialize();
-    $.ajax({
-            type: "POST",
-            url: "ajax/edit_product.php",
-            data: parametros,
-             beforeSend: function(objeto){
-                $("#resultados").html("Enviando...");
-              },
-            success: function(datos){
-                swal(
-                  'Product update!',
-                  '',
-                  'success'
-                    )
-            $("#resultados").html(datos);
-            load(1);
-            $('#editProductModal').modal('hide');
-          }
-    });
-  event.preventDefault();
-});*/
-
-$( "#edit_product" ).submit(function( event ) {
-  var parametros=new FormData($(this)[0])
-    $.ajax({
-            type: "POST",
-           encoding:"UTF-8",
-            url: "edit_product.php",
-            data: parametros,
-            contentType: false, 
-            processData: false, 
-             beforeSend: function(objeto){
-                $("#resultados").html("Enviando...");
-              },
-            success: function(datos){
-                swal(
-                  'Product update!',
-                  '',
-                  'success'
-                    )
-            $("#resultados").html(datos);
-            load(1);
-            $('#editProductModal').modal('hide');
-          }
-    });
-  event.preventDefault();
+$('#saveEdit').click(function() {
+  $( "#edit_product" ).submit(function(e) {
+    e.preventDefault();
+    let parametros=$(this).serialize();
+  
+      $.ajax({
+          url: "edit_product.php",
+          type: "POST",
+          dataType: 'json',
+          encoding:"UTF-8",
+          data: parametros,
+          beforeSend: function(objeto){
+             $("#resultados").html("Enviando...");
+          },
+          success: function(datos){
+              swal({
+                type:'success',
+                title:'Product Update successfully!'
+              })
+          $("#resultados").html(datos);
+          loadPage(1);
+          $('#editProductModal').modal('hide');
+        },
+        error: function(resp) {
+          alert(resp.responseText);
+        } 
+      });   
+  });
 });
 
-$( "#add_product" ).submit(function( event ) {
-  var parametros=new FormData($(this)[0])
-    $.ajax({
-            type: "POST",
-            encoding:"UTF-8",
-            url: "save_product.php",
-            data: parametros,
-            contentType: false, 
-            processData: false, 
-             beforeSend: function(objeto){
-                $("#resultados").html("Enviando...");
-              },
-            success: function(datos){
-              swal(
-                'product added correctly!',
-                '',
-                'success'
-                  )
-            $("#resultados").html(datos);
-            load(1);
-            $('#addProductModal').modal('hide');
+ $('#saveStore').click(function() { // investigar como enviar imagnes de un file campo con post yq que sea con ajax
+  $( "#add_product" ).submit(function(e)  {
+    e.preventDefault();
+    let parametros = new FormData($(this)[0]);
+    
+      $.ajax({
+          url: "ajax/save_product.php",
+          type: "POST",
+          dataType:'json',
+          data: parametros,
+          contentType: false, 
+          processData: false,
+          beforeSend: function(objeto){
+            $("#resultados").html("Enviando...");
           }
-    });
-  event.preventDefault();
-});
-
+        }).done(function(resp){
+            if(!resp.error){
+              // $('body').removeClass('modal-open');
+              $('.modal-backdrop').remove(); // removemos el fondo oscuro
+              $('#addProductModal').modal('hide');
+              $("#resultados").html("<div class='alert alert-success'><strong>Success! </strong>"+resp.msg+"<button type='button' class='close' data-dismiss='alert'>&times;</button></div>");
+              loadPage(1);
+              setTimeout(function(){
+              $("#resultados").html(null);
+              },4000)
+            }
+            else if(resp.error){
+              swal({
+                type:'error',
+                title: 'Error: '+resp.msg,
+              })
+            }
+        }).fail(function(resp){
+          swal({
+            type: 'error',
+            title:'Error!',
+            text:resp.responseText,
+          })
+          console.log(resp.responseText);
+        })
+  });
+ });
+ 
 $( "#delete_product" ).submit(function( event ) {
   var parametros = $(this).serialize();
     $.ajax({
@@ -134,17 +132,16 @@ $( "#delete_product" ).submit(function( event ) {
             data: parametros,
              beforeSend: function(objeto){
                 $("#resultados").html("Enviando...");
-              },
-            success: function(datos){
-              swal(
-                'Product Delete!',
-                '',
-                'success'
-                  )
-            $("#resultados").html(datos);
-            load(1);
-            $('#deleteProductModal').modal('hide');
-          }
-    });
+              }
+            }).done(function(datos){
+              swal('Product Delete!','','success');
+              // $('body').removeClass('modal-open') 
+              $('.modal-backdrop').remove();
+              $("#deleteProductModal").modal('toggle'); 
+              loadPage(1);
+            }).fail(function(resp){
+              $("#resultados").html(resp.responseText);
+            })
   event.preventDefault();
 });
+

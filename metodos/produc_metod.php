@@ -1,5 +1,4 @@
 <?php
-
     $conn = new PDO('mysql:host=localhost;dbname=pos', 'root', '');
     $stm = null;
     try
@@ -14,6 +13,5 @@
     {
       die($e->getMessage());
     }
-  }
 
 ?>

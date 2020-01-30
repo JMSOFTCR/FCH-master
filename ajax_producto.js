@@ -13,59 +13,59 @@ function guardar(){
            var a = $('#tech_p').val();
            var b = $('#video_p').val();
            if($("#id").val() != ""){
-                                       $.ajax({
-                                          type: 'POST',
-                                          url:"../admin/edit_product.php",
-                                          data:  new FormData(this),
-                                          contentType: false,
-                                          cache: false,
-                                          processData: false,
-                                          success:function(result){
-                                            $('#addproduct').modal('toggle');
-                                            Limpiar()
-                                            swal({
-                                                position: 'center',
-                                                type: 'success',
-                                                title: 'file Updated successfully',
-                                                showConfirmButton: false,
-                                                timer: 1500
-                                              });
-                                            listar();
-                                          },
-                                             beforeSend: function(){
-                                                 $f.data('locked', true);  // (2)
-                                             },
-                                            complete: function(){ $f.data('locked', false);  // (3)
-                                           }
-                                       });
-                                     }
-                                     else{
-                                       $.ajax({
-                                          type: 'POST',
-                                          url:"../admin/addproduct.php",
-                                          data:  new FormData(this),
-                                          contentType: false,
-                                          cache: false,
-                                          processData: false,
-                                          success:function(result){
-                                            $('#addproduct').modal('toggle');
-                                            Limpiar();
-                                            swal({
-                                                position: 'center',
-                                                type: 'success',
-                                                title: 'File saved successfully',
-                                                showConfirmButton: false,
-                                                timer: 1500
-                                              });
-                                            listar();
-                                          },
-                                             beforeSend: function(){
-                                                 $f.data('locked', true);  // (2)
-                                             },
-                                            complete: function(){ $f.data('locked', false);  // (3)
-                                           }
-                                       });
-                                     }
+                    $.ajax({
+                      type: 'POST',
+                      url:"../admin/edit_product.php",
+                      data:  new FormData(this),
+                      contentType: false,
+                      cache: false,
+                      processData: false,
+                      success:function(result){
+                        $('#addproduct').modal('toggle');
+                        Limpiar()
+                        swal({
+                            position: 'center',
+                            type: 'success',
+                            title: 'file Updated successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                          });
+                        listar();
+                      },
+                          beforeSend: function(){
+                              $f.data('locked', true);  // (2)
+                          },
+                        complete: function(){ $f.data('locked', false);  // (3)
+                        }
+                    });
+                  }
+                  else{
+                    $.ajax({
+                      type: 'POST',
+                      url:"../admin/addproduct.php",
+                      data:  new FormData(this),
+                      contentType: false,
+                      cache: false,
+                      processData: false,
+                      success:function(result){
+                        $('#addproduct').modal('toggle');
+                        Limpiar();
+                        swal({
+                            position: 'center',
+                            type: 'success',
+                            title: 'File saved successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                          });
+                        listar();
+                      },
+                          beforeSend: function(){
+                              $f.data('locked', true);  // (2)
+                          },
+                        complete: function(){ $f.data('locked', false);  // (3)
+                        }
+                    });
+                  }
 
                       }
                       else
